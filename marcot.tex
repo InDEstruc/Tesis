@@ -1,0 +1,352 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARCO TE\'ORICO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Marco Te\'orico}
+
+\begin{flushleft}
+\begin{verse}
+	\emph{``C\'omo es posible que la matem\'atica, un producto del pensamiento humano independiente de la experiencia, se adapte tan admirablemente a los objetos de la realidad''}.}
+\newline
+	 \qauthor{A. Einstein.}
+\end{verse}
+\end{flushleft}
+
+\section{Modelaci\'on de la Mamposter\'{\i}a}
+
+Como se ha se\~nalado en el estado del arte, el comportamiento de los muros de mamposter\'{\i}a ha sido objeto de una gran cantidad de investigaciones con fines de modelaci\'on. El modelado de la mamposter\'{\i}a resulta de gran dificultad debido a la interacci\'on tan compleja entre las variables, Crisafulli \cite{C1997} presenta los siguientes factores de importancia en el modelado:
+
+\begin{itemize}
+	\item Muro de Relleno: Fractura y aplastamiento de la mamposter\'{\i}a, degradaci\'on en rigidez y resistencia.
+	\item Marco Principal: Fractura del concreto, cedencia de las barras de refuerzo, modificaci\'on en los desplazamientos locales de los nodos.
+	\item Interfaces Marco--Muro: Mecanismo de degradaci\'on por fricci\'on en los nodos, variaci\'on en la longitud de contacto.
+\end{itemize}
+
+\newpage
+
+Es as\'{\i} que el modelado de la mamposter\'{\i}a es un proceso bastante complejo que debe de satisfacer la modelaci\'on de un extenso conjunto de propiedades, es por ello que existe una gran cantidad de modelos de comportamiento \cite{M1979,HM2007,SM2009,Put2010,PE2012}. A continuaci\'on se presenta un esquema general de los tipos de modelos existentes.
+
+\subsection{Tipos de Modelos}
+
+La modelaci\'on en general se puede caracterizar en dos tipos de m\'etodos de modelaci\'on: detallado y simple.
+
+\subsubsection{Modelos Detallados o Micro--modelos}
+
+Este tipo de modelos se basa principalmente en el m\'etodo de los elementos finitos, se obtienen un grupo de elementos simulando las propiedades mec\'anicas del conjunto. Estos tipos de modelos permiten modelar a detalle el comportamiento de cualquier sistema f\'{\i}sico, sin embargo, esto implica un complejo trabajo de c\'omputo debido a la gran cantidad de c\'alculos eh informaci\'on procesada.
+
+Aplicados a la modelaci\'on de la mamposter\'{\i}a este tipo de modelos deben reflejar la naturaleza no lineal de los materiales, existen dos consideraciones de sus propiedades f\'{\i}sicas y mec\'anicas: como elemento homog\'eneo o como sub--elementos en fase donde se debe poner especial atenci\'on en los elementos de contacto (mortero y piezas de mamposteri\'{\i}a). \cite{C1997}.
+
+\subsubsection{Modelos Simples o Macro--modelos}
+
+Este tipo de modelos se basa principalmente en las propiedades f\'{\i}sicas globales del elemento simulado; no son tan detallados como los micro--modelos, sin embargo, permiten estudiar sistemas de mayores dimensiones y mayor n\'umero de elementos.
+
+\newpage
+
+Se han realizado innumerables investigaciones sobre la modelaci\'on por macro--modelos de la mamposter\'{\i}a \cite{MK2004,CG2007,FKA2012,FNK2012,D2008,PE2012}, los macro--modelos de este tipo son en general diagonales que trabajan como puntales de compresi\'on o bien elementos columna con capacidad de corte conforme a la mamposter\'{\i}a.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[scale=0.5]{figmt1.png}
+	\caption{Posici\'on y propiedades de los macro--modelos tipo puntal de mamposter\'{\i}a.}
+	\label{figmt:fig1}
+\end{figure}
+
+En general los macro--modelos de tipo puntal siguen un esquema como el que se presenta en la Figura \ref{figmt:fig1} donde se puede observar que las caracter\'{\i}sticas principales de estos modelos son las siguientes:
+
+\begin{itemize}
+	\item Espesor efectivo de la diagonal \emph{$t_{inf}$}.
+	\item Ancho efectivo de la diagonal \emph{$a$}.
+	\item Longitud de la diagonal \emph{$r_{inf}$}. 
+	\item Altura de la columna \emph{$h_col$}.
+	\item Altura del muro de relleno \emph{$h_{inf}$}.
+	\item Longitud del muro de relleno \emph{$L_{inf}$}.
+\end{itemize}
+
+En la Tabla \ref{tab:formulaciones} se presenta un resumen de las propiedades de los macro--modelos tipo diagonal m\'as utilizados; en general el par\'ametro de mayor importancia y el que se presenta m\'as variado es el ancho efectivo de la diagonal.
+
+	\begin{table}
+		\centering
+		\caption{Diferentes propuestas de modelaci\'on tipo puntal.}
+		\begin{tabular}{lll} \\ 
+			\hline \hline
+	  Investigadores & A\~no & Ancho Efectivo\\ \\ 
+		\hline\hline
+		 Holmes \cite{H1961} & ($1961$) & $a=[0.33]r_{inf}$\\ \\ 
+		\hline
+		Smith y Carter \cite{SC1969} & ($1969$) & $a=[0.58](\frac{l_{inf}}{h_{inf}})^{-0.445}[(\lambda)(h_{col})]^{0.335r_{inf}(\frac{l_{inf}}{h_{inf}})^{0.064}}$\\ \\ 
+		\hline
+		Mainstone \cite{MR1971} & ($1971$) & $a=[0.16][(\lambda)(h_{col})]^{-0.3}r_{inf}$\\ \\ 
+		\hline
+		Klinger y Bertero \cite{KB1976} & ($1976$) & $a=[0.175][(\lambda)(h_{col})]^{-0.4}r_{inf}$\\ \\ 
+		\hline
+		Liauw y Kwan \cite{LK1984} & ($1984$) & $a=[0.95]h_{inf}\cos{\theta}[(\lambda)(h_{col})]^{-0.5}$\\ \\ 
+		\hline
+		Paulay y Priestley \cite{PP1992} & ($1992$) & $a=[0.25]*r_{inf}$\\ 
+\\\hline \hline
+		\end{tabular}
+	\label{tab:formulaciones}
+\end{table}
+
+En esta investigaci\'on se utiliza un macro--modelo de tipo diagonal, estos sirven para representar las fallas m\'as comunes de la mamposter\'{\i}a, sin embargo, existen problemas en la presentaci\'on de ciertas fallas tales como las de deslizamiento horizontal \cite{C1997}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[scale=0.7]{figmt2.png}
+	\caption{Tipos de fallas comunes en los muros de mamposter\'{\i}a. Adaptado de \cite{T2006}.}
+	\label{figmt:fig2}
+\end{figure}
+
+Los principales tipos de falla que se presentan en los muros de mamposter\'{\i}a sometidos a cargas de tipo s\'{\i}smicas se ilustran en la Figura \ref{figmt:fig2}; se resumen a continuaci\'on algunas de sus caracter\'{\i}sticas \cite{T2006}:
+
+\begin{itemize}
+	\item Falla por Cortante Diagonal: Este tipo de falla se presenta cuando la relaci\'on entre las dimensiones en el plano del muro es cercana a la unidad, la distribuci\'on de esfuerzos sigue las esquinas del marco principal formando un puntal de compresi\'on. La falla puede seguir las juntas de mortero o bien atravesar las piezas s\'olidas de mamposter\'{\i}a a lo largo de la diagonal.
+	\item Falla por Deslizamiento Horizontal: Este tipo de falla se presenta  cuando la relaci\'on entre las dimensiones en el plano del muro es mayor a la unidad, siendo el lado de mayor dimensi\'on aquel paralelo al sentido horizontal; en este tipo de falla el mortero de uni\'on no es capaz de resistir los esfuerzos cortantes que se presentan permitiendo un deslizamiento completo de una parte importante del muro.
+	\item Falla por Flexi\'on: Este tipo de falla se presenta  cuando la relaci\'on entre las dimensiones en el plano del muro es mayor a la unidad, siendo el lado de mayor dimensi\'on aquel paralelo al sentido vertical; en este tipo de falla la distribuci\'on de los esfuerzos flexionantes produce agrietamiento en las zonas de tensi\'on tal como un elemento viga--columna sometido a flexi\'on en cantiliver.
+\end{itemize}
+
+\subsection{Macro--modelo Utilizado}
+
+\subsubsection{El modelo de Kadysiewski y Mosalam}
+
+El modelo de Kadysiewski y Mosalam \cite{MOSS2009} por fibras considera la interacci\'on dentro y fuera del plano (\quotes{out of plane, OOP}) mediante una masa con libertad fuera del plano al centro de la diagonal. El comportamiento de las fibras es elasto--pl\'astico perfecto y los estados l\'{\i}mite son definidos por deformaci\'on y ductilidad en las dos direcciones; los estados l\'{\i}mite se definen dependiendo del c\'odigo de dise\~no utilizado. Algunos autores han remarcado la necesidad de establecer modelos materiales m\'as complejos que los elastopl\'asticos \cite{C1997}, sin embargo, se espera que la modelaci\'on por fibras permita compensar la representaci\'on de la distribuci\'on de da\~no en el elemento.
+
+\begin{figure}[htbp]
+	\begin{flushleft}
+		\includegraphics[width=150mm]{figmt3.pdf}
+		\end{flushleft}
+	\caption{Modelo tipo puntal de Kadysiewski y Mosalam \cite{MOSS2009} en Opensees. Adaptado de \cite{OP2006}.}
+	\label{figmt:fig3}
+\end{figure}
+
+El enfoque de una secci\'on discretizada por fibras sirve para representar el comportamiento de la secci\'on transversal donde cada fibra se asocia con una relaci\'on de esfuerzo-deformaci\'on uniaxial; el estado de esfuerzo--deformaci\'on en la secci\'on de los elementos viga--columna se obtiene entonces a trav\'es de la integraci\'on de la respuesta no lineal de esfuerzo--deformaci\'on de fibras individuales con las que la secci\'on ha sido discretizada. Existen formulaciones basadas en el desplazamiento o bien basadas en la fuerza y est\'an disponibles en el programa Opensees \cite{OP2006} para simular el comportamiento inel\'astico de los elementos; en esta investigaci\'on se utilizan elementos basados en  fuerza para la modelaci\'on de los puntales de mamposter\'{\i}a.
+
+\newpage
+
+Por la disponibilidad de los elementos del modelo de Kadysiewski y Mosalam en Opensees \cite{OP2006}, este es el modelo utilizado para realizar el proceso de confiabilidad s\'{\i}smica en esta investigaci\'on, vease la Figura \ref{figmt:fig3}; durante la modelaci\'on se incrementa un grado de libertad en la estructura por cada muro de relleno. 
+
+A pesar de que el modelo se desarrolla en un principio con informaci\'on de un tipo de maposter\'{\i}a de relleno distinta a la \emph{mamposter\'{\i}a confinada} de uso com\'un en M\'exico, en esta investigaci\'on se considera que las diferencias no son significativas realizando un proceso de calibraci\'on del modelo \cite{MC1997} mediante la informaci\'on disponible en Aguilar y Alcocer \cite{AA2001} como se muestra en el Apendice B. Caracter\'{\i}sticas del elemento tipo muro se detallan en el \emph{Ap\'endice \textbf{A}}, la calibraci\'on del modelo con la informaci\'on de Aguilar y Alcocer \cite{AA2001} se presenta en el \emph{Ap\'endice \textbf{B}}.
+
+\newpage
+
+\section{Funciones de Confiabilidad S\'{\i}smica}
+
+A continuaci\'on se presenta una breve descripci\'on de la propuesta mexicana de confiabilidad s\'{\i}smica \cite{DE2006} adaptada a las capacidades de modelaci\'on tridimensional y por elementos con plasticidad distribuida.
+
+\subsection{Simulaci\'on de Propiedades}
+
+Para determinar las funciones de confiabilidad s\'{\i}smica de cada sistema estructural es necesario considerar las posibles variaciones en las propiedades f\'{\i}isicas y geom\'etricas de los sistemas as\'{\i} como en las cargas s\'{\i}smicas probables en la regi\'on de estudio. Se toman en cuenta estas variaciones mediante variables aleatorias cuya distribuci\'on queda determinada por investigaciones en campo \cite{RS1997,MG1970,MSMG1979,CJM1985,RB1996,LPMR2006} y son finalmente simuladas mediante un proceso de Monte Carlo; en este trabajo el proceso de simulaci\'on es realizado a trav\'es del SIB \cite{SIB2013}. Las aceleraciones del terreno por su parte son registros reales o versiones a escala; informaci\'on de los registros s\'{\i}smicos utilizados en el presente trabajo se muestran en el \emph{Cap\'{\i}tulo \textbf{5}}.
+
+	\begin{table}[htbp]
+	\centering
+		\caption{Caracter\'{\i}sticas de las variables simuladas \cite{PC1973,MG1970,MSMG1979,CJM1985,RB1996,LPMR2006}.}
+		\begin{tabular}{llll}
+		\hline \hline
+No & Variable & Distribuci\'on & Par\'ametros \\ \hline
+1 & Carga \ Muerta & $N(\mu_{D},\sigma_{D})$ & $\mu_{D}=1.05, \ \sigma_{D}=0.10$ \\ 
+ &  & & $m=520\frac{kg}{m^{2}}$ \\ 
+2 & Secci\'on \ Transversal & $N(\mu_{bc},\sigma_{bc})$ & $\mu_{bc}=0.002032,$ \\ 
+ & de \ Columnas & & $\sigma_{bc}=0.0066548$ \ en \ $m$ \\ 
+3 & Secci\'on \ Transversal & $N(\mu_{bb},\sigma_{bb})$ & $\mu_{bb}=0.00254,$ \\ 
+ & Base \ de \ Trabes & & $\sigma_{bb}=0.0036576$ \ en \ $m$ \\ 
+4 & Secci\'on \ Transversal & $N(\mu_{bd},\sigma_{bd})$ & $\mu_{bd}=-0.002794,$ \\ 
+ & Peralte \ de \ Trabes & & $\sigma_{bd}=0.0054356$ \ en \ $m$ \\ 
+5 & Secci\'on \ Transversal & $N(\mu_{cbc},\sigma_{cbc})$ & $\mu_{cbc}=0.002794,$ \\ 
+ & Recubrimiento \ de \ Columnas & & $\sigma_{cbc}=0.015748$ \ en \ $m$ \\ 
+6 & Secci\'on \ Transversal & $N(\mu_{cb},\sigma_{cb})$ & $\mu_{cb}=0.002794,$ \\ 
+ & Recubrimiento \ de \ Trabes & & $\sigma_{cb}=0.015748$ \ en \ $m$ \\ 
+7 & Espaciamiento \ de & $N(\mu_{trsc},\sigma_{trsc})$ & $\mu_{trsc}=1.0,$ \\ 
+ & Estribos \ en \ Columnas & & $\sigma_{trsc}=0.02$ \\ 
+8 & Espaciamiento \ de & $N(\mu_{trsb},\sigma_{trsb})$ & $\mu_{trsb}=1.0,$ \\ 
+ & Estribos \ en \ Trabes & & $\sigma_{trsb}=0.03$ \\ 
+9 & \'Area \ de \ acero & $LN(\mu_{trsb},\sigma_{trsb})$ & $\mu_{trsb}=1.01,$ \\ 
+ & longitudinal \ en \ Columnas & & $\sigma_{trsb}=0.0404$ \\ 
+10 & \'Area \ de \ acero & $LN(\mu_{lrb},\sigma_{lrb})$ & $\mu_{lrb}=1.03,$ \\ 
+ & longitudinal \ en \ Trabes & & $\sigma_{lrb}=0.0618$ \\ 
+11 & \'Area \ de \ acero & $LN(\mu_{trac},\sigma_{trac})$ & $\mu_{trac}=1.0,$ \\ 
+ & Transversal \ en \ Columnas & & $\sigma_{trac}=0.015$ \\ 
+12 & \'Area \ de \ acero & $LN(\mu_{trab},\sigma_{trab})$ & $\mu_{trab}=1.0,$ \\ 
+ & Transversal \ en \ Trabes & & $\sigma_{trab}=0.015$ \\ 
+\\ \hline \hline
+		\end{tabular}
+	\label{tab:simp1}
+\end{table}
+
+	\begin{table}[htbp]
+	\centering
+		\caption{Caracter\'{\i}sticas de las variables simuladas \cite{PC1973,MG1970,MSMG1979,CJM1985,RB1996,LPMR2006}, continuaci\'on.}
+		\begin{tabular}{llll}
+		\hline \hline
+13 & Peso \ del \ Concreto & $W_{c}=N(\mu_{ag,h},\sigma_{h})$ & $\mu_{ag,h}=\mu_{c}+a_{ag}$ \\ 
+ &  & & \ $a_{ag}=N(0,\sigma_{ag})$ \\ 
+ &  & & \ $\mu_{c}=1.0, \ \sigma_{h}=0.007$ \\ 
+ &  & & \ $\sigma_{ag}=0.001$ \\ 
+ &  & & \ $\mu_{c}=$ \ peso \ medio \ del \\ 
+ &  & & concreto \\ 
+ &  & & \ $\sigma_{h}=$ \ desviaci\'on \ est\'andar \\ 
+ &  & & \ por \ deshidrataci\'on \\ 
+ &  & & \ $\sigma_{ag}=$ \ desviaci\'on \ est\'andar \\ 
+ &  & & \ por \ agregado \\ 
+14 & $f^{`}c$ \ del \ concreto & $N(\mu_{fc},\sigma_{fc})$ & $\mu_{fc}=1.0,$ \\ 
+ & & & $\sigma_{fc}=0.05$ \\ 
+15 & $f^{`}cc$ \ del \ concreto & $N(\mu_{fcc},\sigma_{fcc})$ & $\mu_{fc}=1.0,$ \\ 
+ & & & $\sigma_{fc}=0.01$ \\ 
+16 & $ft$ \ del \ concreto & $N(\mu_{ft},\sigma_{ft})$ & $\mu_{ft}=1.0,$ \\ 
+ & & & $\sigma_{ft}=0.05$ \\ 
+17 & $E$ \ del \ concreto & $N(\mu_{E},\sigma_{E})$ & $\mu_{E}=1.0,$ \\ 
+ & & & $\sigma_{E}=0.05$ \\ 
+18 & $\epsilon_{fcmax}$ \ del \ concreto & $N(\mu_{fcmax},\sigma_{fc-max})$ & $\mu_{fc-max}=1.0,$ \\ 
+ & & & $\sigma_{fc-max}=0.05$ \\ 
+19 & $\epsilon_{cu}$ \ del \ concreto & $N(\mu_{cu},\sigma_{cu})$ & $\mu_{cu}=1.0,$ \\ 
+ & & & $\sigma_{cu}=0.05$ \\ 
+20 & $\epsilon_{t}$ \ del \ concreto & $N(\mu_{st},\sigma_{st})$ & $\mu_{st}=1.0,$ \\ 
+ & & & $\sigma_{st}=0.05$ \\ 
+21 & $\nu$ \ del \ concreto & $N(\mu_{\nu},\sigma_{\nu})$ & $\mu_{\nu}=1.0,$ \\ 
+ & & & $\sigma_{\nu}=0.005$ \\ 
+\\ \hline \hline
+		\end{tabular}
+	\label{tab:simp2}
+\end{table}
+
+	\begin{table}[htbp]
+	\centering
+		\caption{Caracter\'{\i}sticas de las variables simuladas \cite{PC1973,MG1970,MSMG1979,CJM1985,RB1996,LPMR2006}, continuaci\'on.}
+		\begin{tabular}{llll}
+		\hline \hline
+22 & $fy$ \ del \ acero & $\widetilde{fy}=\beta_{0}+\sum_{j=1}^{k} \beta_{i}x_{ij}+\epsilon_{i}$ & $i=1,...,6,$ \\ 
+ & & $\widetilde{\beta}=\begin{Bmatrix}
+       \beta_{0} & \beta_{1} & \beta_{2} & \beta_{3} & \beta_{4} & \beta_{5} & \beta_{6}
+     \end{Bmatrix} ^{T}$ & $\widetilde{\beta}=\{ 114.5 ,-13.240,$ \\  
+ & & $x_{ij}=\begin{Bmatrix}
+       \epsilon_{shj} &  f_{suj} & \epsilon_{suj} & \epsilon_{suuj} & P_{j} & \phi_{j}
+     \end{Bmatrix} ^{T}$ & $0.6151,-2.2970,$\\ 
+ & & & $0.02644,-3.1420,$\\ 
+ & & & $-22.90 \} ^{T}$\\ 
+ & & & $k=$ \ n\'umero \ de \\ 
+ & & & valores \ de \ muestra \\ 
+ & & & $i=$ \ n\'umero \ de \\ 
+ & & &  variables \ de \\ 
+ & & &  muestra \\ 
+23 & $\epsilon_{sh}$ \ del \ acero & $N(\mu_{\epsilon_{sh}},\sigma_{\epsilon_{sh}})$ & $\mu_{\epsilon_{sh}}=1.0,$ \\ 
+ & de \ refuerzo & & $\sigma_{\epsilon_{sh}}=0.6867937$ \\ 
+24 & $fsu$ \ del \ acero & $N(\mu_{fsu},\sigma_{fsu})$ & $\mu_{fsu}=1.0,$ \\ 
+ & de \ refuerzo & & $\sigma_{fsu}=0.03353442$ \\ 
+25 & $\epsilon_{su}$ \ del \ acero & $N(\mu_{\epsilon_{su}},\sigma_{\epsilon_{su}})$ & $\mu_{\epsilon_{su}}=1.0,$ \\ 
+ & de \ refuerzo & & $\sigma_{\epsilon_{su}}=0.6555658$ \\ 
+26 & $\epsilon_{suu}$ \ del \ acero & $N(\mu_{\epsilon_{suu}},\sigma_{\epsilon_{suu}})$ & $\mu_{\epsilon_{suu}}=1.0,$ \\ 
+ & de \ refuerzo & & $\sigma_{\epsilon_{suu}}=0.3073973$ \\ 
+27 & $P$ \ del \ modelo & $N(\mu_{p},\sigma_{p})$ & $\mu_{p}=1.0,$ \\ 
+ & de \ Mander & & $\sigma_{p}=0.1114421$ \\ 
+28 & $\phi$ \ di\'ametro \ de & $N(\mu_{\phi},\sigma_{\phi})$ & $\mu_{\phi}=1.0,$ \\ 
+ & varillas \ de & & $\sigma_{\phi}=0.4836575$ \\ 
+ & refuerzo & & \\ 
+29 & $E_{s}$ \ del \ acero & $N(\mu_{E_{s}},\sigma_{E_{s}})$ & $\mu_{E_{s}}=1.0,$ \\ 
+ & de \ refuerzo & & $\sigma_{E_{s}}=0.08$ \\ 
+30 & Carga \ viva  & $G(\bullet)$ & $m=75.1,$ \\ 
+ & por \ Mitchel & & $\sigma_{i}^{2}=121.52$ \\ 
+ & y \ Woodgate & & $\sigma_{j}^{2}=698.72$ \\ 
+\\ \hline \hline
+		\end{tabular}
+	\label{tab:simp3}
+\end{table}
+
+\newpage
+
+\subsection{Analisis  No Lineal}
+
+Posteriormente se coteja la demanda s\'{\i}smica y la capacidad de cada sistema estructural mediante un marguen seleccionado de seguridad y se obtiene el \'{\i}ndice $\beta$ de Cornell \cite{C1969}.
+
+Cabe destacar que para la finalidad de establecer niveles de confiabilidad que sean de utilidad en el campo de la industria aseguradora es indispensable reducir la complejidad de los datos de caracterizaci\'on; es por ello que usualmente se utilizan los desplazamientos del nivel superior y el cortante basal de la estructura.
+
+Para la estimaci\'on de la capacidad del sistema se selecciona como par\'ametro el valor de la rigidez inicial \textbf{$K_{0}$},  cuyo valor se obtiene a trav\'es de un an\'alisis est\'atico no lineal (\emph{pushover}) controlado por los desplazamientos del entrepiso superior bajo una configuraci\'on de carga determinada. 	Cabe se\~nalar que los desplazamientos considerados en la presente investigaci\'on corresponden a los desplazamientos absolutos en el espacio de los nodos maestros de entrepiso.
+
+Para la estimaci\'on de la capacidad del sistema al final de cualquier evento s\'{\i}smico se utiliza como par\'ametro a la rigidez secante $K_Sec$  la cual se obtiene al realizar un an\'alisis din\'amico no lineal de m\'ultiples grados de libertad en los sistemas sujetos a las aceleraciones s\'{\i}smicas consideradas.
+
+La convergencia de un modelo no lineal es uno de los principales problemas en la actualidad que impiden el uso general de este tipo de an\'alisis especializados. A continuaci\'on se presenta un resumen de los diversos algoritmos que fueron calibrados para la resoluci\'on de los sistemas no lineales (todos los algoritmos de soluci\'on fueron programados para los archivos de salida de Opensees \cite{OP2006} que se generan a trav\'es del c\'odigo SIB \cite{SIB2013}):
+
+\begin{itemize}
+\item Constrains tipo Transformation.
+\item Transformation tipo Pdelta para los elementos viga columna y tipo linear para los elementos viga.
+\item System tipo UmfPack.
+\item Tolerancia: $1.00000E-15$.
+\item Algorithm tipo Newton en cadena con Newton –Initial Broyden y NewtonLineSearch.
+\item Numberer tipo Plain.
+\item Test tipo EnergyIncr.
+\item Formulación de elementos viga y columna basada en funciones de forma de los desplazamientos: element dispBeamColumn.
+\item Formulación de elementos muro-diagonal basada en funciones de forma de las fuerzas: element forceBeamColumn con plasticidad concentrada.
+\item Integration de secci\'on tipo Lobatto.
+\item M\'aximo n\'umero de interacciones de las secciones: $50$.
+\item M\'aximo n\'umero de interacciones del algoritmo: $25$.
+\item M\'aximo n\'umero de interacciones para convergencia del algoritmo: $1000$.
+\end{itemize}
+
+Una vez que se cuenta con los valores de las respectivas rigideces se utiliza el \'{\i}ndice de da\~no propuesto por Díaz--L\'opez $&$ Esteva \cite{DE2006}:
+
+\begin{equation}
+IRRS=\frac{K_{0}-K_{sec}}{K_{0}}
+\label{eq1}
+\end{equation}
+
+\newpage
+
+\subsection{Medida de la Intensidad Normalizada.}
+
+Una medida de intensidad normalizada est\'a definida por:
+
+\begin{equation}
+q_{a}=\frac{\overline{M}S_{a}}{\overline{V_{y}}}
+\label{eq2}
+\end{equation}
+
+Donde $q_{a}$ es cualquier intensidad normalizada actuante, $S_{a}$ es el valor de la ordenada lineal de respuesta de pseudo--aceleraciones para el periodo fundamental el\'astico del sistema de inter\'es, $\overline{M}$ es la masa del sistema de propiedades medias (con sus incertidumbres consideradas) y $\overline{V_{Y}}$ es el valor de la fuerza cortante en la base obtenida por un ajuste bilineal el\'astico perfectamente pl\'astico en la funci\'on del Cortante basal vs Desplazamiento Lateral obtenida del an\'alisis pushover en la estructura con propiedades medias. 
+
+\subsection{Confiabilidad del Sistema.}
+
+Para un mejor manejo de la medida de la intensidad normalizada se obtiene el logaritmo natural de cada valor y se encuentra espec\'{\i}ficamente aquella intensidad normalizada en la que cierto valor de $S_{a}$ provoca el colapso del edificio y se denomina $q_{r}$. De esta manera se establece el marguen de seguridad de la siguiente forma:
+
+\begin{equation}
+M=Ln(q_{r})-Ln(q_{a})
+\label{eq3}
+\end{equation}
+
+Una vez realizado lo anterior se genera una gr\'afica de dispersi\'on $IRRS$ vs $Ln(q_{r})$ con los $\simulaciones$ valores de edificios simulados por Montecarlo y uno m\'as considerando propiedades medias. Posteriormente se calcula el valor esperado y la desviaci\'on estandar de los logaritmos de $q_{r}$.
+
+Finalmente se calcula el \'{\i}ndice $\beta$ de Cornell \cite{C1969}, para cada uno de los sistemas mediante el proceso estad\'{\i}stico de los valores del margen de seguridad como se muestra en la siguiente ecuaci\'on:
+
+\begin{equation}
+\beta_{i}=\frac{E[M]}{\sigma[M]}=\frac{E[Ln(q_{r})]-Ln(q_{a})}{\sigma[Ln(q_{r})]}
+\label{eq4}
+\end{equation}
+
+Por lo que las gr\'aficas de confiabilidad ser\'an aquellas que tienen como variable independiente la intensidad normalizada y como variable dependiente el \'{\i}ndice $\beta$, cuyos valores num\'ericos se ajustan para generar funciones representativas. Finalmente es posible calcular la probabilidad de falla de cada sistema con funci\'on de distribuci\'on acumulada utilizando la expresi\'on siguiente:
+
+\begin{equation}
+p_{F}=\Phi(-\beta)
+\label{eq5}
+\end{equation}
+
+En este proyecto se consideran principalmente dos investigaciones similares \cite{D2008,PE2012} de manera que el comportamiento obtenido sea comparable y se complemente con dichas investigaciones. 
+
+\begin{figure}[htbp]
+	\begin{flushleft}
+		\includegraphics[width=140mm]{GIC2.pdf}
+		\end{flushleft}
+	\caption{Funciones de confiabilidad obtenidas para edificios de siete niveles en el plano con mamposter\'{\i}a el\'astica \cite{D2008}.}
+	\label{figmt:fig4}
+\end{figure}
+
+\newpage
+
+En la Figura \ref{figmt:fig4} y \ref{figmt:fig5} se presentan las funciones de confiabilidad obtenidas en las investigaciones comparativas; como puede verse las estructuras libres de muros de mamposter\'{\i}a tienen un nivel de confiabilidad menor en una etapa de baja intensidad debido al incremento de rigedez proporcionado por los muros, sin embargo, posteriormente en una etapa de altas deformaciones resulta m\'as confiable las estructuras libres de mamposter\'{\i}a debido a la formaci\'on del piso suave. 
+
+\begin{figure}[htbp]
+	\begin{flushleft}
+		\includegraphics[width=130mm]{GIC1.pdf}
+		\end{flushleft}
+	\caption{Funciones de confiabilidad obtenidas para edificios de cinco niveles en el plano con mamposter\'{\i}a no lineal \cite{PE2012}.}
+	\label{figmt:fig5}
+\end{figure}
+
+\newline
+
+Las curvas comparativas aplicables a esta investigaci\'on corresponden a las curvas BF y SS-M2 de la Figura \ref{figmt:fig4} y a las curvas de muros $D10$ y $D00$ de la Figura \ref{figmt:fig5}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
