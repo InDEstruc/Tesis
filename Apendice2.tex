@@ -1,0 +1,392 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Dise\~no Elemental de los Edificios de Estudio}
+
+\section{Propiedades de Dise\~no El\'astico Lineal}
+
+Las principales propiedades de dise\~no de las estructuras utilizadas en el an\'alisis el\'astico lineal se ilustran en las Tablas \ref{tab:proyecto}, \ref{tab:promat} y \ref{tab:prosismo}.
+
+\begin{table}[htbp]
+	\centering
+		\caption{Propiedades generales de los casos de estudio.}
+		\begin{tabular}{lllll}
+			\hline \hline && Tipo \ de \ Obra &  & Construcci\'on \ Nueva & &\\ \hline
+						&& Funci\'on \ de \ la \ Obra &  & Oficinas & &\\\hline
+						&& N\'umero \ de \ Niveles &  & Cinco & &\\\hline
+						&& Tipo \ de \ Marcos &  & D\'uctil & &\\\hline
+						&& Superficie \ de \ Construcci\'on &  & $182.25{m^2}$& &\\ \hline \hline
+		\end{tabular}
+	\label{tab:proyecto}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+		\caption{Propiedades nominales consideradas de los materiales.}
+		\begin{tabular}{llllllll}
+			\hline \hline && Propiedad & & Valor Utilizado & &Descripci\'on& &\\ \hline \hline
+			&1& F'c & &$250{\frac{Kg}{cm^2}}$ & & Para\ vigas \ y \ trabes &&\\
+			\hline
+			&2 & E \ del \ Concreto & &$2213594.362{\frac{T}{m^2}}$ & & Para\ vigas \ y \ trabes &&\\
+			\hline
+			&3& G & &$885437.745{\frac{T}{m^2}}$ & & Para\ vigas \ y \ trabes &&\\
+			\hline
+			&4 & P.V. \ Concreto & &$2.4{\frac{T}{m^3}}$ & & Para\ vigas \ y \ trabes &&\\
+			\hline
+			&5 & Estribos & &Varilla \ $\frac{3}{8}$ & & Para\ vigas \ y \ trabes &&\\
+			\hline
+			&6 & Recubrimiento & & $ 0.05 \ m $ & & Para\ vigas \ y \ trabes &&\\
+			\hline
+			&7 & Fy & &$4200{\frac{Kg}{cm^2}}$ & & Para\ armado de acero &&\\
+			\hline
+			&8 & $W_{mp}$ & &$1700{\frac{Kg}{m^3}}$ & & Peso \ volum\'etrico \ de \ Muros &&\\
+			\hline
+			&9& e & &$0.12{m}$ & & Espesor\ de \ los \ muros &&\\\hline \hline
+		\end{tabular}
+	\label{tab:promat}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+		\caption{Par\'ametros s\'{\i}smicos.}
+		\begin{tabular}{cccccccc}
+			\hline \hline Par\'ametro & c & a_{0} & T_{a} & T_{b} & r & kQ & ex_{accidental} & \\ \hline Valor & 0.50  & 0.50 & 0.00 & 0.60 & 0.50 & 1.00 & 0.10 &\\ \hline \hline
+		\end{tabular}
+	\label{tab:prosismo}
+\end{table}
+
+\newpage
+
+\subsection{Cargas Consideradas para Dise\~no}
+
+A continuaci\'on se muestran las cargas consideradas para el dise\~no de las estructuras de estudio. En la Tabla \ref{tab:centre} se muestran las cargas para la losa de entrepiso, a su vez en la Tabla \ref{tab:cazote} se muestran las cargas de azotea utilizadas en el an\'alisis estructural. Por otro lado en la Tabla \ref{tab:cmuro} se muestran las cargas determinadas para la inclusi\'on de los muros de mamposter\'{\i}a como elementos aislados de la estructura de concreto reforzado. 
+
+\begin{table}[htbp]
+	\centering
+		\caption{An\'alisis de cargas para entrepiso.}
+		\begin{tabular}{lllll}
+			\hline \hline Tipo\ de \ Carga & C\'alculo &Resultado & Unidades \\ \hline\hline
+			Losa \ de \ Concreto  &$(0.122\frac{m^{3}}{m^{2}})(2.4\frac{T}{m^{3}})$ &0.2928 & $\frac{T}{m^{2}}$ \\
+			Carga \ Muerta \ Adicional &  &0.020 & $\frac{T}{m^{2}}$ \\
+		  por Losa &  & & \\
+			Firme \ de \ Mortero \ de \ Cemento & $(0.03m)(2.2\frac{T}{m^{3}})$ &0.066 & $\frac{T}{m^{2}}$ \\
+			Carga \ Muerta \ Adicional & &0.020& $\frac{T}{m^{2}}$ \\
+			por \ Firme & & & \\
+			Mosaico \ de \ Pasta & & 0.035 & $\frac{T}{m^{2}}$ \\
+			Instalaciones \ y \ Plafones & & 0.035& $\frac{T}{m^{2}}$ \\
+			Paredes \ Divisorias \ de \ Tablaroca \ & &0.050 & $\frac{T}{m^{2}}$ \\
+			con \ Hoja \ de \ Yeso \ de \ $1.25cm$ & & &  \\ \hline
+			Carga \ Muerta \ Total & = &0.5188 & $\frac{T}{m^{2}}$ \\ \hline
+			Carga \ Viva \ Considerada & = &0.180 & $\frac{T}{m^{2}}$ \\ \hline\hline
+		\end{tabular}
+	\label{tab:centre}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+		\caption{An\'alisis de cargas para azotea.}
+		\begin{tabular}{lllll}
+			\hline \hline Tipo\ de \ Carga & C\'alculo &Resultado & Unidades \\ \hline\hline
+			Losa \ de \ Concreto  &$(0.122\frac{m^{3}}{m^{2}})(2.4\frac{T}{m^{3}})$ &0.2928 & $\frac{T}{m^{2}}$ \\
+			Carga \ Muerta \ Adicional &  &0.020 & $\frac{T}{m^{2}}$ \\
+		  por Losa &  & & \\
+			Relleno \ e \ Impermeabilizaci\'on  &  &0.150 & $\frac{T}{m^{2}}$ \\
+			Instalaciones \ y \ Plafones & &0.040& $\frac{T}{m^{2}}$ \\ \hline
+			Carga \ Muerta \ Total & = &0.5028 & $\frac{T}{m^{2}}$ \\ \hline
+			Carga \ Viva \ Considerada & = &0.070 & $\frac{T}{m^{2}}$ \\ \hline\hline
+		\end{tabular}
+	\label{tab:cazote}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+		\caption{Carga de los muros de mamposter\'{\i}a como elementos sin rigidez.}
+		\begin{tabular}{lcll}
+			\hline \hline Altura\ de \ Muro & C\'alculo &Resultado & Unidades \\ \hline\hline
+			4.00m  &$(1700\frac{Kg}{m^{3}})(0.12m)(4.00m)$ &816.008 & $\frac{Kg}{m}$ \\
+			3.20m  &$(1700\frac{Kg}{m^{3}})(0.12m)(3.20m)$ & 653 & $\frac{Kg}{m}$ \\ \hline
+		\end{tabular}
+	\label{tab:cmuro}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+		\caption{An\'alisis de cargas por Viento.}
+		\begin{tabular}{lcc}
+			\hline \hline N\'umero \ de \ Entrepiso & Carga en Direcci\'on X & Carga en Direcci\'on Y \\ \hline\hline
+       Primero & 5.929 & 5.929 \\ 
+       Segundo & 5.270 & 5.270 \\ 
+       Tercero & 5.310 & 5.310 \\ 
+       Cuarto & 5.597 & 5.597 \\ 
+       Quinto & 2.92 & 2.92 \\ 												
+			\hline\hline
+		\end{tabular}
+	\label{tab:caviento}
+\end{table}
+
+\newpage
+
+\subsection{Combinaciones de Dise\~no Consideradas}
+
+A continuaci\'on se presentan las combinaciones de cargas que fueron consideradas para generar el dise\~no de las estructuras. La primer columna corresponde al identificador y la segunda a la combinaci\'on de cargas.
+
+\begin{verbatim}
+CM1=CARGA MUERTA DE LOSA Y MUROS
+CV1 =CARGA VIVA
+SISMX*=SISMO EN X
+SISMY* =SISMO EN Y
+VX=VIENTO EN X
+VY=VIENTO EN Y
+
+DI1              1.4CM1+1.4CV1   
+DI2              1.1CM1 + 0.77CV1 + 1.1SISMX + 0.33SISMY   
+DI3              1.1CM1 + 0.77CV1 + 1.1SISMX - 0.33SISMY   
+DI4              1.1CM1 + 0.77CV1 - 1.1SISMX + 0.33SISMY  
+DI5              1.1CM1 + 0.77CV1 - 1.1SISMX - 0.33SISMY   
+DI6              1.1CM1 + 0.77CV1 + 0.33SISMX + 1.1SISMY   
+DI7              1.1CM1 + 0.77CV1 + 0.33SISMX - 1.1SISMY   
+DI8              1.1CM1 + 0.77CV1 - 0.33SISMX + 1.1SISMY   
+DI9              1.1CM1 + 0.77CV1 - 0.33SISMX - 1.1SISMY   
+DI10            1.1CM1 + 0.77CV1 + 1.1VX + 0.33VY   
+DI11            1.1CM1 + 0.77CV1 + 1.1VX - 0.33VY  
+DI12            1.1CM1 + 0.77CV1 - 1.1VX + 0.33VY   
+DI13            1.1CM1 + 0.77CV1 - 1.1VX - 0.33VY   
+DI14            1.1CM1 + 0.77CV1 + 0.33VX + 1.1VY   
+DI15            1.1CM1 + 0.77CV1 + 0.33VX - 1.1VY   
+DI16            1.1CM1 + 0.77CV1 - 0.33VX + 1.1VY   
+DI17            1.1CM1 + 0.77CV1 - 0.33VX - 1.1VY   
+DI18            1.1CM1 + CV1 + 1.1SISMX + 0.33SISMY   
+DI19            1.1CM1 + CV1 + 1.1SISMX - 0.33SISMY   
+DI20            1.1CM1 + CV1 - 1.1SISMX + 0.33SISMY   
+DI21            1.1CM1 + CV1 - 1.1SISMX - 0.33SISMY   
+DI22            1.1CM1 + CV1 + 0.33SISMX + 1.1SISMY   
+DI23            1.1CM1 + CV1 + 0.33SISMX - 1.1SISMY   
+DI24            1.1CM1 + CV1 - 0.33SISMX + 1.1SISMY   
+DI25            1.1CM1 + CV1 - 0.33SISMX - 1.1SISMY   
+DI26            1.1CM1 + CV1 + 1.1VX + 0.33VY   
+DI27            1.1CM1 + CV1 + 1.1VX - 0.33VY   
+DI28            1.1CM1 + CV1 - 1.1VX + 0.33VY   
+DI29            1.1CM1 + CV1 - 1.1VX - 0.33VY   
+DI30            1.1CM1 + CV1 + 0.33VX + 1.1VY   
+DI31            1.1CM1 + CV1 + 0.33VX - 1.1VY   
+DI32            1.1CM1 + CV1 - 0.33VX + 1.1VY   
+DI33            1.1CM1 + CV1 - 0.33VX - 1.1VY   
+
+\end{verbatim}
+
+\newpage
+
+\section{Resultados del Dise\~no El\'astico Lineal}
+
+Las principales secciones y armados del dise\~no el\'astico lineal se presentan a continuaci\'on. Cabe recalcar que en el dise\~no convencional no existen diferencias en los resultados para cada tipo de estructura analizada debido a que las cargas por la distribuci\'on de los muros de mamposter\'{\i}a en todos los niveles son iguales siendo unicamente los muros de planta baja los que determinan los cambios de comportamiento.
+
+\begin{figure}[htbp]
+        \includegraphics[width=160mm]{V1P.pdf}						
+	\label{fig:apendis1}																													
+\end{figure}
+
+\begin{figure}[htbp]
+        \includegraphics[width=160mm]{V1I.pdf}					
+	\label{fig:apendis2}																													
+\end{figure}
+
+\begin{figure}[htbp]
+        \includegraphics[width=160mm]{V2P.pdf}									
+	\caption{Distribuci\'on del acero de refuerzo en las vigas.}
+	\label{fig:apendis3}																													
+\end{figure}
+
+\begin{figure}[htbp]
+        \includegraphics[width=160mm]{V2I.pdf}	
+	\label{fig:apendis4}																															
+\end{figure}
+
+\begin{figure}[htbp]
+        \includegraphics[width=160mm]{V3P.pdf}
+	\label{fig:apendis5}																															
+\end{figure}
+
+\begin{figure}[htbp]
+        \includegraphics[width=160mm]{V3I.pdf}
+	\label{fig:apendis6}																															
+\end{figure}
+
+\begin{figure}[htbp]
+        \includegraphics[width=160mm]{V4P.pdf}
+	\caption{Distribuci\'on del acero de refuerzo en las vigas, continuaci\'on.}
+	\label{fig:apendis7}																															
+\end{figure}
+
+\begin{figure}[htbp]
+        \includegraphics[width=160mm]{V4I.pdf}	
+	\label{fig:apendis8}																															
+\end{figure}
+
+\begin{figure}[htbp]
+        \includegraphics[width=160mm]{V5P.pdf}
+	\label{fig:apendis9}
+\end{figure}
+
+\begin{figure}[htbp]
+        \includegraphics[width=160mm]{V5I.pdf}																												
+	\caption{Distribuci\'on del acero de refuerzo en las vigas, continuaci\'on.}
+	\label{fig:apendis10}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[width=150mm]{C1P1.pdf}
+			\includegraphics[width=150mm]{C1P2.pdf}
+			\includegraphics[width=150mm]{C1P3.pdf}
+	\caption{Distribuci\'on del refuerzo en la viga perimetral nivel $1$.}
+	\label{fig:apendis11}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[width=150mm]{C1I1.pdf}
+			\includegraphics[width=150mm]{C1I2.pdf}
+			\includegraphics[width=150mm]{C1I3.pdf}
+	\caption{Distribuci\'on del refuerzo en la viga interior nivel $1$.}
+	\label{fig:apendis12}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[width=150mm]{C2P1.pdf}
+			\includegraphics[width=150mm]{C2P2.pdf}
+			\includegraphics[width=150mm]{C2P3.pdf}						
+	\caption{Distribuci\'on del refuerzo en la viga perimetral nivel $2$.}
+	\label{fig:apendis13}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[width=150mm]{C2I1.pdf}
+			\includegraphics[width=150mm]{C2I2.pdf}
+			\includegraphics[width=150mm]{C2I3.pdf}						
+	\caption{Distribuci\'on del refuerzo en la viga interior nivel $2$.}
+	\label{fig:apendis14}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[width=150mm]{C3P1.pdf}
+			\includegraphics[width=150mm]{C3P2.pdf}
+			\includegraphics[width=150mm]{C3P3.pdf}						
+	\caption{Distribuci\'on del refuerzo en la viga perimetral nivel $3$.}
+	\label{fig:apendis15}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[width=150mm]{C3I1.pdf}
+			\includegraphics[width=150mm]{C3I2.pdf}
+			\includegraphics[width=150mm]{C3I3.pdf}						
+	\caption{Distribuci\'on del refuerzo en la viga interior nivel $3$.}
+	\label{fig:apendis16}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[width=150mm]{C4P1.pdf}
+			\includegraphics[width=150mm]{C4P2.pdf}
+			\includegraphics[width=150mm]{C4P3.pdf}						
+	\caption{Distribuci\'on del refuerzo en la viga perimetral nivel $4$.}
+	\label{fig:apendis17}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[width=150mm]{C4I1.pdf}
+			\includegraphics[width=150mm]{C4I2.pdf}
+			\includegraphics[width=150mm]{C4I3.pdf}						
+	\caption{Distribuci\'on del refuerzo en la viga interior nivel $4$.}
+	\label{fig:apendis18}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[width=150mm]{C5P1.pdf}
+			\includegraphics[width=150mm]{C5P2.pdf}
+			\includegraphics[width=150mm]{C5P3.pdf}						
+	\caption{Distribuci\'on del refuerzo en la viga perimetral nivel $5$.}
+	\label{fig:apendis19}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[width=150mm]{C5I1.pdf}
+			\includegraphics[width=150mm]{C5I2.pdf}
+			\includegraphics[width=150mm]{C5I3.pdf}						
+	\caption{Distribuci\'on del refuerzo en la viga interior nivel $5$.}
+	\label{fig:apendis20}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[width=170mm]{COLUMNAS.pdf}
+	\caption{Distribuci\'on del refuerzo en las columnas.}
+	\label{fig:apendis21}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[scale=0.34]{nodosN0.pdf}
+			\includegraphics[scale=0.34]{nodosN1.pdf}
+			\includegraphics[scale=0.34]{nodosN2.pdf}			
+	\caption{Distribuci\'on de los nodos en la estructura.}
+	\label{fig:apendis22}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+			\includegraphics[scale=0.34]{nodosN3.pdf}
+			\includegraphics[scale=0.34]{nodosN4.pdf}
+			\includegraphics[scale=0.34]{nodosN5.pdf}			
+	\caption{Distribuci\'on de los nodos en la estructura.}
+	\label{fig:apendis23}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+\includegraphics[width=100mm]{DMM1.pdf}
+\includegraphics[width=100mm]{DMM2.pdf}
+\caption{Numeraci\'on de los muros de mamposter\'{\i}a dentro de la estructura considerada.}
+\label{fig:apendis24}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+\includegraphics[width=100mm]{DMM3.pdf}
+\includegraphics[width=100mm]{DMM4.pdf}
+\caption{Numeraci\'on de los muros de mamposter\'{\i}a dentro de la estructura considerada, continuaci\'on.}
+\label{fig:apendis25}
+\end{figure}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
