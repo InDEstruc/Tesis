@@ -1,0 +1,139 @@
+%%%%%%%%%%%%% CONCLUSIONES %%%%%%%%%%%%%%%%%
+
+\chapter{ Conclusiones y Recomendaciones}
+
+\begin{flushleft}
+\begin{verse}
+	\emph{\quotes{``Con el conocimiento se acrecientan las dudas''}.}
+  \newline 
+	 \qauthor{Johann Wolfgang Goethe.}
+\end{verse}
+\end{flushleft}
+
+\section{Conclusiones}
+
+Los resultados mostrados en el \emph{Cap\'{\i}tulo \textbf{6}} ilustran el comportamiento obtenido de los an\'alisis relizados en la investigaci\'on, de lo anterior pueden obtenerse las siguientes conclusiones:
+
+\begin{itemize}
+	\item [1)] La presencia no planeada de muros de mamposter\'{\i}a muestra influencia considerable en los niveles de confiabilidad en etapas de alta deformaci\'on y da\~no.
+	\item [2)] Las estructuras tipo ECML sometidas a los an\'alisis pushover, se ven afectadas por la presencia de los muros de mamposter\'{\i}a en una etapa intermedia de la zona el\'astica; sin embargo, despu\'es de la eliminaci\'on de los muros de mamposter\'{\i}a la estructura sigue la tendencia de la rigidez inicial. Posteriormente en la formaci\'on de las secciones plastificas la influencia de los muros se vuelve nuevamente significativa.
+
+	\newpage
+	
+	\item [3)] Las incertidumbres muestran mayor influencia en etapas de alta deformaci\'on y da\~no.	
+	\item [4)] El cumplimiento de los l\'{\i}mites de desplazamientos relativos de entrepiso establecidos en las NTC-2004 \cite{NTC2004} para edificios con la presencia de elementos fr\'agiles dentro de los marcos principales ha mostrado ser de vital importancia para la permanencia de comportamiento el\'astico. Cabe mencionar que al haberse realizado el dise\~no asumiendo un factor de comportamiento s\'{\i}smico $Q=2.0$ la capacidad de presentar comportamiento d\'uctil es baja como se ha confirmado en los resultados de esta investigaci\'on.
+	\item [5)] El modelo utilizado de la mamposter\'{\i}a ha demostrado su correcto funcionamiento en cuanto al cumplimiento de los l\'{\i}mites establecidos por los diagramas de interacci\'on de los desplazamientos dentro y fuera del plano, cabe mencionar que se han obtenido resultados esperados respecto a la secuencia de eliminaci\'on de los muros de mamposter\'{\i}a ante diversos tipos de an\'alisis. 
+		\item [6)] El modelo tridimensional utilizado ha permitido observar la influencia continua de la estructura en direcci\'on perpendicular a los casos de carga aplicados (principalmente en aquellos casos de aplicaci\'on de carga unidimensional) y se puede concluir que existe una influencia significativa de esta direcci\'on al presentarse los mecanismos de falla. Se concluye por lo anterior que no resulta correcto condensar los grados de libertad unidimensionales y de esto resulta m\'as general el uso del esquema tridimensional de confiabilidad propuesto en esta investigaci\'on. Es importante mencionar que no se logr\'o la convergencia en los an\'alisis no lineales al impedir la libertad de desplazamiento en una sola direcci\'on como se sugiere en la investigaci\'o reciente de Esteva \emph{et al} \cite{CTEM2013}.		
+		
+		\newpage
+		
+	\item [7)] Resulta aparente que una de las principales opciones para continuar con el uso del \'{\i}ndice $IRRS$ es a trav\'es de la sustituci\'on de las pendientes de los desplazamientos por valores \'{\i}ndice de las gr\'aficas rotaci\'on y de distorci\'on de entrepiso respecto al correspondiente nodo maestro del \'ultimo entrepiso. 		
+\end{itemize}
+
+\section{Recomendaciones y Trabajo Futuro}
+
+Por lo anterior es posible determinar las siguientes recomendaciones generales para las estructuras similares:
+
+\begin{itemize}
+	\item [1)] En edificios que cuenten con la posibilidad de presentar un cambio de estructura tipo ECMD a ECML se recomienda cumplir con las caracter\'{\i}sticas de dise\~no utilizadas en esta investigaci\'on y presentadas en el \emph{Cap\'{\i}tulo \textbf{5}}. 
+	\item [2)] Se recomienda utilizar el modelo de carga viva de Peir J. y Cornell C. \cite{PC1973} el cual presenta mejor modelaci\'on espacial debido a la correlaci\'on existente entre diversas variables. Sin embargo, es necesario remarcar el incremento de la demanda computacional respecto al modelo de Mitchel, G. R. y Woodgate, R. W \cite{MG1970}.
+		\item [3)] Se recomienda realizar un m\'{\i}nimo de $200$ simulaciones por configuraci\'on estructural estudiada, cabe mencionar que debido a la alta  demanda computacional en horas CPU este n\'umero de simulaciones quedan fuera del alcance de la investigaci\'on.
+		\item [4)] Se recomienda simular las incertidumbres inherentes por muro individual en lugar de considerarlas por entrepiso, de esta manera ser\'{\i}a posible observar un comportamiento global e independiente en sistemas ECML.
+	\item [5)] Se recomienda explorar el uso de un indicador que sea capaz de representar las variaciones de las simulaciones en la etapa de comportamiento no lineal basado en rotaciones y (o) distorsiones.	
+		\item [6)] Es necesario estudiar el esquema de cargas laterales m\'as adecuado para poder representar el rango no lineal en el c\'alculo de cualquier \'{\i}ndice de da\~no.
+		\item [7)] Es posible visualizar los patrones de comportamiento y variaci\'on a trav\'es de las Gr\'aficas de diferencias $\beta$ cuando se esta comparando distintos sistemas estructurales.
+\end{itemize}
+
+\subsection{ Trabajo Futuro}
+
+\subsubsection{Modelado de la Mamposter\'{\i}a}
+
+Debido a los resultados obtenidos en esta presente investigaci\'on resulta necesario como primer instancia para el desarrollo de las funciones de confiabilidad en estructuras ECML realizar los trabajos futuros propuestos a continuaci\'on:
+
+\begin{itemize}
+	\item [1)] Calibrar los resultados de un modelo tridimensional en Opensees cuyas caracter\'{\i}sticas coincidan con pruebas emp\'{\i}ricas de mesa vibradora y cuenten con muros de mamposter\'{\i}a de propiedades determinadas.
+	\item [2)] Es necesario realizar an\'alisis de sensibilidad \cite{SRT2004} que permitan caracterizar las variables m\'as influyentes en la generaci\'on del \emph{piso suave} debido a la presencia de los muros de mamposter\'{\i}a.
+		\item [3)] Se recomienda estudiar el comportamiento a tensi\'on del macro modelo de mamposter\'{\i}a utilizado. Es posible adem\'as explorar otros elementos de plasticidad distribuida y otros modelos de comportamiento esfuerzo--deformaci\'on de la secci\'on no lineal.		
+		\item [4)] Se recomienda estudiar el comportamiento de estructuras ECML con muros conformados en nucleos.		
+		\item [5)] Se recomienda estudiar el comportamiento de estructuras ECML con muros que cuentan con refuerzo horizontal; esto puede realizarse a trav\'es de un macromodelo igual al utilizado en esta investigaci\'on pero que cuente con una diagonal adicional y opuesta, o bien con el uso de elementos tipo placa tridimensionales (a la fecha no disponibles en Opensees \cite{OP2006}).
+		\item [6)] Se recomienda estudiar el comportamiento de estructuras ECML con muros que cuenten con aberturas debido a ventanales; esto puede realizarse a trav\'es del uso de diversos grupos de macromodelos tipo diagonales.
+\end{itemize}
+
+\subsubsection{Variables y Tipos de Irregularidades}
+
+El esquema de confiabilidad espacial presentado en esta investigaci\'on permite observar diferencias puntuales en el comportamiento de la estructura de manera que es conveniente explorar un mayor n\'umero de casos en los cuales sea posible apreciar los efectos de diversos tipos de irregularidades.
+
+A continuaci\'on se presenta un grupo de variables de estudio que comprenden un conjunto adecuado para caracterizar en primer instancia la irregularidad en planta baja debido a la presencia de muros de mamposter\'{\i}a. Cabe aclarar que la configuraci\'on de muros en todos los niveles superiores a la planta baja es la misma; completamente cubierta de muros de relleno de mamposter\'{\i}a, variando unicamente la distribuci\'on en planta baja. 
+
+\begin{itemize}
+	\item [a)] Tipo de Irregularidad: 
+	\begin{itemize}
+				\item [i.] Configuraci\'on de	Piso Suave tipo ECML con ausencia de muros en planta baja en esquema tipo \emph{C}.
+				\item [ii.] Configuraci\'on de Piso Suave tipo ECML con ausencia de muros en planta baja en esquema tipo \emph{Esquina}.				
+	\end{itemize}
+	\item [b)] Factor de comportamiento s\'{\i}smico: 
+	\begin{itemize}
+		\item [i.] Valor de Q igual a 2.
+		\item [ii.] Valor de Q igual a 4.
+		\item [iii.] Valor de Q igual a 2 y 4.				
+	\end{itemize}
+	\item [c)] Relaci\'on largo-ancho de la base: 
+	\begin{itemize}
+		\item [i.] Relaci\'on $\frac{a}{b}=1$.
+		\item [i.] Relaci\'on $\frac{a}{b}=2$.		
+	\end{itemize}
+	\item [d)] Tipo de muro: 
+	\begin{itemize}
+		\item [i.] Sin refuerzo horizontal, de piezas macizas de tab\'{\i}que rojo recocido (el cual se denomina $M2$ \cite{AA2001}).
+		\item [ii.] Con refuerzo horizontal, de piezas macizas de tab\'{\i}que rojo recocido (el cual se denomina $M4$ \cite{AA2001}).		
+	\end{itemize}
+\end{itemize}
+
+Las Figuras \ref{fig:casosaf1}, \ref{fig:casosaf2}, \ref{fig:casosaf3}, \ref{fig:casosaf4}, \ref{fig:casosaf5} y \ref{fig:casosaf6} presentan de manera visual los posibles tipos de irregularidad y sus correspondientes cortes sobre los ejes ortogonales.  
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{b).pdf}
+\caption{Configuraci\'on en planta tipo C.}
+\label{fig:casosaf1}
+\end{figure}
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{bxx).pdf}
+\caption{Vistas de la configuraci\'on tipo C.}
+\label{fig:casosaf2}
+\end{figure}
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{byy).pdf}
+\caption{Vistas de la configuraci\'on tipo C.}
+\label{fig:casosaf3}
+\end{figure}
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{c).pdf}
+\caption{Vistas en planta de la configuraci\'on tipo Esquina.}
+\label{fig:casosaf4}
+\end{figure}
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{cxx.pdf}
+\caption{Vistas de la configuraci\'on tipo esquina.}
+\label{fig:casosaf5}
+\end{figure}
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{cyy.pdf}
+\caption{Vistas de la configuraci\'on tipo esquina.}
+\label{fig:casosaf6}
+\end{figure}
+
+Como puede observarse existen tres distribuciones generales a estudiar en las cuales las l\'{\i}neas perimetrales muestran cu\'ales contienen muros (l\'{\i}neas con mayor grosor) donde a y b son los anchos de cruj\'{\i}a, h y h$1$ alturas de entrepiso. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
