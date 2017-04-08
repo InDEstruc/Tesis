@@ -1,0 +1,994 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%APENDICES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Modelado No Lineal de Elementos Estructurales}
+
+\section{Formulaci\'on de Elementos Viga--Columna}
+
+En este ap\'endice se presenta el desarrollo del modelo equivalente de un elemento viga--columna donde se describe el comportamiento no lineal de miembros tipo marco bajo un historial de carga c\'{\i}clica arbitraria de flexi\'on biaxial y carga axial mediante una discretizaci\'on por fibras tal como se presenta en el trabajo de F. F. Taucer, E. Spacone y F. C. Filippou \cite{FEF1991}. 
+
+El modelo de elemento viga-columna est\'a basado en la suposici\'on de que las deformaciones son peque\~nas y que las secciones planas permanecen planas durante el historial de carga. La formulaci\'on del elemento est\'a basada en el m\'etodo mixto: la descripci\'on de la distribución de fuerzas dentro del elemento se obtiene por funciones de interpolaci\'on que satisfacen el equilibrio, es el punto de partida de la formulaci\'on. Basado en los conceptos del m\'etodo mixto se muestra que la selecci\'on de las funciones de forma dependientes de la flexibilidad para el campo de deformaci\'on del elemento resulta en una considerable simplificaci\'on. Con cierta selecci\'on de las funciones de forma de la deformaci\'on, el m\'etodo general mixto reduce al caso especial del m\'etodo de flexibilidad. 
+
+\newpage
+
+La formulaci\'on presentada ofrece las siguientes ventajas con respecto a otros modelos:
+
+\begin{itemize}
+	\item El equilibrio y la compatibilidad son siempre satisfechos a lo largo del elemento: el equilibrio es satisfecho por la selecci\'on de funciones de interpolaci\'on de fuerzas y la compatibilidad es satisfecha mediante la integraci\'on de la secci\'on de deformaciones para obtener los elementos de deformaciones y desplazamientos extremos correspondientes. Una soluci\'on iterativa es utilizada entonces para satisfacer la relaci\'on fuerza-deformaci\'on no lineal de la secci\'on dentro de una tolerancia especificada.
+	\item La fluencia de miembros de concreto reforzado que est\'an pobremente reforzados o est\'an sometidos a fuerzas axiales altas, puede ser descrita sin dificultad.
+\end{itemize}
+
+\begin{figure}[htbp]
+	\centering
+				\includegraphics[width=110mm]{figapaa1.pdf}
+	\caption{Marco de referencia para el elemento considerado en un sistema coordenado X, Y, Z.}
+	\label{fig:apenfe1}
+\end{figure}
+
+El elemento viga-columna estudiado se muestra esquem\'aticamente en la Figura \ref{fig:apenfe1}; se presenta un marco de referencia local tridimensional de coordenadas \emph{x}, \emph{y}, \emph{z}, mientras que \emph{X}, \emph{Y}, \emph{Z} denota el sistema de referencia global. El eje longitudinal \emph{x} corresponde a la uni\'on de los centroides geom\'etricos de cada secci\'on.
+
+El siguiente criterio es seguido para la notaci\'on de fuerzas, desplazamientos y deformaciones: las fuerzas est\'an representadas por las letras may\'usculas y las correspondientes deformaciones o desplazamientos se indican con la misma letra en min\'uscula. Las letras normales denotan cantidades escalares, mientras que las letras en negrita indican los vectores y matrices.
+
+La Figura \ref{fig:apenfe1} muestra las fuerzas de los elementos con las deformaciones correspondientes; no se considera la modelaci\'on por cuerpo r\'{\i}gidos en el esquema presentado, sin embargo, este tipo de modelos pueden ser incorporados con una simple transformaci\'on geom\'etrica. 
+
+El elemento tiene $5$ grados de libertad: deformaci\'o axial, $q_{5}$, y dos rotaciones relativas acordes a cada nodo final, ($q_{1}, q_{3}$) y ($q_{2}, q_{4}$), respectivamente. Por razones de simplicidad estas son llamadas deformaciones generalizadas del elemento  o simplemente deformaciones del elemento en lo que resta de la formulaci\'on. $Q_{1}$ a $Q_{5}$ representan las fuerzas generalizadas correspondientes: una fuerza axial, $Q_{5}$, y dos momentos de flexi\'on en cada nodo final ($Q_{1}$, $Q_{3}$)  y ($Q_{4}$, $Q_{2}$), respectivamente. Las rotaciones finales y sus momentos correspondientes se refieren a dos ejes ortogonales arbitrarios \emph{y} y \emph{z}. Las fuerzas y deformaciones generalizadas del elemento son agrupadas en los siguientes vectores:
+
+\begin{equation}
+Vector \ de \ Fuerzas \ del \ Elemento \ \ \  
+	\centering
+Q = \begin{Bmatrix}
+       Q_{1} \\ Q_{2} \\ Q_{3} \\ Q_{4} \\ Q_{5}
+     \end{Bmatrix}
+\label{eqfbc1}
+\end{equation}
+
+\begin{equation}
+Vector \ de \ Deformaciones \ del \ Elemento \ \ \  
+	\centering
+q = \begin{Bmatrix}
+       q_{1} \\ q_{2} \\ q_{3} \\ q_{4} \\ q_{5}
+     \end{Bmatrix}
+\label{eqfbc2}
+\end{equation}
+
+En la Figura \ref{fig:apenfe1} se presentan las fuerzas y deformaciones generalizadas en la secci\'on del elemento. Las deformaciones en las secciones se representan mediante las siguientes tres resultantes de esfuerzos: deformación axial $\epsilon(x)$ a lo largo del eje longitudinal y curvaturas $X_{z}(x)$ y $X_{y}(x)$ alrededor de dos ejes ortogonales arbitrarias, \emph{y} y \emph{z}, respectivamente. Las fuerzas resultantes correspondientes son la fuerza axial $N(x)$ y dos momentos flexionantes $M_{z}(x)$ y $M_{y}(x)$. Los vectores de fuerza y deformaci\'on de las secciones se agrupan como sigue:
+
+\begin{equation}
+Vector \ de \ Fuerzas \ de \ Secci\'on \ \ \  
+	\centering
+D(X) = \begin{Bmatrix}
+       M_{z}(x) \\ M_{y}(x) \\ N(x)
+     \end{Bmatrix} = \begin{Bmatrix}
+       D_{1}(x) \\ D_{2}(x) \\ D_{3}(x)
+     \end{Bmatrix}
+\label{eqfbc3}
+\end{equation}
+
+\begin{equation}
+Vector \ de \ Deformaciones \ de \ Secci\'on \ \ \  
+	\centering
+D(X) = \begin{Bmatrix}
+       X_{z}(x) \\ X_{y}(x) \\ \epsilon(x)
+     \end{Bmatrix} = \begin{Bmatrix}
+       d_{1}(x) \\ d_{2}(x) \\ d_{3}(x)
+     \end{Bmatrix}
+\label{eqfbc4}
+\end{equation}
+
+La formulaci\'on se puede ampliar f\'acilmente para incluir los grados de libertad de torsi\'on, siempre y cuando estos est\'en desacoplados de los presentes grados de libertad y se encuentren dominados por un comportamiento elástico lineal. 
+
+A continuaci\'on no se hace referencia a funciones de interpolaci\'on espec\'{\i}ficas; se demuestra, sin embargo, que si las funciones de forma--deformaci\'on son dependientes de la flexibilidad y son seleccionadas de manera adecuada, entonces el m\'etodo mixto se simplifica al m\'etodo de flexibilidad. 
+
+La presente derivaci\'on utiliza el m\'etodo de dos campos combinados, dicho m\'etodo utiliza la forma integral del equilibrio y las relaciones de fuerza-deformaci\'on de las secciones para derivar la relaci\'on matricial entre las fuerzas generalizadas del elemento y las deformaciones correspondientes. A fin de llegar a una relaci\'on lineal, la funci\'on de fuerza--deformaci\'on de la secci\'on es linealizada sobre el estado actual. Un algoritmo iterativo es entonces utilizado para satisfacer la relación fuerza--deformaci\'on dentro de la tolerancia requerida.
+
+En el m\'etodo de dos campos mixtos se utilizan funciones de forma independientes para obtener una aproximaci\'on de los campos de fuerza y deformaci\'on a lo largo del elemento. Mediante el uso de incrementos de las cantidades correspondientes, los dos campos son descritos como sigue:
+
+\begin{equation}
+\Delta d^{i}(x)=a(x) \Delta q^{i}
+\label{eqfbc5}
+\end{equation}
+
+\begin{equation}
+D^{i} (x)=b(x) Q^{i} \ \ y \ \ \Delta D^{i} (x)=b(x) \Delta Q^{i}
+\label{eqfbc6}
+\end{equation}
+
+Donde $a(x)$ y $b(x)$ son las matrices de interpolaci\'on de las deformaciones y fuerzas respectivamente. El super\'{\i}ndice $i$ describe la i-esima iteraci\'on  del algoritmo de soluci\'on (Newton Rhapson, Modified Newton, etc.) la cual es realizada en todos los grados de libertad hasta que el equilibrio entre las fuerzas externas y las fuerzas resistentes internas satisfacen el equilibrio. El super\'{\i}ndice es necesario para el manejo de las funciones de interpolaci\'on dependientes de un esquema de flexibilidad.
+
+En el m\'etodo de formulaci\'on mixto la forma integral del equilibrio y las relaciones fuerza--deformaci\'on se obtienen primero y posteriormente se combinan para obtener la relaci\'on entre la fuerza del elemento y los incrementos de deformaci\'on.
+
+La integral (pesada conforme al m\'etodo de integraci\'on) de la relaci\'on esfuerzo--deformaci\'on linealizada es la siguiente:
+
+\begin{equation}
+\int_{0} ^{L} \delta D^{T} (x) [\Delta d^{i} (x)-f^{i-1} (x) \Delta D^{i} (x)] dx =0
+\label{eqfbc7}
+\end{equation}
+
+La relaci\'on fuerza--deformaci\'on descrita en un esquema de flexibilidad es la siguiente:
+
+\begin{equation}
+\Delta d^{i} (x)=f^{i-1} (x) \Delta D^{i} (x)
+\label{eqfbc8}
+\end{equation}
+
+De esta manera la matriz de flexibilidad resulta sim\'etrica (vease \cite{ZT1989}). El super\'{\i}ndice $i-1$ indica que en la iteracci\'on $i$ del algoritmo de soluci\'on (Newton Raphson) se utiliza la integraci\'on anterior de la flexibilidad de la secci\'on. Sustituyendo las ecuaciones \ref{eqfbc5} y \ref{eqfbc6} en la \ref{eqfbc8} se obtiene lo siguiente:
+
+\begin{equation}
+\delta Q^{T} \int_{0} ^{L} b^{T} (x) [a(x) \Delta q^{i}-f^{i-1} (x) b(x) \Delta Q^{i} ]dx =0
+\label{eqfbc9}
+\end{equation}
+
+Como puede observarse la Ecuaci\'on \ref{eqfbc9} se satisface para cualquier $\delta Q^{T}$ de manera que puede procederse como a continuaci\'on:
+
+\begin{equation}
+[\int_{0} ^{L} b^{T} (x) a(x) dx] \Delta q^{i}-[\int_{0} ^{L} b^{T} (x)  f^{i-1} (x)b(x) dx] \Delta Q^{i}=0
+\label{eqfbc10}
+\end{equation}
+
+Las expresiones que se presentan dentro de los par\'entesis rectangulares representan a las siguientes matrices:
+
+\begin{equation}
+F^{i-1}=[\int_{0} ^{L} b^{T} (x)  f^{i-1} (x)b(x) dx] 
+\label{eqfbc11}
+\end{equation}
+
+\begin{equation}
+T=[\int_{0} ^{L} b^{T} (x) a(x) dx]
+\label{eqfbc12}
+\end{equation}
+
+Donde \emph{F} es la matriz de flexibilidad del elemento y \emph{T} es una matriz que depende de las matrices de funciones de interpolaci\'on. Utilizando las ecuaciones \ref{eqfbc11} y \ref{eqfbc12} la Ecuaci\'on \ref{eqfbc10} se reduce a lo siguiente:
+
+\begin{equation}
+T \Delta q^{i}-F^{i-1} \Delta Q^{i}=0
+\label{eqfbc13}
+\end{equation}
+
+\begin{equation}
+T \Delta q^{i}=F^{i-1} \Delta Q^{i}
+\label{eqfbc14}
+\end{equation}
+
+La Ecuaci\'on \ref{eqfbc14} resulta ser la forma integral de la relaci\'on fuerza--deformaci\'on. Por otro lado del principio de trabajo virtual se toma la forma integral de la ecuaci\'on de equilibrio de la siguiente manera:
+
+\begin{equation}
+\int_{0} ^{L} \delta d^{T} (x) [D^{i-1} (x)+\Delta D^{i} (x)] dx= \delta q^{T} P^{i}
+\label{eqfbc15}
+\end{equation}
+
+En la Ecuaci\'on \ref{eqfbc15} $P^{i}$ es el vector de fuerzas aplicadas que est\'an en equilibrio con las fuerzas internas $[ D^{i-1} (x)+\Delta D^{i} (x)]$ sustituyendo las fuerzas internas de la Ecuaci \'on \ref{eqfbc5} y \ref{eqfbc6} a trav\'es de incrementos se obtiene lo siguiente:
+
+\begin{equation}
+\delta q^{T}[\int_{0} ^{L} a^{T} (x) [b(x) Q^{i-1}+b(x) \Delta Q^{i}] dx]= \delta q^{T} P^{i}
+\label{eqfbc16}
+\end{equation}
+
+En la expresi\'on anterior puede observarse que el t\'ermino $\delta q^{T}$ se reduce de manera que re acomodando se llega a lo siguiente:
+
+\begin{equation}
+[\int_{0} ^{L} a^{T} (x) b(x) dx]Q^{i-1}+[\int_{0} ^{L} a^{T} (x) b(x) dx]= \delta q^{T} P^{i}
+\label{eqfbc17}
+\end{equation}
+
+O bien utilizando la notaci\'on de las matrices correspondientes se tendr\'a la forma integral matricial de la ecuaci\'on de equilibrio del elemento estudiado:
+
+\begin{equation}
+T^{T} Q^{i-1}+T^{T}\Delta Q^{i}=P^{i}
+\label{eqfbc18}
+\end{equation}
+
+La expresi\'on anterior junto con la Ecuaci\'on \ref{eqfbc13} genera el siguiente sistema de estado:
+
+\begin{equation}
+\centering
+\begin{bmatrix}
+       -F^{i-1} & T \\ T^{T} & 0
+     \end{bmatrix} \begin{Bmatrix}
+       \Delta Q^{i} \\ \Delta q^{i}
+     \end{Bmatrix} = \begin{Bmatrix}
+       0 \\ P^{i}-T^{T} Q^{i-1}
+     \end{Bmatrix}
+\label{eqfbc19}
+\end{equation}
+
+Dado que es relativamente sencillo resolver la primera ecuaci\'on del sistema matricial presentado con anterioridad debido a la igualdad con cero, es posible sustituir la soluci\'on del $\Delta Q^{i}$ en la segunda ecuaci\'on obteniendo lo siguiente:
+
+\begin{equation}
+T^{T}[F^{i-1}]^{-1} T \Delta q^{i}=P^{i}-T^{T} Q^{i-1}
+\label{eqfbc20}
+\end{equation}
+
+A continuaci\'on se plantean funciones de forma dependientes de la flexibilidad de la siguiente forma:
+
+\begin{equation}
+a(x)=f^{i-1}(x)b(x)[F^{i-1}]^{-1}
+\label{eqfbc21}
+\end{equation}
+
+Estas funciones estar\'an relacionadas al campo de deformaciones de las secciones del elemento de la siguiente manera:
+
+\begin{equation}
+\Delta d^{i} (x)=f^{i-1}(x)b(x)[F^{i-1}]^{-1} \Delta q^{i}
+\label{eqfbc22}
+\end{equation}
+
+Aqu\'{\i} $F^{i-1}$ es la matriz tangente de flexibilidad del elemento de la anterior iteracci\'on del algoritmo de soluci\'on. La ventaja de la selecci\'on de este tipo de funciones de forma puede observarse mediante la sustituci\'on de la Ecuaci\'on \ref{eqfbc21} en la \ref{eqfbc12}, de esto resulta lo siguiente:
+
+\begin{equation}
+T=[\int_{0} ^{L} b^{T} (x) a(x) dx]= [\int_{0} ^{L} b^{T} f^{i-1} (x) b(x) dx] [F^{i-1}]^{-1}=\textbf{I}
+\label{eqfbc23}
+\end{equation}
+
+Finalmente con esta selecci\'on de funciones de forma $a(x)$ la Ecuaci\'on \ref{eqfbc20} resulta en lo siguiente:
+
+\begin{equation}
+[F^{i-1}]^{-1} \Delta q^{i}=P-Q^{i-1}
+\label{eqfbc24}
+\end{equation}
+
+Al mismo tiempo, esta elecci\'on de las funciones de forma $a(x)$ reduce el m\'etodo mixto general a lo m\'etodo de flexibilidad. 
+
+\section{Modelaci\'on por Discretizaci\'on de Fibras}
+
+El modelo de viga--columna discretizado en fibras se muestra en la Figura \ref{fig:apenfe2} bajo un sistema de referencia local. Como puede observarse la longitud del elemento cuenta con diversos puntos de control, es decir, dentro del elemento se seleccionan puntos donde se desea obtener informaci\'on directa a trav\'es de la integraci\'on, posteriormente estos puntos de control sirven para obtener el estado total del elemento a trav\'es de las funciones de forma utilizadas. Particularmente es utilizada en esta investigaci\'on el m\'etodo de integraci\'on de Lobato debido a que cuenta entre los puntos de control a los extremos f\'isicos de los elementos, esto es importante en los an\'alisis no lineales debido a la tendencia de la generaci\'on de articulaciones pl\'asticas en los extremos de los elementos.
+
+Cada secci\'on considerada es subdividida en \'areas com\'unmente llamadas fibras las cuales permiten establecer un comportamiento axial particular, es decir, se pueden determinar zonas de concreto o bien zonas de acero en cada secci\'on; este tipo de modelos resulta bastante pr\'actico ya que elimina la necesidad de obtener diagramas de comportamiento axial respecto a la flexi\'on y permite considerar las variaciones de dimensiones en los elementos as\'{\i} como de las \'areas de varillas obtenidas por la simulaci\'on de propiedades en el SIB \cite{SIB2013}.
+
+\begin{figure}[htbp]
+	\centering
+				\includegraphics[width=130mm]{FIBER-BEAM.pdf}
+	\caption{Modelo de secciones elementos y secciones discretizadas utilizados en esta investigaci\'on.}
+	\label{fig:apenfe2}
+\end{figure}
+
+Los vectores de fuerza y deformaci\'on para el elemento y las secciones consideradas ya fue presentada en la Ecuaci\'on \ref{eqfbc1}, \ref{eqfbc2}, \ref{eqfbc3} y \ref{eqfbc4}.
+
+\newpage
+
+Se introducen dos vectores adicionales para describir el estado de las fibras de cada secci\'on, estos son las deformaciones y esfuerzos de las fibras:
+
+\begin{equation}
+Vector \ de \ Deformaciones \ de \ Fibras \ \ \  
+	\centering
+e(x) = \begin{Bmatrix}
+       \epsilon_{1} (x,y_{1},z_{1}) \\ ... \\ \epsilon_{ifib} (x,y_{ifib},z_{ifib})  \\ ... \\ \epsilon_{n} (x,y_{n},z_{n}) 
+     \end{Bmatrix}
+\label{eqfbc25}
+\end{equation}
+
+\begin{equation}
+Vector \ de \ Esfuerzos \ de \ Fibras \ \ \  
+	\centering
+E(x) = \begin{Bmatrix}
+       \sigma_{1} (x,y_{1},z_{1}) \\ ... \\ \sigma_{ifib} (x,y_{ifib},z_{ifib})  \\ ... \\ \sigma_{n} (x,y_{n},z_{n}) 
+     \end{Bmatrix}
+\label{eqfbc25}
+\end{equation}
+
+En los vectores de estado de las fibras $x$ representa la posici\'on de la secci\'on a lo largo del eje longitudinal de referencia y $y_{ifib},z_{ifib}$ se refieren a la posici\'on de la i-esima fibra en la secci\'on, en la Figura \ref{fig:apenfe2} se ilustra el esquema de discretizaci\'on utilizado en la presente investigaci\'on; como puede observarse se utilizan en total $85$ fibras de las cuales $60$ son para el concreto no confinado y $25$ de concreto confinado.
+
+Considerando que las secciones planas permanecen planas y normales al eje longitudinal el vector de deformaciones de las fibras y de la secci\'on se relacionan por la siguiente relaci\'on simple:
+
+\begin{equation}
+	\centering
+e(x)=l(x) d(x)
+\label{eqfbc26}
+\end{equation}
+
+Donde $l(x)$ es la matriz geom\'etrica cuyo valor es el siguiente:
+
+\begin{equation}
+	\centering
+l(x) = \begin{Bmatrix}
+       -y_{1} & z_{1} & 1 \\ ... & ... & ... \\ -y_{ifib} & z_{ifib} & 1  \\ ... & ... & ... \\ -y_{n} & z_{n} & 1
+     \end{Bmatrix}
+\label{eqfbc27}
+\end{equation}
+
+Es posible utilizar formas m\'as complejas de la matriz de compatibilidad para considerar efectos tales como el cortante y deslizamientos, sim embargo, requieren de una mayor inversi\'on de tiempo y trabajo.
+
+Se resume a continuaci\'on el proceso de determinaci\'on del estado de un elemento:
+
+\begin{enumerate}
+	\item Resolver el sistema global de ecuaciones y actualizar los desplazamientos estructurales.
+	\item C\'alculo de los incrementos de deformaci\'on de los elementos y actualizar las deformaciones de los elementos.
+	\item Iniciar la determinaci\'on del estado del elemento por fibras. Bucle sobre todos los elementos de la estructura.
+	\item Determinar los incrementos de la fuerza de elemento.
+	\item Actualizaci\'on de las fuerzas de los elementos.
+	\item Determinar los incrementos de fuerzas en la secci\'on. Los pasos (6) a (11) se llevan a cabo para todas las secciones de control (puntos de integraci\'on) del elemento.
+	\item Determinar los incrementos de deformaci\'on de la secci\'on.
+		\item Determinar los incrementos de deformaci\'on de las fibras.
+			\item Determinar los esfuerzos y m\'odulos tangentes de las fibras.
+	\item Determinar las matrices de rigidez tangente y de flexibilidad en la secci\'on.
+	\item Determinar las fuerzas resistentes de la secci\'on.
+	\item Determinar las fuerzas desequilibradas en la secci\'on.
+	\item Determinar las deformaciones residuales en la secci\'on.
+	\item Determinar las matrices de rigidez y flexibilidad del elemento.
+	\item Comprobaci\'on de la convergencia.
+	\item Determinar las fuerzas resistentes y la nueva matriz de rigidez de toda la estructura.
+\end{enumerate}
+
+\newpage
+
+\section{Modelo de Kadysiewski y Mosalam para la Mamposter\'{\i}a}
+
+En este ap\'endice se presenta el desarrollo del modelo con comportamiento fuera del plano del muro de relleno no reforzado utilizado en esta investigaci\'on, este modelo se presenta en Kadysiewski y Mosalam \cite{MOSS2009}. Aqu\'{\i} se presentan los c\'alculos para la obtenci\'on de las propiedades el\'asticas e inelasticas del elemento viga--columna, tambi\'en se presentan los c\'alculos del valor de la masa fuera del plano. 
+
+En el modelo se representa la acci\'on de la mamposter\'{\i}a de relleno mediante una diagonal en el interior del marco de concreto reforzado actuando como un puntal tanto a tensi\'on como a compresi\'on, lo anterior puede producir distribuciones de acciones internas distintas a las reales, sin embargo, se espera que debido a la existencia de diafragmas en los entrepisos de los edificios las consecuencias de esta simplificaci\'on sean menores. En la Figura \ref{fig:apenab1} se presenta un esquema del modelo y sus principales componentes: el elemento viga columna discretizado por fibras, la masa puntual fuera del plano y el marco de la estructura principal.
+
+\begin{figure}[htbp]
+	\centering
+				\includegraphics[scale=0.50]{figapa1.pdf}
+	\caption{Modelo de la mamposter\'{\i}a de relleno. Adaptado de \cite{MOSS2009}.}
+	\label{fig:apenab1}
+\end{figure}
+
+En la aplicaci\'on del modelo en Opensees \cite{OP2006} se utilizan en los extremos del muro en uni\'on con los marcos de concreto elementos viga--columna el\'asticos y en la parte central de la diagonal existen elementos no lineales con una zona de plasticidad distribuida alrededor de la masa que act\'ua unicamente fuera del plano.
+
+Se desarrolla un modelo equivalente para los muros de mamposter\'{\i}a con el objetivo de obtener una correcta selecci\'on de la inercia y rigidez tomando en cuenta la interacci\'on din\'amica del muro con los marcos principales. Se idealiza a los muros  como elementos viga dispuestos con el eje vertical fuera del plano, se consideran condiciones de apoyo simples en sus extremos; posteriormente se realiza una concentraci\'on puntual en el centro de la viga de una masa equivalente y se determina una rigidez a la flexi\'on equivalente; v\'ease la Figura \ref{fig:apenab2}, en esta figura se denomina OOP a la libertad de desplazamiento fuera del plano por su abreviaci\'on en el idioma ingles (Out Of Plane).
+
+\begin{figure}[htbp]
+	\centering
+				\includegraphics[scale=0.5]{SISTEMA_ORIGINAL.pdf}
+				\includegraphics[scale=0.5]{SISTEMA_EQUIVALENTE.pdf}
+	\caption{Sistema original y equivalente del muro de mamposter\'{\i}a idealizado.}
+	\label{fig:apenab2}
+\end{figure}
+
+Se determina la frecuencia natural de vibraci\'on del sistema original idealizado como una viga mediante la soluci\'on de la ecuaci\'on de movimiento de un sistema con masa distribuida, sin amortiguamiento y con condiciones de apoyo iguales a las idealizadas \cite{Cho2007}. El problema matem\'atico se reduce a la soluci\'on de la siguiente ecuaci\'on diferencial parcial en t\'erminos del desplazamiento fuera del plano $u(x,t)$:
+
+\begin{equation}
+m\frac{\partial^{2}u}{\partial t^{2}}+EI\frac{\partial^{4}u}{\partial x^{4}}=0
+\label{eqa1}
+\end{equation}
+
+Aplicando el m\'etodo de separaci\'on de variables \cite{EK2008} se asume una soluci\'on de la forma siguiente:
+
+\begin{equation}
+u(x,t)=\phi (x) q(t)
+\label{eqa2}
+\end{equation}
+
+Sustituyendo en el problema matem\'atico de la Ecuaci\'on \ref{eqa1} se tendr\'a:
+
+\begin{equation}
+\begin{array}{ccc}
+\ddot{q}(t)+\omega^{2}q(t)=0 & & \frac{\partial^{4}\phi(x)}{\partial x^{4}}+\frac{m\omega^{2}}{EI}\phi(x)=0
+\end{array}
+\label{eqa3}
+\end{equation}
+
+Se procede a resolver la Ecuaci\'on \ref{eqa3} considerando las condiciones de frontera apropiadas conforme a los apoyo simples; se llega a las siguientes formas modales:
+
+\begin{equation}
+\phi_{i} (x)=C_{i}\sin{\frac{i\pi}{h}x} \ \ \ \ \ \ i=1,2,3,...
+\label{eqa4}
+\end{equation}
+
+La soluci\'on general es la siguiente:
+
+\begin{equation}
+u(x,t)=\sum_{i=1}^{\infty}{\phi_{i} (x) q_{i}(t)}
+\label{eqa5}
+\end{equation}
+
+Asumiendo que la respuesta din\'amica del muro queda gobernada por el primer modo de vibrar de manera que el vector de forma y la frecuencia natural se pueden determinar mediante las siguientes expresiones:
+
+\begin{equation}
+\phi_{1} (x)=C_{1}\sin{\frac{\pi}{h}x} \ \ \ \ \ \ y  \ \ \ \ \ \ \omega_{1}=\frac{\pi^{2}}{h^{2}}\sqrt{\frac{EI}{m}}
+\label{eqa6}
+\end{equation}
+
+Debe notarse la simetr\'{\i}a del comportamiento din\'amico del muro respecto al eje vertical de referencia; lo anterior debido a la naturaleza de la funci\'on seno. Posteriormente es indispensable obtener la relaci\'on de los desplazamientos entre los apoyos del muro y los del marco de la estructura principal; para lo anterior se puede asumir cierta independencia entre la curva deformada del muro y los desplazamientos del marco de manera que existe unicamente una relaci\'on global entre ellos.
+
+\begin{figure}[htbp]
+	\centering
+				\includegraphics[scale=0.4]{figapa4.pdf}
+	\caption{Desplazamientos fuera del plano del muro de mamposter\'{\i}a idealizado. Adaptado de \cite{MOSS2009}.}
+	\label{fig:apenab3}
+\end{figure}
+
+Siendo as\'{\i}, consid\'erese a $U_{L}(t)$ y $U_{R}(t)$ como los desplazamientos libres del marco en los apoyos izquierdo y derecho respectivamente, v\'ease Figura \ref{fig:apenab3}, posteriormente se determina mediante estos valores el desplazamiento total del muro $U^{t} (x,t)$ en coordenadas globales; se asume que el valor de $U^{t}(x,t)$ puede obtenerse mediante una relaci\'on de variaci\'on lineal entre los desplazamientos $U_{L}(t)$ y $U_{R}(t)$ como sigue:
+
+\begin{equation}
+U^{t}(x,t)=u(x,t)+U_{L}(t)+\left[U_{R}(t)-U_{L}(t)\right]\frac{x}{h}
+\label{eqa7}
+\end{equation}
+
+O bien de la siguiente manera:
+
+\begin{equation}
+U^{t}(x,t)=\frac{1}{2}\left[U_{L}(t)+U_{R}(t)\right]-\left[U_{L}(t)+U_{R}(t)\right]\left(\frac{x}{h}-\frac{1}{2}\right)+u(x,t)
+\label{eqa8}
+\end{equation}
+
+Es necesario observar la independencia del primer t\'ermino del lado derecho de la expresi\'on anterior respecto de $x$ y la anti--simetr\'{\i}a del segundo t\'ermino en el valor especifico de $x=h/2$. Del problema matem\'atico conocido en t\'erminos del equilibrio din\'amico \ref{eqa1}:
+
+\begin{equation}
+m\frac{\partial^{2}u^{t}(x,t)}{\partial t^{2}}+EI\frac{\partial^{4}u^{t}(x,t)}{\partial x^{4}}=0
+\label{eqa9}
+\end{equation}
+
+Por lo que al sustituir la Ecuaci\'on \ref{eqa7} y \ref{eqa8} en la Ecuaci\'on \ref{eqa9} se obtiene lo siguiente:
+
+\begin{equation}
+m\frac{\partial^{2} u(x,t)}{\partial t^{2}}+EI\frac{\partial^{4}u(x,t)}{\partial x^{4}}=-m{\frac{1}{2}\left[\ddot{u_{L}}(t)+\ddot{u_{R}}(t)\right]-\left[\ddot{u_{L}}(t)-\ddot{u_{R}}(t)\right]\left(\frac{x}{h}-\frac{1}{2}\right)}
+\label{eqa10}
+\end{equation}
+
+Se sustituye la soluci\'on propuesta de la Ecuaci\'on \ref{eqa5} en la Ecuaci\'on anterior para posteriormente multiplicar ambos lados de la expresi\'on por $\phi_{1}(x)$, luego realizando una integraci\'on en la longitud del muro y aplicando los principios de las condiciones de ortogonalidad \cite{EK2008} se llega a lo siguiente:
+
+\begin{equation}
+\begin{array}{c}
+[\ddot{q_{1}}(t)+\omega_{1}^{2}q_{1}(t)]{\int ^{x=0}_{h}{m\phi_{1}^{2}}(x)dx}=-\frac{1}{2}[\ddot{u_{L}}(t)+\ddot{u_{R}}(t)]{\int ^{x=0}_{h}{m\phi_{1}}(x)dx}
+ \\ 
+\\ 
++[\ddot{u_{L}}(t)-\ddot{u_{R}}(t)]{\int ^{x=0}_{h}{m\phi_{1}}(x)\left(\frac{x}{h}-\frac{1}{2}\right)dx}
+\end{array}
+\label{eqa11}
+\end{equation}
+
+La segunda integral del lado derecho de la expresi\'on anterior se reduce a cero debido a la simetr\'{\i}a al centro del claro del integrando, por otro lado si se normaliza la ordenada m\'axima del vector de forma modal a uno y se define el coeficiente de participaci\'on de la siguiente manera:
+
+\begin{equation}
+\Gamma_{1}=\frac{{\int ^{x=0}_{h}{m\phi_{1}}(x)dx}}{{\int ^{x=0}_{h}{m\phi_{1}^{2}}(x)dx}}=1.2732
+\label{eqa12}
+\end{equation}
+
+De lo anterior la Ecuaci\'on \ref{eqa11} se reduce a lo siguiente:
+
+\begin{equation}
+[\ddot{q_{1}}(t)+\omega_{1}^{2}q_{1}(t)]=-[\frac{\ddot{u_{L}}(t)+\ddot{u_{R}}(t)}{2}]\Gamma_{1}
+\label{eqa13}
+\end{equation}
+
+Con lo que finalmente es posible obtener la respuesta fuera del plano cuando s\'olo se considera la primer forma de vibrar del muro; resulta en estas condiciones que como puede verse en el segundo t\'ermino de la Ecuaci\'on \ref{eqa13} se consigue la soluci\'on asumiendo que los apoyos superior e inferior experimenta la misma aceleraci\'on, la cual es simplemente el promedio en cada paso del tiempo de las aceleraciones en los correspondientes apoyos.
+
+La resupuesta m\'axima de los muros puede ser obtenida a trav\'es del m\'etodo del espectro de respuesta siendo la m\'axima coordenada modal igual a: 
+
+\begin{equation}
+q_{1max}=\Gamma_{1}S_{d1}
+\label{eqa14}
+\end{equation}
+
+Donde $S_{d1}$ es el desplazamiento para un sistema de un grado de libertad excitado por la aceleraci\'on media mencionada anteriormente. Posteriormente el momento flexionante y la fuerza cortante se obtienen de la teor\'{\i}a b\'asica de vigas mediante las siguientes expresiones \cite{Cho2007:
+
+\begin{equation}
+\begin{array}{ccc}
+M(x,t)=EI\frac{\partial^{2}u(x,t)}{\partial x^{2}} & & V(x,t)=EI\frac{\partial^{3}u(x,t)}{\partial x^{2}}
+\end{array}
+\label{eqa15}
+\end{equation}
+
+Primero se determina la fuerza total m\'axima existente debido a la estructura del marco r\'{\i}gido. Esta fuerza es igual en el instante dado $t$ a $V(0,t)-V(h,t)$, esto es la suma de cortante en los extremos, con la debida consideraci\'on de los signos.  
+
+\begin{equation}
+\begin{array}{c}
+V(0,t)-V(h,t)=EI[\frac{\partial^3 u(x,t)}{\partial x^{3}}-\frac{\partial^{3}u(h,t)}]=-EI{\int ^{x=0}_{h}{\frac{\partial^{4}u(x,t)}{\partial x^{4}}dx}
+\\
+\\
+=-EI{\int ^{x=0}_{h}{\frac{\partial^{4}\phi(x)}{\partial x^{4}}q(t)dx}
+=F(t)=-\omega^{2}\left\{\int ^{x=0}_{h}{m\phi(x)dx}\right\}q(t)
+\end{array}
+\label{eqa16}
+\end{equation}
+
+En la expresi\'on anterior los \'{\i}ndices de la forma modal se desprecian debido a que unicamente se considera la primer forma modal. Por consecuencia de la Ecuaci\'on \ref{eqa14} el mayor valor absoluto de la suma de fuerzas de soporte con aceleraci\'on espectral $S_{a}=\omega^{2}S_{d}$ estar\'a dado por:
+
+\begin{equation}
+\begin{array}{c}
+F_{max}=\omega^{2}{\int ^{x=0}_{h}{m\phi(x)dx}}q_{max}=\omega^{2}\left\{\int ^{x=0}_{h}{m\phi(x)dx}\right\}\Gamma S_{d}
+\\
+\\
+=\left\{\int ^{x=0}_{h}{m\phi(x)dx}\right\}\Gamma S_{a}=MME S_{a}
+\end{array}
+\label{eqa17}
+\end{equation}
+
+Siendo $MME$ el valor de la masa modal efectiva cuyo valor se define por la expresi\'on siguiente: 
+
+\begin{equation}
+MME=\left\{\int ^{x=0}_{h}{m\phi(x)dx}\right\}\Gamma=\frac{\left({\int ^{x=0}_{h}{m\phi_{1}}(x)dx}\right)^{2}}{{\int ^{x=0}_{h}{m\phi_{1}^{2}}(x)dx}}
+\label{eqa18}
+\end{equation}
+
+Para la primer forma modal $MME=0.81 m h$, o bien el $81\%$ de la masa de la viga original. Posteriormente el m\'aximo momento central ser\'a:
+
+\begin{equation}
+M\left(\frac{h}{2},t\right)=EI\left.\frac{\partial^{2}\phi(x)}{\partial x^{2}}\right|_{x=\frac{h}{2}}q(t)
+\label{eqa19}
+\end{equation}
+
+\begin{equation}
+\left.M\left(\frac{h}{2},t\right)\right|_{max}=EI\left.\frac{\partial^{2} \phi(x)}{\partial x^{2}}\right|_{x=\frac{h}{2}}q(max)=EI\left.\frac{\partial^{2} \phi(x)}{\partial x^{2}}\right|_{x=\frac{h}{2}}\frac{\Gamma S_{a}}{\omega^{2}}
+\label{eqa20}
+\end{equation}
+
+Posteriormente considerando el primer modo de vibrar y un valor de la constante $C_{1}=1.0$ tendremos lo siguiente:
+
+\begin{equation}
+\left.\frac{\partial^{2} \phi(x)}{\partial x^{2}}\right|_{x=\frac{h}{2}}q(max)=-\frac{\pi^{2}}{h^{2}}
+\label{eqa21}
+\end{equation}
+
+Reordenando la Ecuaci\'on \ref{eqa6} se obtiene que $\frac{\omega^{2}h^{4}m}{EI\pi^{4}}=1$. Por lo que usando la Ecuaci\'on \ref{eqa21} y \ref{eqa20} se llega a lo siguiente:
+
+\begin{equation}
+\left.M\left(\frac{h}{2},t\right)\right|_{max}=\left[EI\left.\frac{\partial^{2} \phi(x)}{\partial x^{2}}\right|_{x=\frac{h}{2}}\right]\frac{\Gamma S_{a}}{\omega^{2}}=EI\left(\frac{\pi^{2}}{h^{2}}\right)\frac{\Gamma S_{a}}{\omega^{2}}\left[\frac{\omega^{2}h^{4}m}{EI\pi^{4}}\right]=\frac{\Gamma S_{a}h^{2}m}{\pi^{2}}
+\label{eqa22}
+\end{equation}
+
+Al considerar el factor de participaci\'on del primer modo de vibrar $\Gamma_{1}=1.2732$ se determina el m\'aximo momento central a corde a la siguiente expresi\'on:
+
+\begin{equation}
+\left.M\left(\frac{h}{2},t\right)\right|_{max}=\frac{\left(mS_{a})h^{2}}{7.752}
+\label{eqa23}
+\end{equation}
+
+Finalmente es posible calcular el momento de fluencia central asumiendo que la resistencia esperada fuera del plano esta dada en t\'erminos de una presi\'on uniforme $q_{ine}$:
+
+\begin{equation}
+M_{y}=\frac{q_{ine}L_{inf}h^{2}}{7.752}
+\label{eqa24}
+\end{equation}
+
+Reordenando la expresi\'on anterior en t\'erminos de la aceleraci\'on de cedencia tendremos:
+
+\begin{equation}
+S_{ay}=0.969\frac{q_{ine}L_{inf}}{m}
+\label{eqa25}
+\end{equation}
+
+A continuaci\'on es necesario considerar la respuesta del sistema equivalente con masa concentrada; dicho sistema cuenta unicamente con un grado de libertad fuera del plano cuyo desplazamiento es $\Delta_{OOP}$ y corresponde al desplazamiento de la masa fuera del plano, v\'ease la Figura \ref{fig:apenab4}. Asumiendo que la masa central concentrada tiene un valor equivalente a la $MME$ derivada para el sistema original se procede a calcular la rigidez en flexi\'on requerida para obtener la misma frecuencia que en el sistema original y se calcula el momento de fluencia condicionado a la misma aceleraci\'on espectral que el sistema original.
+
+\begin{figure}[htbp]
+	\centering
+				\includegraphics[scale=0.4]{figapa5.pdf}
+	\caption{Deformaci\'on del sistema en su primer modo de vibrar. Adaptado de \cite{MOSS2009}.}
+	\label{fig:apenab4}
+\end{figure}
+
+La rigidez fuera del plano del sistema equivalente $k_{eq}$, definida como la fuerza fuera del plano $P_{N}$ requerida para producir una deflexi\'on unitaria asumiendo un comportamiento del muro semejante a una viga simplemente apoyada se determina mediante la siguiente ecuaci\'on:
+
+\begin{equation}
+k_{eq}=\frac{P_{N}}{\Delta_{OOP}}=\frac{48EI_{eq}}{{L_{diag}}^{3}}
+\label{eqa26}
+\end{equation}
+
+En dicha expresi\'on $I_{eq}$ es igual al momento de inercia equivalente de la secci\'on, y $E$ es m\'odulo de elasticidad del muro de mamposter\'{\i}a no reforzada. La frecuencia  natural de vibrar del sistema equivalente asumiendo que la masa del panel vibra bajo su primer modo, $MME$ es dada por la expresi\'on:
+
+\begin{equation}
+\begin{array}{ccc}
+\omega_{eq}=\sqrt{\frac{k_{eq}}{MME}} & O \ bien & k_{eq}=MME \ \omega^{2}
+\end{array}
+\label{eqa27}
+\end{equation}
+
+Calculando esta frecuencia, procediendo sobre la Ecuaci\'on \ref{eqa6} y sustituy\'endola en la Ecuaci\'on \ref{eqa27} se llega a lo siguiente:
+
+\begin{equation}
+I_{eq}=\frac{MME \ {\omega_{eq}}^{2}{L_{diag}}^{2}}{48E}=\frac{MME \ {\pi}^{4}EI{L_{diag}}^{3}}{48h^{4}mE}=\frac{0.81{\pi}^{4}}{48}\left(\frac{L_{diag}}{h}\right)^{3}I=1.644\left(\frac{L_{diag}}{h}\right)^{3}I
+\label{eqa28}
+\end{equation}
+
+Lo anterior nos permite obtener el momento de inercia del sistemaequivalente mediante el momento de inercia del sistema original igual a $\frac{\kappa L_{inf} t_{inf}^{3}}{12}$ donde $t_{inf}$ es el espesor del muro de relleno y $\kappa$ es un factor que toma en consideraci\'on la fractura.
+
+Haciendo uso de los principios de la mec\'anica estructural la ecuaci\'on de movimiento para el sistema equivalente con masa $MME$ se obtiene:
+
+\begin{equation}
+MME \ \ddot{\Delta_{OOP}}+k_{eq}\Delta_{OOP}=-MME\left[\frac{\ddot{u_{L}}(t)+\ddot{u_{R}}(t)}{2}\right]
+\label{eqa29}
+\end{equation}
+
+O bien de la siguiente manera:
+
+\begin{equation}
+\Delta_{OOP}+{\omega_{eq}}^{2}\Delta_{OOP}=-\left[\frac{\ddot{u_{L}}(t)+\ddot{u_{R}}(t)}{2}\right]
+\label{eqa30}
+\end{equation}
+
+La soluci\'on para el desplazamiento m\'aximo es dada por lo siguiente:
+
+\begin{equation}
+\Delta_{OOP_{max}}=S_{d}
+\label{eqa31}
+\end{equation}
+
+Donde $S_{d}$ es la respuesta del sistema de un grado de libertad para el movimiento medio. Por otro lado la maxima fuerza en la base es la siguiente:
+
+\begin{equation}
+F_{max}=k_{eq} \ \Delta_{OOP_{max}}=MME \ {\omega_{eq}}^{2} \ S_{d}=MME \ S_{a}
+\label{eqa32}
+\end{equation}
+
+De esta manera la fuerza en la base del sistema equivalente es igual a la del sistema original dada por la Ecuaci\'on \ref{eqa17}. El momento m\'aximo del muro es dado por la siguiente expresi\'on:
+
+\begin{equation}
+M_{max}=\frac{F_{max}L_{diag}}{4}=MME \ S_{a}\frac{L_{diag}}{4}
+\label{eqa33}
+\end{equation}
+
+Para mantener la equivalencia, el momento de fluencia en el sistema equivalente es alcanzado cuando la aceleraci\'on $S_{a}$ es igual a la aceleraci\'on de fluencia del sistema original $S_{ay}$ de manera que se obtiene lo siguiente:
+
+\begin{equation}
+M_{eq-y}=MME \ S_{ay}\frac{L_{diag}}{4}
+\label{eqa34}
+\end{equation}
+
+\begin{equation}
+M_{eq-y}=0.81mh\frac{7.752M_{y}}{mh^{2}}\frac{L_{diag}}{4}=1.570\frac{L_{diag}}{h}M_{y}
+\label{eqa35}
+\end{equation}
+
+Finalmente se calcula la fuerza fuera del plano que causa que la viga equivalente llegue a la fluencia, usando la Ecuaci\'on \ref{eqa19}, la Ecuaci\'on \ref{eqa26} y la Ecuaci\'on \ref{eqa32} se obtiene:
+
+\begin{equation}
+F_{eq-y}=\frac{4M_{eq-y}}{L_{diag}}=MME \ S_{ay}=\left(0.81mh\right)\left(0.969\right)\frac{q_{ine}L_{inf}}{m}=0.785\left[q_{ine}L_{inf}h\right]
+\label{eqa36}
+\end{equation}
+
+Como puede observarse el t\'ermino entre par\'entesis rectangulares es la capacidad est\'atica esperada fuera del plano. El coeficiente $0.785$ es el producto de dos factores; uno de ellos es $0.81$ y equivale a la relaci\'on entre la masa efectiva del primer modo y el peso total del muro, el otro factor es $0.969$ y equivale a la relaci\'on entre el momento debido a la carga uniforme quasi-est\'atica y el momento causado por la vibraci\'on del primer modo.
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Calibraci\'on del Macro--modelo de Kadysiewski y Mosalam}
+
+\section{Simulaci\'on de Propiedades de los Muros de Mamposter\'{\i}a}
+
+Las principales propiedades simuladas de los muros se presentan en el siguiente c\'odigo de lenguaje R \cite{R2011} junto con los resultados de una corrida del programa.
+
+\begin{verbatim}
+# 
+ # LIMPIEZA DEL SISTEMA Y LECTURA DE ARREGLO DE INFORMACIÓN
+ #
+ rm(list=ls())
+ #
+ # DIRECCIÓN DE LOS DATOS DE ENTRADA
+ #
+ datos <- read.csv("C:\\EDWIN\\data.csv", header=TRUE, sep = ",")
+ #
+ # NÚMERO SELECCIONADO DE SIMULACIONES
+ #
+ n.simulaciones <- 360
+ #
+ # GENERACIÓN DE VALORES DE SIMULACIÓN DE PROPIEDADES
+ #
+ # ARREGLO PARA LAS VARIABLES CORRELACIONADAS DE vm y G
+ #
+ mediavm <- 4.35
+ mediag <- 4763.3
+ desvm <- 0.8809
+ desg <- 1039.5
+ correlacion <- 0.47
+ t22 <- (1-(correlacion^2))^(1/2)
+ #
+ mu <- matrix (c(mediavm,mediag), ncol=1, nrow=2, byrow=TRUE)
+ d <- matrix (c(desvm,0,0,desg), ncol=2, nrow=2, byrow=TRUE)
+ t <- matrix(c(1,correlacion,correlacion,t22), ncol=2, nrow=2, byrow=TRUE)
+ vm <- array(0, dim=c(n.simulaciones,1))
+ gmuro <- array(0, dim=c(n.simulaciones,1))
+ #
+ # PROPIEDADES SIMULADAS NO CORRELACIONADAS
+ #
+ conteo <- 1:n.simulaciones
+ for(sim in seq(along=conteo)) {
+ uuno <- rnorm(1, mean=0.00, sd=1.00)
+ udos <- rnorm(1, mean=0.00, sd=1.00)
+ u <- array(uuno, udos, dim=c(2,1))
+ nmz <- mu+d%*%t%*%u
+ vm[sim,1] <- abs(nmz[1,1])
+ gmuro[sim,1] <- abs(nmz[2,1])
+ }
+ #
+ # SIMULACIÓN DE LAS PROPIEDADES RESTANTES
+ #
+ wmuro <- rnorm(n.simulaciones, mean=12.30, sd=0.31)
+ murofy <- rnorm(n.simulaciones, mean=7140, sd=142.80)
+ murofu <- rnorm(n.simulaciones, mean=8220, sd=82.20)
+ epsym <- rnorm(n.simulaciones, mean=0.0060, sd=0.00024)
+ muroees <- rnorm(n.simulaciones, mean=6873.75, sd=1374.75)
+ pmuro <- rnorm(n.simulaciones, mean=1300, sd=195)
+ fm <- rnorm(n.simulaciones, mean=38.75, sd=6.4906)
+ #
+ # GENERANDO LOS CÁLCULOS ESTADÍSTICOS
+ #
+ summary(wmuro)
+ Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+11.41   12.03   12.30   12.28   12.51   13.12 
+ summary(vm)
+     V1        
+Min.   :0.6009  
+st Qu.:3.4829  
+Median :4.2941  
+Mean   :4.2995  
+rd Qu.:5.1740  
+Max.   :8.1885  
+ summary(gmuro)
+     V1        
+Min.   : 692.4  
+st Qu.:3821.7  
+Median :4702.6  
+Mean   :4708.4  
+rd Qu.:5658.1  
+Max.   :8931.4  
+ summary(murofy)
+ Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 6754    7035    7129    7133    7221    7529 
+ summary(muroees)
+ Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 3326    5788    6814    6789    7756   10620 
+ summary(pmuro)
+ Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+846.9  1198.0  1327.0  1318.0  1460.0  1776.0 
+ summary(fm)
+ Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+18.23   34.30   38.38   38.41   42.85   55.61 
+ summary(murofu)
+ Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 7930    8160    8216    8215    8266    8457 
+ summary(epsym)
+  Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+.005146 0.005812 0.005963 0.005968 0.006138 0.006615 
+ #
+ # ARREGLO MATRICIAL FINAL
+ #
+ x <- array(datos$wmuro, dim=c(n.simulaciones,1))
+ y <- array(datos$vm, dim=c(n.simulaciones,1))
+ z <- array(datos$gmuro, dim=c(n.simulaciones,1))
+ w <- array(datos$murofy, dim=c(n.simulaciones,1))
+ v <- array(datos$sep, dim=c(n.simulaciones,1))
+ p <- array(datos$pmuro, dim=c(n.simulaciones,1))
+ ee <- array(datos$muroees, dim=c(n.simulaciones,1))
+ f <- array(datos$murofm, dim=c(n.simulaciones,1))
+ mfu <- array(datos$murofu, dim=c(n.simulaciones,1))
+ dy <- array(datos$epsym, dim=c(n.simulaciones,1))
+ #
+ M <- matrix (0, ncol=27, nrow=n.simulaciones, byrow=TRUE)
+ M[,1] <- x
+ M[,2] <- wmuro
+ M[,3] <- v
+ M[,4] <- y
+ M[,5] <- vm
+ M[,6] <- v
+ M[,7] <- z
+ M[,8] <- gmuro
+ M[,9] <- v
+ M[,10] <- w
+ M[,11] <- murofy
+ M[,12] <- v
+ M[,13] <- p
+ M[,14] <- pmuro
+ M[,15] <- v
+ M[,16] <- ee
+ M[,17] <- muroees
+ M[,18] <- v
+ M[,19] <- f
+ M[,20] <- fm
+ M[,21] <- v
+ M[,22] <- mfu
+ M[,23] <- murofu
+ M[,24] <- v
+ M[,25] <- dy
+ M[,26] <- epsym
+ M[,27] <- v
+ #
+ #
+ # ESCRITURA FINAL DE LAS SIMULACIONES PARA OPENSEES
+ #
+ E <- t(M)
+ write(E, file = "datosMURO.tcl", ncolumns = 27, append = FALSE, sep = "")
+ #
+ #
+\end{verbatim}
+
+\newpage
+
+\section{Obtenci\'on de Par\'ametros del Modelo de la Mamposter\'{\i}a}
+
+Se realiz\'o una hoja de c\'alculo que permite la resoluci\'on del conjunto de ecuaciones presentadas en el Apendice A; dicha hoja de c\'alculo contiene la informaci\'on aplicada para las propiedades medias de los muros de mamposter\'{\i} consideradas en esta investigaci\'on (vease el Cap\'{\i}tulo de Casos de Aplicaci\'on), se procede de manera similar por cada entrepiso de un edificio simulado, se substituyen los procesos estad\'{\i}sticos simulados por Montecarlo y se obtiene un modelo de la mamposter\'{\i}a que es a\~nadido al modelo no lineal en Opensees \cite{OP2006} y se procede a realizar el conjunto de an\'alisis necesarios. A continuaci\'on se reproduce la hoja de c\'alculo que fue desarrollada en el programa Mathcad $14$ \cite{MC1997} para los par\'ametros del 	Muro tipo $M2$ de los estudios del CENAPRED \cite{AA2001}.
+
+\begin{flushleft}
+		\includegraphics[width=150mm]{cmp1.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp2.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp3.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp4.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp5.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp6.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp7.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp8.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp9.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp10.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp11.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp12.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp13.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp14.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp15.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp16.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp17.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp18.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp19.pdf}
+		\newpage
+		\includegraphics[width=150mm]{cmp20.pdf}
+\end{flushleft}
+\newpage
+
+\section{Simulaci\'on en Opensees de los Muros de Mamposter\'{\i}a}
+
+A continuaci\'on se presentan las principales lineas del c\'odigo para la simulaci\'on de los muros de mamposter\'{\i}a en Opensees; este c\'odigo considera la informaci\'on procedente del SIB y a\~nade los muros donde sean determinados.
+
+\tiny
+\begin{verbatim}
+# Tags for the first floor with masonry walls
+set nodeID [ expr $nodjmasniv ] ; 
+set lasttag [expr $BC($numcol.IDNUM)*8 - 0]  ;
+set sectionpin   [ expr $lasttag + 1]  ;  
+set Torsionmat [ expr $lasttag + 2] ; 
+set InfillTransf1   [ expr $lasttag + 3]  ;  
+set InfillTransf2   [ expr $lasttag + 4]  ;  
+
+geomTransf Linear $InfillTransf1 0 0 -1 ;       
+geomTransf Linear $InfillTransf2 1 0 0 ;        
+
+for { set i 1 } { $i < [ expr $floors + 1 ] } { incr i } {
+variable EminfM $mw($i.EminfM) ;
+variable AreainfM $mw($i.AreainfM) ;
+variable Winf $mw($i.Winf) ;
+variable nummwalls $mw($i.nummwalls) ;
+variable nummfibers $mw($i.nummfibers) ;
+variable InertiainfM $mw($i.InertiainfM) ;
+variable iinodes  $mw($i.iinodes) ;
+variable ifnodes  $mw($i.ifnodes) ;
+variable iiddirect $mw($i.iiddirect) ;
+variable fileremoval $mw($i.fileremoval) ;
+variable fyfibinf $mw($i.fyfibinf) ;
+variable areafibinf $mw($i.areafibinf) ;
+variable zfibinf $mw($i.zfibinf) ;
+variable massinf [ expr $Winf/$gravity] ;
+variable iinfmattag [ expr $Torsionmat+1] ;
+variable sectioninf   [expr $sectionpin + 1]  ;  
+   
+section fiberSec $sectioninf {
+   
+     for { set j 0 } { $j < [ expr $nummfibers ] } { incr j } {
+  
+   set ifyfibinf [lindex $fyfibinf $j]	 ;
+   set iareafibinf [lindex $areafibinf $j]	 ;
+   set izfibinf [lindex $zfibinf $j]	 ;
+   uniaxialMaterial Steel01 $iinfmattag $ifyfibinf $EminfM 0.02 ;
+   fiber 0.0 $izfibinf $iareafibinf $iinfmattag ;
+   set iinfmattag [ expr $iinfmattag+1] ;
+     } ;
+     uniaxialMaterial Steel01 $iinfmattag 1.000E+40 $EminfM 0.02 ;
+     layer straight $iinfmattag 1 0.0001 1.0 0.0 1.0 0.0 ;
+   } ;
+
+   set Torsionmat [ expr $iinfmattag + 1 ] ;
+   uniaxialMaterial Elastic $Torsionmat 1.00E+12 ;
+
+   set sectioninfT   [expr $sectioninf + 1]  ;  
+section Aggregator $sectioninfT $Torsionmat T -section $sectioninf ;
+
+   set secintertag [ expr $sectioninfT + 1 ] ;
+   section Elastic $secintertag $EminfM $AreainfM 1.e-5 $InertiainfM 
+[expr $EminfM/2.5] $Ubig ;
+
+   set sectionpin [ expr $secintertag + 1 ] ;
+   section Elastic $sectionpin $EminfM $AreainfM 1.000E-3 1.000E-3 
+[expr $EminfM/2.5] 1.000E-3 ;
+
+if {$i == 1} {
+ set infnum [ expr $sectionpin + 1 ] ;
+       set infnum2 [ expr $infnum + 1 ] ;  
+       set nodeID [ expr $nodeID + 1 ] ;		 
+   } elseif {$i > 1}  {
+       set infnum2 [ expr $infnum + 1 ] ;
+   }
+
+
+ for {set j 0} {$j < [ expr $nummwalls ]} {incr j} {
+  set inodes [lindex $iinodes $j]	 ;
+  set fnodes [lindex $ifnodes $j]	 ;
+  set iddirect [lindex $iiddirect $j]	 ;
+  
+  set idinodes $nod($inodes.id) ;
+  set idfnodes $nod($fnodes.id) ;
+  set xinodes  $nod($idinodes.nodx) ;
+  set zinodes  $nod($idinodes.nodz) ;
+  set yinodes  $nod($idinodes.nody) ;
+  set xfnodes  $nod($idfnodes.nodx) ;
+  set zfnodes  $nod($idfnodes.nodz) ;
+  set yfnodes  $nod($idfnodes.nody) ;
+   
+ if {$iddirect == 1} {
+     set InfillTransf $InfillTransf1 ;       
+	 set CLCol [expr abs($yfnodes-$yinodes) ];
+	 set CLBeam [expr abs($xfnodes-$xinodes) ];
+   	 set Z [expr abs(($zfnodes-$zinodes)/2)+$zinodes ] ;
+  	 set Y [expr abs(($yfnodes-$yinodes)/2)+$yinodes ] ;
+  	 set X [expr abs(($xfnodes-$xinodes)/2)+$xinodes ] ;     
+     # Calculated the length of the diagonal element
+     set rinfM [expr pow((pow($CLCol,2.0)+pow($CLBeam,2.0)),0.5)];
+ node $nodeID $X $Y $Z -mass 0.0 0.0 [expr $massinf] 0.0 0.0 0.0;			 
+ } elseif {$iddirect == 2}  {
+     set InfillTransf $InfillTransf2 ;   
+	 set CLCol [expr abs($yfnodes-$yinodes) ];
+	 set CLBeam [expr abs($zfnodes-$zinodes) ];
+     # This are the calculated coordinates for the middle node
+   	 set Z [expr abs(($zfnodes-$zinodes)/2)+$zinodes ] ;
+  	 set Y [expr abs(($yfnodes-$yinodes)/2)+$yinodes ] ;
+  	 set X [expr abs(($xfnodes-$xinodes)/2)+$xinodes ] ;     
+     # Calculated the length of the diagonal element
+     set rinfM [expr pow((pow($CLCol,2.0)+pow($CLBeam,2.0)),0.5)];
+ node $nodeID $X $Y $Z -mass [expr $massinf] 0.0 0.0 0.0 0.0 0.0;			 
+ }     
+
+ set nodeCM $nodeID ;
+ set nodeI $inodes ;
+ set nodeJ  $fnodes ;
+
+ if {$indtwall == 1} {
+ element beamWithHinges $infnum $nodeCM  $nodeI $sectioninfT 
+ [expr $rinfM*0.1] $sectionpin [expr $rinfM*0.05] $EminfM $AreainfM 1.e-5  
+ $InertiainfM  $InertiainfM   [expr $EminfM/2.5] $Ubig $InfillTransf ;
+ element beamWithHinges $infnum2 $nodeCM  $nodeJ $sectioninfT 
+ $InertiainfM   [expr $rinfM*0.1]$sectionpin [expr $rinfM*0.05] $EminfM 
+ $AreainfM 1.e-5 [expr $EminfM/2.5] $Ubig $InfillTransf ;				 
+  } elseif {$indtwall == 2}  {
+ element forceBeamColumn $infnum $nodeCM $nodeI $InfillTransf "HingeRadau 
+ $sectioninfT [expr $rinfM*0.1] $sectionpin [expr $rinfM*0.05] $secintertag" 
+ <-iter $maxIters $tol>
+ element forceBeamColumn $infnum2 $nodeCM $nodeJ $InfillTransf "HingeRadau 
+ $sectioninfT [expr $rinfM*0.1] 
+ $sectionpin [expr $rinfM*0.05] $secintertag" <-iter $maxIters $tol>	 			 
+	 }
+ 	 recorder Collapse -ele $infnum   -time  -crit INFILLWALL  
+-file $dirpath/CollapseSequence.out 
+-file_infill INFMW/$fileremoval -global_gravaxis 2 -checknodes $nodeI 
+$nodeCM $nodeJ
+ 	 recorder Collapse -ele $infnum2  -time  -crit INFILLWALL   
+-file_infill INFMW/$fileremoval 
+-global_gravaxis 2 -checknodes $nodeI $nodeCM $nodeJ
+ 	 recorder Collapse -ele $infnum $infnum2 -node $nodeCM
+ 
+ 	 set nodeID [ expr $nodeID + 1 ] ;
+ 	 set infnum [ expr $infnum2+1] ;
+ 	 set infnum2 [ expr $infnum+1] ;
+   };         
+};
+set nodeIDi [ expr $nodjmasniv + 1 ] ;
+set nodeIDf [ expr $nodeID - 1 ] ;
+set ext ".txt" ;
+set nde "nodeMWdisp" ;
+append nde $ext ;
+set namefile $nde ;
+recorder Node  -file  $dirpath/$namefile  -time -nodeRange 
+$nodeIDi $nodeIDf -dof 1 2 3 disp  ;$
+
+puts "OUT-Model of the Masonry Infill Wall"
+
+#
+# _______________________________________________________________
+# _______________________________________________________________
+# _______________________________________________________________
+\end{verbatim}
+
+\normalsize
