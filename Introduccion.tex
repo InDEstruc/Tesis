@@ -1,0 +1,287 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INTRODUCCI\'ON %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Introducci\'on}
+
+\begin{flushleft}
+\begin{verse}
+	\emph{\quotes{``La naturaleza ha puesto en nuestras mentes
+                  un insaciable deseo de ver la verdad''}.}
+\newline
+	 \qauthor{Cicer\'on.}
+\end{verse}
+\end{flushleft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En la actualidad se construye un gran porcentaje de viviendas ya sea unifamiliares o multifamiliares con sistemas de mamposter\'{\i}a. Seg\'un cifras de la Sociedad Mexicana de Ingenier\'{\i}a Estructural (SMIE), en M\'exico m\'as del $90\%$ de viviendas est\'an construidas con muros de carga a base de mamposter\'{\i}a, mostrando el arraigado uso de estos sistemas constructivos en el pa\'{\i}s \cite{ICA2003}.  
+
+No siempre se toman en cuenta las caracter\'{\i}sticas particulares de la mamposter\'{\i}a como elemento estructural, debido principalmente a las incertidumbres inherentes y a la diferencia de resistencia respecto a elementos de concreto y acero, de manera que los analistas prefieren acotar su influencia mec\'anica en el modelo estructural.
+
+En una estructura a base de marcos de concreto reforzado con muros de mamposter\'{\i}a de relleno, la resistencia de los muros se considera despreciable en comparaci\'on con el resto de los elementos estructurales y se prefiere proporcionar una holgura marco--muro para considerar a los muros como un peso muerto independiente. Es as\'{\i} que la mamposter\'{\i}a no es considerada elemento clave en el dise\~no estructural y su distribuci\'on queda definida por los diversos usos arquitect\'onicos dentro del proyecto (elemento divisorio, aislante t\'ermico, ac\'ustico, etcetera). 
+
+Cabe sen\~nalar que si no se realiza una correcta separaci\'on entre los marcos resistentes de la estructura y los muros, la distribuci\'on de \'estos puede influenciar al sistema estructural y por consecuencia suelen presentarse problemas tales como el \emph{piso suave} y el fen\'omeno de la \emph{columna corta}, en tal situaci\'on la estructura no siempre ser\'a capaz de desarrollar un comportamiento adecuado debido a que el modelo matem\'atico  utilizado en el dise\~no desprecia la contribuci\'on de rigidez de los muros y por ello no representa al sistema real. 
+
+En esta investigaci\'on se estudia el sistema tipo ECML (Estructura de Concreto con Mamposter\'{\i}a Ligada) esperando que supere el nivel de riesgo del sistema original  ECMD (Estructura de Concreto con Mamposter\'{\i}a Desligada).  Se parte del supuesto dise\~no estructural tipo ECMD en el cual no fueron respetados los detalles de liga marco--muro.
+
+La existencia de una gran diversidad de riesgos naturales en M\'exico es un hecho, debido a que el pa\'{\i}s se encuentra entre cuatro placas tect\'onicas se caracteriza como una zona de constante actividad s\'{\i}smica, dando como resultado los eventos de mayor impacto a nivel econ\'omico y social \cite{CEPAL2007}. La costa del Pac\'{\i}fico mexicano, ubicada sobre la subducci\'on de las placas de Cocos y la Norteamericana demanda especial atenci\'on por la frecuencia e intensidad de los sismos que en ella se generan al deslizarse y friccionarse dichas placas \cite{CENAPRED2001}; resulta indispensable evaluar los niveles de riesgo en la infraestructura ante este tipo de eventos naturales en dicha zona.
+
+\newpage
+
+Como puede observarse en la Figura \ref{figsis:fig1} la zona de subducci\'on en las costas del pac\'{\i}fico queda definida debido al gradiente de la profundidad de los sismos (los puntos rojos corresponden a eventos de profundidad mayor e igual a los $170 \ km$), cabe mencionar que existen diversas zonas en la placa Norteamericana que muestran actividad s\'{\i}smica del tipo intraplaca, este tipo de sismos resultan en su mayor\'{\i}a de magnitudes menores a los sismos de subducci\'on. 
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=160mm]{sismosprof.pdf}
+	\caption{Niveles de sismicidad en M\'exico respecto a la profundidad durante el periodo de $1985$ a $2013$. Informaci\'on recuperada de \cite{USGS2013}.}
+	\label{figsis:fig1}
+\end{figure}
+
+Hist\'oricamente han ocurrido sismos del tipo interplaca cuyas consecuencias han sido desastrosas tal como el sismo de $1812$ en el \'area de Nuevo Madrid en Missouri Estados Unidos con una magnitud de $7.0-8.0$, el sismo dej\'o completa destrucci\'on en la zona, otro evento de importancia es el sismo de Carolina del Sur Estados Unidos de magnitud estimada de $7.3$ \cite{W2007}. En el norte de M\'exico se han presentado sismos importantes tales como el de Bavispe, Sonora, en $1887$ de  magnitud $7.4$ y el de Parral, Chihuahua, de magnitud $6.5$ \cite{MA2009}.
+
+Las consecuencias tan dr\'asticas de este tipo de sismos se deben principalmente a la falta de un dise\~no s\'{\i}smico adecuado que conlleva a fallas no consideradas; algunos autores sugieren que otra posible causa es la baja atenuaci\'on de energ\'{\i}a s\'{\i}smica que se presenta dentro de los continentes \cite{MA2009}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=160mm]{sismosprof2.pdf}
+	\caption{Profundidad de sismos registrados en Nuevo Le\'on durante el periodo de $2006$ a $2013$. Informaci\'on recuperada de \cite{USGS2013}.}
+	\label{figsis:fig2}
+\end{figure}
+
+El noreste de M\'exico ha sido considerado durante mucho tiempo como una regi\'on as\'{\i}smica. Sin embargo, existe la evidencia hist\'orica de la ocurrencia de temblores desde hace m\'as de $160$ a\~nos, dicha informaci\'on ha sido confirmada a  partir de la instalaci\'on de las estaciones LNIG y MNIG desde enero de $2006$ (pertenecientes al Servicio Sismol\'ogico Nacional); a trav\'es de estos registros y de informaci\'on geol\'ogica se han determinado patrones de comportamiento en la regi\'on \cite{LHJ2012}.
+
+La actividad s\'{\i}smica en el noreste de M\'exico es de bajo nivel de riesgo con profundidades de $2$ a $38$ km y con magnitudes menores a $4.5$; en la Figura \ref{figsis:fig2} y \ref{figsis:fig3} se muestra un grupo de sismos ocurridos en el estado de Nuevo Le\'on los cuales a pesar de su magnitud relativamente baja mantienen una actividad constante considerando que los registros son recientes. De esta manera resulta de vital importancia para la gran parte del pa\'{\i}s el estudio de diversos tipos de sistemas estructurales sometidos ante solicitaciones s\'{\i}smicas.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=160mm]{sismosmag.pdf}
+	\caption{Niveles de sismicidad Nuevo Le\'on durante el periodo de $2006$ a $2013$. Informaci\'on recuperada de \cite{USGS2013}.}
+	\label{figsis:fig3}
+\end{figure}
+
+\newpage
+
+\section{Aspectos Generales de la Investigaci\'on}
+
+En este proyecto se tiene como objetivo principal generar herramientas y establecer una metodolog\'{\i}a para obtener \emph{funciones de confiabilidad} en t\'erminos de una medida de la intensidad s\'{\i}smica dependiente de: la seudoaceleraci\'on sobre el periodo fundamental de vibraci\'on, la masa total y la fuerza cortante basal de fluencia en estructuras modeladas tridimensionalmente; para lo anterior se vuelve necesario el estudio del comportamiento en el rango no lineal de las estructuras. Particularmente se estudian sistemas ECML partiendo de la suposici\'on de la existencia de muros que son considerados de relleno en el an\'alisis y dise\~no estructural (sistema tipo ECMD) pero son finalmente ligados a la estructura durante la construcci\'on. Se estudia la variaci\'on de rigidez considerando el caso del \emph{piso suave en planta baja}. 
+
+Al realizar an\'alisis no lineales se debe determinar un l\'{\i}mite aceptable de deformaci\'on y da\~no, para esto se sigue la filosofia del dise\~no por \emph{desempe\~no s\'{\i}smico} \cite{SEAOC1995}, optando por considerar al inicio del colapso como nivel de desempe\~no en t\'erminos de los desplazamientos y distorsiones (diez por ciento de la altura de la estructura como desplazamiento lateral superior), se establece un nivel de da\~no conforme al denominado \'{\i}ndice de rigidez lateral secante \cite{DE2006}, para la consideraci\'on de la capacidad rotacional de las estructuras se propone un marco de observaci\'on tridimensional, as\'{\i} como un grupo de an\'alisis orientados a buscar la capacidad de la estructura espacialmente; de esta manera es posible obtener un margen de seguridad global y proceder con el c\'alculo de las funciones de confiabilidad.
+
+Cabe mencionar que existen trabajos previos sobre confiabilidad de estructuras con irregularidad debido a la presencia de muros de mamposter\'{\i}a siguiendo una metodolog\'{\i}a semejante \cite{Put2010,PE2012}, en estas investigaciones el an\'alisis se hace a trav\'es de marcos planos con simetr\'{\i}a donde se utilizan elementos con plasticidad concentrada, de manera que no se ha profundizado en un comportamiento completo de no linealidad material y geom\'etrica en un sistema coordenado tridimensional (como se realiza en esta investigaci\'on). 
+
+\newpage
+ 
+Uno de los principales obst\'aculos de la investigaci\'on es la simulaci\'on del comportamiento de los muros de mamposter\'{\i}a por lo que este aspecto resulta de vital importancia, debido a ello se retoman \textit{a priori}} investigaciones importantes sobre modelaci\'on \cite{C1997,FSG1970,LFA2001,G2006,HM2007,SM2009,KE2000,Put2010} y de esta manera se procede a tomar como punto de partida el modelo considerado m\'as adecuado.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=160mm]{sismosprof3.pdf}
+	\caption{Profundidad de sismos registrados en Acapulco Guerrero de $1985$ a $2013$. Informaci\'on recuperada de \cite{USGS2013}.}
+	\label{figsis:fig4}
+\end{figure}
+
+Se utilizan registros de estaciones en suelo firme cercanas al puerto de Acapulco en las costas del pac\'{\i}fico mexicano, lo anterior debido a la alta sismicidad de la zona, as\'{\i} como a la cantidad y calidad de la informaci\'on disponible en la regi\'on. De los registros se consideran cinco familias de sismos con sus respectivas componentes en tres direcciones perpendiculares, cabe aclarar que aqu\'{\i} se considera la componente vertical de los sismos debido a la importancia en sismos de subducci\'on, dichos sismos se escalan en amplitud para llegar al colapso de la estructura permitiendo observar las variaciones del comportamiento estructural. En la Figura \ref{figsis:figg1} se ilustra el alto nivel de sismicidad en la regi\'on de estudio seleccionada, la mayor\'{\i}a de los sismos son de baja magnitud pero en abundancia por lo que el contenido de frecuencias es altamente variable.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=160mm]{sismosmag2.pdf}
+	\caption{Niveles de sismicidad en Acapulco Guerrero de $1985$ a $2013$. Informaci\'on recuperada de \cite{USGS2013}.}
+	\label{figsis:figg1}
+\end{figure}
+
+Siguiendo un enfoque probabilista del tratamiento de las incertidumbres inherentes resulta necesario un proceso intermedio de simulaci\'on de los edificios estudiados para considerar las posibles combinaciones de propiedades de manera global; entre dichas incertidumbres se encuentran las cargas, las caracter\'{\i}sticas de los materiales y las caracter\'{\i}sticas geom\'etricas de los elementos de concreto reforzado. Como parte de esta investigaci\'on se presenta el C\'odigo--SIB en FORTRAN $90/95$ \cite{SIB2013}, el cual es calibrado con par\'ametros estad\'{\i}sticos disponibles en un gran n\'umero de investigaciones nacionales e internacionales \cite{PC1973,MG1970,MSMG1979,CJM1985,RB1996,LPMR2006} para realizar las simulaciones de Montecarlo bajo diversos modelos probabilistas \textit{ad hoc}.
+
+La simulaci\'on de las incertidumbres en la mamposter\'{\i}a se obtiene considerando el teorema del l\'{\i}mite central bajo un modelo de distribuci\'on normal; cabe destacar que se considera que las caracter\'{\i}sticas  f\'{\i}sicas no var\'{\i}an por entrepiso de manera significativa, realizando as\'{\i} simulaci\'on de Montecarlo unicamente por entrepiso.
+
+Despu\'es de la simulaci\'on de propiedades se requiere llevar a la estructura al rango de comportamiento no Lineal, para la presente investigaci\'on se opt\'o por utilizar la herramienta de an\'alisis Opensees \cite{OP2006}, donde se usa el modelo mixto de Kadysiewski $&$ Mosalam \cite{MOSS2009} para la modelaci\'on de los muros de mamposter\'{\i}a, el $Concrete02$ para el concreto confinado y no confinado siguiendo el esquema de modelaci\'on de Mander \cite{MPP1988}. La formulaci\'on no lineal se realiza mediante elementos barra integrados seccionalmente en diversos puntos de integraci\'on con interpolaci\'on mediante funciones de desplazamientos, vease el \emph{Apendice \textbf{A}}.
+
+\newpage
+
+\section{Planteamiento del Problema}
+
+	\subsection{Irregularidad Estructural}
+	
+La mamposter\'{\i}a adem\'as de servir en la formaci\'on de elementos divisorios y de aislamiento de las condiciones clim\'aticas (tales como el calor y sonido), posee la capacidad de rigidizar el sistema disipando la energ\'{\i}a debida a cargas laterales y verticales (Figura \ref{fig:figacc}), por lo anterior el uso de los muros de mamposter\'{\i}a permite economizar y mediante una distribuci\'on adecuada de los muros (y de otros elementos no estructurales) es posible mejorar el desempe\~no s\'{\i}smico de edificios o bien contribuir a la reparaci\'on de estructuras da\~nadas \cite{SAMJ2008,PP1992}. 
+
+Por otro lado una incorrecta distribuci\'on de los muros de mamposter\'{\i}a es fuente de una gran variedad de problemas estructurales como se ha observado durante eventos s\'{\i}smicos de gran intensidad tal como el sismo de M\'exico en $1985$ \cite{E1987}. 
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[scale=0.75]{figcmamp.pdf}
+	\caption{Tipos de acciones presentes en los muros de mamposter\'{\i}a.}
+	\label{fig:figacc}
+\end{figure}
+
+En general para todo tipo de estructuras se pueden identificar dos formas de irregularidad ocasionadas por la distribuci\'on de elementos r\'{\i}gidos resistentes: 
+
+\begin{itemize}
+	\item En Planta: Cuando la irregularidad se presenta en el plano paralelo al nivel del terreno, ocasiona principalmente problemas de torsi\'on.
+	
+	\newpage
+	
+	\item En Elevaci\'on: Cuando la irregularidad se presenta sobre la altura de la estructura debido a discontinuidades de elementos r\'{\i}gidos resistentes en los niveles de la estructura.
+\end{itemize}
+
+\subsection{Mamposter\'{\i}a de Relleno}
+	
+Una pr\'actica de estructuraci\'on com\'un consiste en formar sistemas a base de marcos ortogonales de concreto reforzado, estos sistemas trabajan desarrollando desplazamientos libres en sus planos correspondientes. Cuando se construyen muros de mamposter\'{\i}a dentro de los marcos de concreto reforzado, los muros restringen sus desplazamientos libres incrementando la rigidez de entrepiso formando un sistema tipo ECML. Aunado a lo anterior la mamposter\'{\i}a posee la capacidad de disponer de diversos tipos de cargas no unicamente las laterales, vease la Figura \ref{fig:figacc}, esto repercute m\'as aun en el comportamiento tridimensional de la estructura.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[scale=0.73]{figmamp1.png}
+	\caption{Estructuras comunes con muros de mamposter\'{\i}a de relleno \cite{WHE2011}.}
+	\label{fig:figm1}
+\end{figure}
+
+La contribuci\'on en rigidez y resistencia debida a la presencia de los muros mamposter\'{\i}a en la estructura en ocasiones es despreciada por el dise\~nador al considerarlos como elementos de relleno en el proyecto, sin embargo, se presentan situaciones en las que durante el proceso constructivo no se siguen las recomendaciones adecuadas en la normativa (NTC--$2004$) y son ligados a la estructura \cite{WHE2011,KFM2007}. El problema en general radica en que se desarrolla un modelo estructural con un comportamiento distinto al real, lo cual puede repercutir sensiblemente en la estabilidad local y global de la estructura. 
+
+\newpage
+
+En la Figura \ref{fig:figm2} se presentan dos posibles soluciones al problema de la mamposter\'{\i}a de relleno cuando en el an\'alisis se considera unicamente a la mamposter\'{\i}a como carga muerta; la primera consiste en otorgar holguras entre los elementos permitiendo el desplazamiento libre de los marcos, la segunda posibilidad consiste en construir los muros de mamposter\'{\i}a del tipo reforzado interiormente.
+
+\begin{figure}
+	\centering
+		\includegraphics[scale=0.73]{figmmamp2.png}
+	\caption{Recomendaciones para solucionar los problemas de rigidez debido a la presencia de muros diafragma o de relleno \cite{NTC2004}.}
+	\label{fig:figm2}
+\end{figure}
+
+	\begin{table}
+	\centering
+		\caption{Ventajas y Desventajas de los Marcos Rellenos de Mamposter\'{\i}a \cite{MR2012}.}
+		\begin{tabular}{lcl}
+			\hline \hline Ventajas  &  & Desventajas \\ \hline \hline
+			Alta rigidez  &  & Posible irregularidad en la rigidez \\
+			&  & con la altura (piso suave) \\ \hline
+			Alta resistencia  &  & Irregularidad en la resistencia \\
+			&  &  con la altura (piso debil) \\ \hline
+			Bajos requerimientos  &  & Irregularidad de rigidez en \\
+			de ductilidad & & planta (efectos de torsi\'on) \\ \hline
+			Altura mayor de entrepiso  &  & Distribuci\'on impropia de fuerza \\ 
+			en ciertas condiciones & & entre las columnas del marco \\ \hline
+			Fractura d\'ulctil  &  & Distribuci\'on impropia de\\
+		  por cortante & & fuerzas en el plano \\ \hline
+			Dise\~no de marcos para  &  & Incremento en cargas de dise\~no \\
+			cargas laterales peque\~nas & & por periodos cortos de vibrar\\ \hline
+			Creaci\'on de sistemas acoplados &  & Incremento en las cargas de dise\~no \\ 
+			con fuerzas axiales en los marcos  &  & por factores de bajo comportamiento \\ 
+			en lugar de momentos & & del conjunto \\  \hline \hline
+		\end{tabular}
+	\label{tab:ventajas}
+\end{table}
+
+Se presentan de manera resumida diversas ventajas y desventajas de lo muros de mamposter\'{\i}a en la Tabla \ref{tab:ventajas}. A continuaci\'on se presenta una descripci\'on de los problemas m\'as importantes ocasionados por la presencia de muros de mamposter\'{\i}a.
+
+	\subsubsection{El Piso Suave en Planta Baja}
+	
+En caso de que la rigidez de entrepiso sea constante las cargas de inercia tienden a distribuirse de forma controlada en cada nivel; cabe mencionar que cuando se presenta un cambio s\'ubito en la distribuci\'on de los muros a lo alto de la estructura, la rigidez de entrepiso se ve reducida. Como consecuencia el piso en el cual se reduce la rigidez, debido a su mayor capacidad de deformaci\'on deber\'a ser capaz de disipar, o dirigir la energ\'{\i}a hister\'etica de los pisos superiores hacia el piso inferior inmediato generando as\'{\i} un sistema de aislamiento s\'{\i}smico el cual, sin embargo, perjudica la estabilidad de toda la estructura.
+
+Cuando la planta baja presenta el cambio s\'ubito de rigidez, a esta configuraci\'on irregular de muros se le conoce como \emph{piso suave en planta baja}; es el problema de estudio primario en esta investigaci\'on, a pesar de ser uno de los sistemas estructurales menos adecuados para la disipaci\'on de cargas s\'{\i}smicas es de gran uso en la actualidad. 
+
+\begin{figure}
+	\centering
+		\includegraphics[scale=0.75]{figps1.png}
+	\caption{Disposici\'on de estacionamientos que induce el piso suave en planta baja.}
+	\label{fig:figm3}
+\end{figure}
+
+	Como puede observarse en la Figura \ref{fig:figm4} la concentraci\'on de esfuerzos cortantes produce fallas en las columnas provocando que el piso inferior colapse mientras que los pisos superiores no reciben da\~no considerable.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=110mm]{figps2.png}
+		\includegraphics[width=110mm]{figps3.png}
+	\caption{Estructuras con falla global debido al piso suave en planta baja \cite{WHE2011,WD2012}.}
+	\label{fig:figm4}
+\end{figure}
+
+\newpage
+
+\subsubsection{La Columna Corta}
+		
+Otro fen\'omeno asociado a la distribuci\'on de los muros dentro del sistema de marcos es conocido como \emph{columna corta}, donde debido a la distribuci\'on de la mamposter\'{\i}a existen huecos en la parte superior de las cruj\'{\i}as y se generan concentraciones de esfuerzos cortantes dentro de las columnas en un mismo nivel, estas concentraciones generalmente  no son consideradas en el an\'alisis y dise\~no estructural. 
+
+\begin{figure}
+	\centering
+		\includegraphics[scale=0.5]{figcc1.png}
+				\includegraphics[scale=0.87]{figcc2.png}
+	\caption{Falla por cortante debido al fen\'omeno de la columna corta \cite{WHE2011}.}
+	\label{fig:figm5}
+\end{figure}
+
+Este problema de irregularidad es bastante com\'un en la construcci\'on debido a las necesidades arquitect\'onicas tan diversas, uno de las principales causas es la disposici\'on de aberturas de ventilaci\'on e iluminaci\'on en las partes superiores de ciertos muros. Dicho fen\'omeno no se estudia en la presente investigaci\'on.
+
+\newpage
+
+\section{Metodolog\'{\i}a de la Investigaci\'on}
+
+	\subsection{Justificaci\'on de la Investigacion}
+	
+La problem\'atica actual sobre la demanda creciente de espacio en las grandes ciudades obliga al uso lo m\'as eficiente posible del \'area urbana recurriendo a la construcci\'on de edificaciones de varios niveles, por otro lado respecto a los costos de construcci\'on se vuelve indispensable la aplicaci\'on de t\'ecnicas lo m\'as econ\'omicas y r\'apidas posibles; es aqu\'{\i} cuando el uso de la mamposter\'{\i}a toma importancia por su facilidad de construcci\'on y bajo costo. 
+	
+No basta con satisfacer los requerimientos iniciales en una construcci\'on, puesto que con el tiempo las incertidumbres de las solicitaciones s\'{\i}smicas y de las propiedades de los materiales determinan el comportamiento real del conjunto. Por lo anterior se acepta la naturaleza probabilista del comportamiento de las estructuras y la necesidad de recurrir a un an\'alisis que considere la aleatoriedad de las cargas y el sistema para poder determinar los niveles de probabilidad de falla.
+
+\subsection{Objetivos de la Investigaci\'on}
+
+\subsubsection{Objetivo General}
+
+Generar herramientas y establecer una metodolog\'{\i}a para obtener \emph{funciones de confiabilidad}de acuerdo a la propuesta mexicana de confiabilidad s\'{\i}smica \cite{DE2006}, pero aplicada a estructuras modeladas tridimensionalmente; particularmente de sistemas ECML partiendo de la suposici\'on de la existencia de muros que son considerados de relleno en el an\'alisis y dise\~no estructural (sistema tipo ECMD) pero son finalmente ligados a la estructura durante la construcci\'on.
+
+\subsubsection{Objetivos Particulares}
+
+\begin{itemize}
+\item Determinar los sistemas estructurales de estudio y sus propiedades de dise\~no m\'as importantes.
+	\item Determinar el modelo \emph{ad hoc} para la simulaci\'on no lineal de la mamposter\'{\i}a.
+	\item Determinar las principales propiedades por ser simuladas conforme al modelo utilizado.
+	\item Determinar las cargas s\'{\i}smicas de estudio.
+	\item Obtener las funciones de confiabilidad s\'{\i}smica.
+	\item Obtener informaci\'on \'util para obtener criterios de dise\~no.
+\end{itemize}
+
+	\subsection{Limitaciones y Delimitaciones}
+
+A continuaci\'on se presentan las limitaciones y delimitaciones sobre las cuales la investigaci\'on se lleva a cabo.
+
+	\subsubsection{Delimitaciones}
+		
+	\begin{itemize}
+	
+		\item Se sigue la filosof\'{\i}a de dise\~no s\'{\i}smico por desempe\~no, donde el fundamento principal es que las estructuras deben ser capaces de resistir las solicitaciones s\'{\i}smicas asociadas a un cierto periodo de retorno, con costos y da\~nos aceptables en la estructura \cite{SEAOC1995}.
+		\item Los muros son de \emph{mamposter\'{\i}a confinada} y los marcos son de \emph{concreto reforzado}. La mamposter\'{\i}a considerada es de tabique rojo recocido semejante a las probetas de estudio tipo \emph{M$2$} de Aguilar y Alcocer \cite{AA2001}. Se cumplen las diversas normativas y caracter\'{\i}sticas estructurales especificadas en los reglamentos de construcci\'on nacionales \cite{CFE1993,NTC2004,NTCII2004}. No se estudian configuraciones que inducen el fen\'omeno de la columna corta.
+		\item Para tomar en cuenta las incertidumbres de cargas y de elementos constitutivos en las estructuras se utiliza la t\'ecnica de simulaci\'on de Montecarlo, lo anterior usando los modelos probabilistas calibrados en el SIB \cite{SIB2013}. Se realizan $\simulaciones$ simulaciones por cada sistema estructural estudiado y una simulaci\'on por grupo de propiedades medias.
+	  \item Para la consideraci\'on del comportamiento hister\'etico de los elementos estructurales se utilizan los modelos incluidos en Opensees \cite{OP2006}: el modelo de Concrete $02$ para elementos de concreto (confinado y no confinado), el modelo Steel $02$ para el acero de refuerzo y el de Kadysiewski y Mosalam para la mamposter\'{\i}a \cite{MOSS2009}.
+		\item Para la estimaci\'on de la rigidez inicial del sistema y su capacidad se utiliza un an\'alisis incremental de cargas (pushover) con perfil de cargas triangulares inversas de igual magnitud a las cargas de an\'alisis din\'amico modal el\'astico de acuerdo a diversos reglamentos nacionales \cite{CFE1993,NTC2004,NTCII2004}.
+		\item Para considerar el riesgo s\'{\i}smico se realiza un an\'alisis con las se\~nales de sismos reales registrados en terreno firme en la zona de Acapulco Guerrero, M\'exico. Los sismos son escalados en amplitud para obtener diversos estados l\'{\i}mite e informaci\'on del comportamiento de la estructura; se consideran las tres componentes de los sismos.
+		
+		\item Para la estimaci\'on del \'{\i}ndice de da\~no se utiliza el \'{\i}ndice de reducci\'on de rigidez secante, IRRS \cite{DE2006}; para la generaci\'on de las funciones de confiabilidad se utiliza el \'{\i}ndice $\beta$ sobre un margen de seguridad global \cite{C1969}.
+		\item Interacci\'on Suelo--Estructura. Se considera la estructura desplantada en base r\'{\i}gida (\emph{i.e.} no hay interacci\'on suelo--estructura).
+ \end{itemize}
+
+	\subsubsection{Limitaciones}
+	
+	\begin{itemize}
+		\item Los sismos de estudio. Los sismos a los que se someten las estructuras corresponde a una porci\'on considerada basada en su nivel de intensidad a partir de los registros disponibles a la fecha.
+		\item Modelado de la Mamposter\'{\i}a. En el modelado de los muros de mamposter\'{\i}a no se considera aberturas y su comportamiento se limita a las capacidades del modelo (vease el \emph{Cap\'{\i}tulo \textbf{4}}). Igualmente para los modelos considerados del concreto confinado, no confinado y el acero de refuerzo.
+		\item Simulaci\'on de Incertidumbres. Actualmente las incertidumbres simuladas por secci\'on no tienen correlaci\'on directa respecto al eje principal longitudinal en funci\'on de la distancia entre puntos de control.
+		\item Relaci\'on de las Dimensiones en Planta de los Muros de Mamposter\'{\i}a. Las dimensiones de los muros se limitan a un valor cercano a la unidad; de esta manera el tipos de falla m\'as probable es la falla por corte diagonal.
+				\item Simulaciones Consideradas. Debido a la demanda computacional y horas CPU fuera del alcance de la presente investigaci\'on s\'olo se considera un espacio muestral de cinco sistemas tipo ECML y cinco sistemas tipo ECMD.
+	\end{itemize}
+
+\subsection{Hip\'otesis Principal}
+
+La disposici\'on de los muros de mamposter\'{\i}a con piso suave en planta baja, genera problemas en la distribuci\'on de rigidez provocando concentraciones de esfuerzos cortantes ante la exposici\'on de fen\'omenos s\'{\i}smicos considerables afectando el grado de la confiabilidad en toda la estructura de manera que es posible establecer criterios de confiabilidad en t\'erminos de los desplazamientos del \'ultimo entrepiso.
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Organizaci\'on del Trabajo}
+
+En el \emph{Cap\'{\i}tulo \textbf{2}} se presenta informaci\'on hist\'orica de la mamposter\'{\i}a y se presentan conceptos fundamentales relacionados a la presente investigaci\'on.
+
+En el \emph{Cap\'{\i}tulo \textbf{3}} se presentan investigaciones importantes del tipo te\'orico y experimental en el campo de estudio de los muros de mamposter\'{\i}a as\'{\i} como aquellas que sirven de \emph{estado del arte} para la investigaci\'on. 
+
+En el \emph{Cap\'{\i}tulo \textbf{4}} se presentan las bases te\'oricas necesarias para llevar a cabo el proceso de confiabilidad; en primer lugar se definen las caracter\'{\i}sticas y problem\'aticas del modelado de los muros de mamposter\'{\i}a y posteriormente la secuencia de c\'alculos para obtener las funciones de confiabilidad con la metodolog\'{\i}a propuesta.
+
+En el \emph{Cap\'{\i}tulo \textbf{5}}} se exponen los procesos realizados durante este estudio, igualmente se expone un marco te\'orico para caracterizar la confiabilidad en sistema con mayor disposici\'on a los fen\'omenos de torsi\'on.
+
+En el \emph{Cap\'{\i}tulo \textbf{6}}} se exponen resultados importantes de las simulaciones y los an\'alisis no lineales mientras que en el \emph{cap\'{\i}tulo \textbf{7}} se exponen las conclusiones y recomendaciones principales de la investigaci\'on, igualmente se propone un grupo de investigaciones para trabajo futuro.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
