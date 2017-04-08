@@ -1,0 +1,2052 @@
+%%%%%%%%%%%%% CASOS DE APLICACIÓN %%%%%%%%%%%%%%%%%
+
+\chapter{Casos de Aplicaci\'on }
+
+\begin{flushleft}
+\begin{verse}
+	\emph{\quotes{S\'{\i}rvete de lo aparente como indicio de lo inaparente}.}
+\bigskip\newline
+	 \qauthor{Sol\'on.}
+\end{verse}
+\end{flushleft}
+
+\section{Consideraciones Principales}
+			
+El problema del piso suave se estudia con base en la metodolog\'{\i}a presentada de an\'alisis de confiabilidad en el \emph{Cap\'{\i}tulo \textbf{4}} que considera fen\'omenos mec\'anicos no lineales en el espacio mediante plasticidad distribuida en elementos tipo barra tridimensionales. En el proceso de an\'alisis se consideran incertidumbres en cargas, materiales y elementos estructurales, as\'{\i} como el riesgo mediante se\~nales s\'{\i}smicas reales.
+
+En esta investigaci\'on se desarrolla el an\'alisis de confiabilidad dejando la optimaci\'on como trabajo futuro. Los casos de estudio cuentan con irregularidades estructurales usuales en la pr\'actica constructiva del pa\'{\i}s, de manera que con la informaci\'on resultante sea posible cubrir condiciones generales. 
+		
+En las normas t\'ecnicas complementarias por sismo se especifican los requerimientos para una estructura regular \cite{NTC2004}, se presentan un total de $11$ condiciones que afectan dicha regularidad, para fines de esta investigaci\'on se consideran casos regulares dentro de la normativa modificando unicamente la distribuci\'on de rigidez en planta baja.
+
+\section{Casos de Estudio}
+
+En esta secci\'on se presentan las caracter\'{\i}sticas de los casos estudiados. Las principales variables de estudio son las siguientes:
+
+\begin{itemize}
+	\item [a)] Tipo de Irregularidad: 
+	\begin{itemize}
+		\item [i.] Configuraci\'on de Piso Suave tipo ECMD.
+				\item [ii.] Configuraci\'on de 	Piso Suave tipo ECML.
+	\end{itemize}
+	\item [b)] Factor de comportamiento s\'{\i}smico: 
+	\begin{itemize}
+		\item [i.] Valor de Q igual a 2.
+	\end{itemize}
+	\item [c)] Relaci\'on largo-ancho de la base: 
+	\begin{itemize}
+		\item [i.] Relaci\'on $\frac{a}{b}=1$.
+	\end{itemize}
+	\item [d)] Tipo de muro: 
+	\begin{itemize}
+		\item [i.] Sin refuerzo horizontal, de piezas macizas de tab\'{\i}que rojo recocido (el cual se denomina M2 \cite{AA2001}).
+	\end{itemize}
+\end{itemize}
+
+En el esquema de la Figura \ref{fig:fig6} es posible visualizar las combinaciones de variables de estudio para los casos seleccionados.
+
+\begin{figure}[htbp]
+	\centering
+			\begin{array}{cccc}
+			\\
+       & \left\{ \begin{array}{l} \\ Configuraci\'on \ de \ Piso \ Suave \ ECMD \left\{Relaci\'on \ \frac{a}{b}=1\rightarrow M2 \rightarrow Q=2 \\\\\\
+						Configuraci\'on \ de \ Piso \ Suave \ ECMD \left\{Relaci\'on \ \frac{a}{b}=1\rightarrow M2 \rightarrow Q=2 \\\\
+			\end{array}
+		\end{array}
+	\caption{Arreglo de casos de estudio.}
+	\label{fig:fig6}
+\end{figure}
+
+\newpage
+
+A continuaci\'on en la Figura \ref{fig:casosa1}, \ref{fig:casosa2} y \ref{fig:casosa3} se presenta el caso investigado de distribuci\'on tipo ECMD mientras que en la Figura \ref{fig:casosb1}, \ref{fig:casosb2} y \ref{fig:casosb3} se presenta la configuraci\'on tipo ECML en la condici\'on especifica de piso suave en planta baja. 
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{b.pdf}
+\caption{Configuraci\'on de tipo piso ECMD.}
+\label{fig:casosa1}
+\end{figure}
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{axx.pdf}
+\caption{Vistas de la configuraci\'on de tipo ECMD.}
+\label{fig:casosa2}
+\end{figure}
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{ayy.pdf}
+\caption{Vistas de la configuraci\'on de tipo ECMD.}
+\label{fig:casosa3}
+\end{figure}
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{b.pdf}
+\caption{Configuraci\'on de tipo ECML con piso suave en planta baja.}
+\label{fig:casosb1}
+\end{figure}
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{bxx.pdf}
+\caption{Vistas de la configuraci\'on de tipo ECML con piso suave en planta baja.}
+\label{fig:casosb2}
+\end{figure}
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{byy.pdf}
+\caption{Vistas de la configuraci\'on de tipo ECML con piso suave en planta baja.}
+\label{fig:casosb3}
+\end{figure}
+
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=150mm]{render1.pdf}
+\caption{Vista tridimensional de la configuraci\'on de tipo ECML.}
+\label{fig:casosb3r}
+\end{figure}
+
+Con los casos seleccionados se determinan las dimensiones en planta que resultan adecuadas para llevar a cabo la investigaci\'on, dichas dimensiones se presentan en la Tabla \ref{tablacasos}.
+
+\begin{table}[htbp]
+	\centering
+		\caption{Dimensiones en planta consideradas en la investigaci\'on.}
+		\begin{tabular}{ccc} \hline \hline
+		$Dimensi\'on$ & &\multicolumn{1}{c}{$Magnitud$}\\& & $(cm)$\\ \hline\hline
+		a & &450\\
+		b & &450\\
+		h1 & &400\\
+		h & &320\\ \hline \hline
+		\end{tabular}
+	\label{tablacasos}
+\end{table}
+
+\newpage
+
+\section{Procedimiento de la Investigaci\'on}
+
+A continuaci\'on se presentan los principales pasos de la propuesta para el c\'alculo de la confiabilidad estructural de sistemas tridimensionales; se parte de un dise\~no convencional de la estructura ante solicitaciones s\'{\i}smicas de la regi\'on estudiada, posteriormente se consideran las posibles incertidumbres en un esquema de Montecarlo y se determina el margen de seguridad y los niveles de probabilidad de falla.
+
+\subsection{Dise\~no S\'{\i}smico Convencional}
+
+En esta investigaci\'on se dise\~nan los edificios siguiendo las normativas mediante procesos de c\'alculos comunes en la ingenier\'{\i}a \cite{CFE1993,NTC2004,NTCII2004}; en el Apendice C se presentan las propiedades principales de dise\~no; valores caracter\'{\i}sticos y cargas. En el esquema de la Figura \ref{fig:esquema1} es posible observar el desarrollo del dise\~no como un proceso c\'{\i}clico que busca optimizar los porcentajes de refuerzo con fines pr\'acticos y econ\'omicos; para esto se tomaron en cuenta las siguientes propiedades de dise\~no:
+
+\begin{itemize}
+	\item Tipo de an\'alisis: Din\'amico Modal Espectral.
+	\item C\'alculo de respuestas: Elementos mec\'anicos.
+	\item Modos a calcular: $12$.
+	\item Niveles sin masa: $0$.
+	\item Grupo: B.
+	\item Zona: D.
+	\item Suelo: I.
+	\item Q: $2$.
+	\item kQ: $1$ (regular).
+	\item ex.accidental: $0.1$ B.
+	\item c: $0.5$.
+	\item r: $0.5$.
+	\item Rango del $\%$ de acero de refuerzo en vigas: $0.31\%$ a $1.87\%$.
+	\item Rango del $\%$ de acero de refuerzo en columnas: $1.00\%$ a $2.40\%$.
+	\item Desplazamiento m\'aximo de entrepiso: $0.0060$.
+	\item Periodo de la primer forma de vibrar del edificio: $0.5790$ s.
+\end{itemize}
+
+\begin{figure*}[htbp]
+
+\begin{pgfpicture}[width=170mm]{0bp}{0bp}{419.041939bp}{411.500825bp}
+\begin{pgfscope}
+\pgfsetlinewidth{1.9842550435865507bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{302.504441bp}{394.758698bp}}
+\pgfpathcurveto{\pgfpoint{302.504441bp}{386.060213bp}}{\pgfpoint{261.202908bp}{379.008698bp}}{\pgfpoint{210.2549bp}{379.008698bp}}
+\pgfpathcurveto{\pgfpoint{159.306893bp}{379.008698bp}}{\pgfpoint{118.00536bp}{386.060213bp}}{\pgfpoint{118.00536bp}{394.758698bp}}
+\pgfpathcurveto{\pgfpoint{118.00536bp}{403.457183bp}}{\pgfpoint{159.306893bp}{410.508698bp}}{\pgfpoint{210.2549bp}{410.508698bp}}
+\pgfpathcurveto{\pgfpoint{261.202908bp}{410.508698bp}}{\pgfpoint{302.504441bp}{403.457183bp}}{\pgfpoint{302.504441bp}{394.758698bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear67}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear67}{0.0}\pgfseteorule\color[gray]{0.25}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.9317}{-0.0}{0.0}{0.9317}{\pgfpoint{211.895568bp}{396.01815bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}INICIO DE MODELACI\'ON}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{0.708663bp}{362.798659bp}}
+\pgfpathlineto{\pgfpoint{0.708663bp}{344.423659bp}}
+\pgfpathlineto{\pgfpoint{80.43497bp}{344.423659bp}}
+\pgfpathlineto{\pgfpoint{80.43497bp}{362.798659bp}}
+\pgfpathlineto{\pgfpoint{0.708663bp}{362.798659bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear68}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear68}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{40.283548bp}{353.52395bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}MODIFICACIONES}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{96.809803bp}{335.963517bp}}
+\pgfpathlineto{\pgfpoint{96.809803bp}{294.241358bp}}
+\pgfpathlineto{\pgfpoint{417.968351bp}{294.241358bp}}
+\pgfpathlineto{\pgfpoint{417.968351bp}{335.963517bp}}
+\pgfpathlineto{\pgfpoint{96.809803bp}{335.963517bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear69}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear69}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{257.624369bp}{329.055786bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}PROYECTO ARQUITECT\'ONICO}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{257.45347bp}{316.707349bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Tipo de Edificaci\'on: Oficina}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{256.963822bp}{305.580786bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}N\'umero de Niveles: Cinco}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.9842550435865507bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{146.976929bp}{37.749703bp}}
+\pgfpathlineto{\pgfpoint{146.976929bp}{0.992117bp}}
+\pgfpathlineto{\pgfpoint{370.34158bp}{0.992117bp}}
+\pgfpathlineto{\pgfpoint{370.34158bp}{37.749703bp}}
+\pgfpathlineto{\pgfpoint{146.976929bp}{37.749703bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear70}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear70}{0.0}\pgfseteorule\color[gray]{0.25}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.9317}{-0.0}{0.0}{0.9317}{\pgfpoint{258.182147bp}{26.963339bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}PROCESO DE SIMULACI\'ON}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{97.300329bp}{283.954206bp}}
+\pgfpathlineto{\pgfpoint{97.300329bp}{237.148771bp}}
+\pgfpathlineto{\pgfpoint{417.337133bp}{237.148771bp}}
+\pgfpathlineto{\pgfpoint{417.337133bp}{283.954206bp}}
+\pgfpathlineto{\pgfpoint{97.300329bp}{283.954206bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear71}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear71}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{257.106009bp}{275.076685bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}ETAPA DE ESTRUCTURACI\'ON}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{257.927689bp}{261.074146bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Por dimensionamiento de los elementos estructurales }
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{257.902103bp}{249.707349bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Propiedades nominales de los materiales}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{257.642395bp}{79.363371bp}}
+\pgfpathlineto{\pgfpoint{257.642395bp}{45.013371bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{258.102555bp}{42.374298bp}
+\pgfpathqlineto{254.769211bp}{50.208954bp}
+\pgfpathqlineto{254.309067bp}{50.013367bp}
+\pgfpathqlineto{254.009354bp}{49.613129bp}
+\pgfpathqlineto{257.342698bp}{47.113129bp}
+\pgfpathqlineto{257.642411bp}{46.888733bp}
+\pgfpathqlineto{257.942093bp}{47.113129bp}
+\pgfpathqlineto{261.275437bp}{49.613129bp}
+\pgfpathqlineto{260.975724bp}{50.013367bp}
+\pgfpathqlineto{260.51558bp}{50.208954bp}
+\pgfpathqlineto{257.182236bp}{42.374298bp}
+\pgfpathqlineto{257.642411bp}{42.178711bp}
+\pgfpathqlineto{258.102555bp}{42.374298bp}
+\pgfclosepath
+\pgfpathqmoveto{258.102555bp}{41.983124bp}
+\pgfpathqlineto{261.435898bp}{49.81778bp}
+\pgfpathqlineto{262.166672bp}{51.529785bp}
+\pgfpathqlineto{260.676041bp}{50.413605bp}
+\pgfpathqlineto{257.342698bp}{47.913605bp}
+\pgfpathqlineto{257.642411bp}{47.513367bp}
+\pgfpathqlineto{257.942093bp}{47.913605bp}
+\pgfpathqlineto{254.60875bp}{50.413605bp}
+\pgfpathqlineto{253.120469bp}{51.531616bp}
+\pgfpathqlineto{253.848893bp}{49.81778bp}
+\pgfpathqlineto{257.182236bp}{41.983124bp}
+\pgfpathqlineto{257.642411bp}{40.900513bp}
+\pgfpathqlineto{258.102555bp}{41.983124bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{40.393324bp}{339.903302bp}}
+\pgfpathlineto{\pgfpoint{40.319252bp}{19.864149bp}}
+\pgfpathlineto{\pgfpoint{145.247619bp}{19.864149bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{39.933777bp}{342.542473bp}
+\pgfpathqlineto{43.265294bp}{334.707054bp}
+\pgfpathqlineto{43.725499bp}{334.902534bp}
+\pgfpathqlineto{44.025288bp}{335.302689bp}
+\pgfpathqlineto{40.692532bp}{337.803459bp}
+\pgfpathqlineto{40.392891bp}{338.027946bp}
+\pgfpathqlineto{40.093144bp}{337.803604bp}
+\pgfpathqlineto{36.759232bp}{335.304375bp}
+\pgfpathqlineto{37.058835bp}{334.904076bp}
+\pgfpathqlineto{37.518948bp}{334.708382bp}
+\pgfpathqlineto{40.854092bp}{342.542259bp}
+\pgfpathqlineto{40.393979bp}{342.737953bp}
+\pgfpathqlineto{39.933777bp}{342.542473bp}
+\pgfclosepath
+\pgfpathqmoveto{39.933865bp}{342.933647bp}
+\pgfpathqlineto{36.598721bp}{335.09977bp}
+\pgfpathqlineto{35.867554bp}{333.387932bp}
+\pgfpathqlineto{37.358437bp}{334.503777bp}
+\pgfpathqlineto{40.692349bp}{337.003006bp}
+\pgfpathqlineto{40.392746bp}{337.403305bp}
+\pgfpathqlineto{40.092957bp}{337.003143bp}
+\pgfpathqlineto{43.425713bp}{334.502373bp}
+\pgfpathqlineto{44.91375bp}{333.38401bp}
+\pgfpathqlineto{44.185704bp}{335.098007bp}
+\pgfpathqlineto{40.854184bp}{342.933434bp}
+\pgfpathqlineto{40.394276bp}{344.016167bp}
+\pgfpathqlineto{39.933865bp}{342.933647bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{82.159177bp}{354.347444bp}}
+\pgfpathlineto{\pgfpoint{199.602459bp}{354.347444bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{202.241517bp}{354.807602bp}
+\pgfpathqlineto{194.406876bp}{351.47427bp}
+\pgfpathqlineto{194.602463bp}{351.014111bp}
+\pgfpathqlineto{195.002686bp}{350.714417bp}
+\pgfpathqlineto{197.502686bp}{354.047749bp}
+\pgfpathqlineto{197.727097bp}{354.347443bp}
+\pgfpathqlineto{197.502686bp}{354.647141bp}
+\pgfpathqlineto{195.002686bp}{357.980473bp}
+\pgfpathqlineto{194.602463bp}{357.680779bp}
+\pgfpathqlineto{194.406876bp}{357.220619bp}
+\pgfpathqlineto{202.241517bp}{353.887283bp}
+\pgfpathqlineto{202.437104bp}{354.347443bp}
+\pgfpathqlineto{202.241517bp}{354.807602bp}
+\pgfclosepath
+\pgfpathqmoveto{202.632691bp}{354.807602bp}
+\pgfpathqlineto{194.79805bp}{358.140938bp}
+\pgfpathqlineto{193.086045bp}{358.871708bp}
+\pgfpathqlineto{194.202225bp}{357.381084bp}
+\pgfpathqlineto{196.702225bp}{354.047749bp}
+\pgfpathqlineto{197.102463bp}{354.347443bp}
+\pgfpathqlineto{196.702225bp}{354.647141bp}
+\pgfpathqlineto{194.202225bp}{351.313805bp}
+\pgfpathqlineto{193.084214bp}{349.825508bp}
+\pgfpathqlineto{194.79805bp}{350.553951bp}
+\pgfpathqlineto{202.632691bp}{353.887283bp}
+\pgfpathqlineto{203.715317bp}{354.347443bp}
+\pgfpathqlineto{202.632691bp}{354.807602bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{211.426068bp}{377.106752bp}}
+\pgfpathlineto{\pgfpoint{211.426068bp}{340.92064bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{211.886231bp}{338.281578bp}
+\pgfpathqlineto{208.552887bp}{346.116226bp}
+\pgfpathqlineto{208.092728bp}{345.920639bp}
+\pgfpathqlineto{207.793046bp}{345.520409bp}
+\pgfpathqlineto{211.126374bp}{343.020409bp}
+\pgfpathqlineto{211.426072bp}{342.795998bp}
+\pgfpathqlineto{211.72577bp}{343.020409bp}
+\pgfpathqlineto{215.059098bp}{345.520409bp}
+\pgfpathqlineto{214.7594bp}{345.920639bp}
+\pgfpathqlineto{214.299241bp}{346.116226bp}
+\pgfpathqlineto{210.965912bp}{338.281578bp}
+\pgfpathqlineto{211.426072bp}{338.085991bp}
+\pgfpathqlineto{211.886231bp}{338.281578bp}
+\pgfclosepath
+\pgfpathqmoveto{211.886231bp}{337.890404bp}
+\pgfpathqlineto{215.219559bp}{345.725052bp}
+\pgfpathqlineto{215.950333bp}{347.437057bp}
+\pgfpathqlineto{214.459702bp}{346.320869bp}
+\pgfpathqlineto{211.126374bp}{343.820869bp}
+\pgfpathqlineto{211.426072bp}{343.420639bp}
+\pgfpathqlineto{211.72577bp}{343.820869bp}
+\pgfpathqlineto{208.392426bp}{346.320869bp}
+\pgfpathqlineto{206.90413bp}{347.438889bp}
+\pgfpathqlineto{207.632569bp}{345.725052bp}
+\pgfpathqlineto{210.965912bp}{337.890404bp}
+\pgfpathqlineto{211.426072bp}{336.807777bp}
+\pgfpathqlineto{211.886231bp}{337.890404bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{306.222375bp}{353.751688bp}}
+\pgfpathlineto{\pgfpoint{219.036263bp}{353.751688bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{216.397202bp}{353.291527bp}
+\pgfpathqlineto{224.231843bp}{356.624863bp}
+\pgfpathqlineto{224.036271bp}{357.085022bp}
+\pgfpathqlineto{223.636033bp}{357.384716bp}
+\pgfpathqlineto{221.136033bp}{354.051384bp}
+\pgfpathqlineto{220.911622bp}{353.751686bp}
+\pgfpathqlineto{221.136033bp}{353.451992bp}
+\pgfpathqlineto{223.636033bp}{350.11866bp}
+\pgfpathqlineto{224.036271bp}{350.418354bp}
+\pgfpathqlineto{224.231843bp}{350.878513bp}
+\pgfpathqlineto{216.397202bp}{354.211845bp}
+\pgfpathqlineto{216.201615bp}{353.751686bp}
+\pgfpathqlineto{216.397202bp}{353.291527bp}
+\pgfclosepath
+\pgfpathqmoveto{216.006028bp}{353.291527bp}
+\pgfpathqlineto{223.840683bp}{349.958195bp}
+\pgfpathqlineto{225.552689bp}{349.227425bp}
+\pgfpathqlineto{224.436493bp}{350.718048bp}
+\pgfpathqlineto{221.936493bp}{354.051384bp}
+\pgfpathqlineto{221.536271bp}{353.751686bp}
+\pgfpathqlineto{221.936493bp}{353.451992bp}
+\pgfpathqlineto{224.436493bp}{356.785328bp}
+\pgfpathqlineto{225.554505bp}{358.273624bp}
+\pgfpathqlineto{223.840683bp}{357.545181bp}
+\pgfpathqlineto{216.006028bp}{354.211845bp}
+\pgfpathqlineto{214.923401bp}{353.751686bp}
+\pgfpathqlineto{216.006028bp}{353.291527bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{307.550821bp}{363.048659bp}}
+\pgfpathlineto{\pgfpoint{307.550821bp}{344.673659bp}}
+\pgfpathlineto{\pgfpoint{358.642232bp}{344.673659bp}}
+\pgfpathlineto{\pgfpoint{358.642232bp}{363.048659bp}}
+\pgfpathlineto{\pgfpoint{307.550821bp}{363.048659bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear72}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear72}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{333.478275bp}{353.77395bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}NTC--2004}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{97.051752bp}{225.403254bp}}
+\pgfpathlineto{\pgfpoint{97.051752bp}{157.382462bp}}
+\pgfpathlineto{\pgfpoint{417.834948bp}{157.382462bp}}
+\pgfpathlineto{\pgfpoint{417.834948bp}{225.403254bp}}
+\pgfpathlineto{\pgfpoint{97.051752bp}{225.403254bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear73}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear73}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{257.315384bp}{216.080786bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}CONFIGURACI\'ON DE CARGAS DE DISE\~NO}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{257.718705bp}{205.074146bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Cargas de tipo permanente }
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{256.477298bp}{192.949146bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Cargas de tipo variable}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{96.216654bp}{242.263324bp}}
+\pgfpathlineto{\pgfpoint{80.787933bp}{242.263324bp}}
+\pgfpathlineto{\pgfpoint{80.787933bp}{197.271672bp}}
+\pgfpathlineto{\pgfpoint{92.648782bp}{197.271672bp}}
+\color[rgb]{0.5,0.5,0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[rgb]{0.5,0.5,0.5}\pgfpathqmoveto{95.28785bp}{197.731827bp}
+\pgfpathqlineto{87.453194bp}{194.398499bp}
+\pgfpathqlineto{87.648781bp}{193.938339bp}
+\pgfpathqlineto{88.049012bp}{193.638641bp}
+\pgfpathqlineto{90.549012bp}{196.971985bp}
+\pgfpathqlineto{90.773423bp}{197.271667bp}
+\pgfpathqlineto{90.549012bp}{197.571365bp}
+\pgfpathqlineto{88.049012bp}{200.904694bp}
+\pgfpathqlineto{87.648781bp}{200.605011bp}
+\pgfpathqlineto{87.453194bp}{200.144852bp}
+\pgfpathqlineto{95.28785bp}{196.811508bp}
+\pgfpathqlineto{95.483429bp}{197.271667bp}
+\pgfpathqlineto{95.28785bp}{197.731827bp}
+\pgfclosepath
+\pgfpathqmoveto{95.679017bp}{197.731827bp}
+\pgfpathqlineto{87.844368bp}{201.06517bp}
+\pgfpathqlineto{86.132363bp}{201.795929bp}
+\pgfpathqlineto{87.248551bp}{200.305313bp}
+\pgfpathqlineto{89.748551bp}{196.971985bp}
+\pgfpathqlineto{90.148781bp}{197.271667bp}
+\pgfpathqlineto{89.748551bp}{197.571365bp}
+\pgfpathqlineto{87.248551bp}{194.238037bp}
+\pgfpathqlineto{86.130539bp}{192.749741bp}
+\pgfpathqlineto{87.844368bp}{193.47818bp}
+\pgfpathqlineto{95.679017bp}{196.811508bp}
+\pgfpathqlineto{96.761651bp}{197.271667bp}
+\pgfpathqlineto{95.679017bp}{197.731827bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{95.216654bp}{321.263324bp}}
+\pgfpathlineto{\pgfpoint{79.787933bp}{321.263324bp}}
+\pgfpathlineto{\pgfpoint{79.787933bp}{276.271672bp}}
+\pgfpathlineto{\pgfpoint{91.648782bp}{276.271672bp}}
+\color[rgb]{0.5,0.5,0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[rgb]{0.5,0.5,0.5}\pgfpathqmoveto{94.28785bp}{276.731827bp}
+\pgfpathqlineto{86.453194bp}{273.398499bp}
+\pgfpathqlineto{86.648781bp}{272.938339bp}
+\pgfpathqlineto{87.049012bp}{272.638641bp}
+\pgfpathqlineto{89.549012bp}{275.971985bp}
+\pgfpathqlineto{89.773423bp}{276.271667bp}
+\pgfpathqlineto{89.549012bp}{276.571365bp}
+\pgfpathqlineto{87.049012bp}{279.904694bp}
+\pgfpathqlineto{86.648781bp}{279.605011bp}
+\pgfpathqlineto{86.453194bp}{279.144852bp}
+\pgfpathqlineto{94.28785bp}{275.811508bp}
+\pgfpathqlineto{94.483429bp}{276.271667bp}
+\pgfpathqlineto{94.28785bp}{276.731827bp}
+\pgfclosepath
+\pgfpathqmoveto{94.679017bp}{276.731827bp}
+\pgfpathqlineto{86.844368bp}{280.06517bp}
+\pgfpathqlineto{85.132363bp}{280.795929bp}
+\pgfpathqlineto{86.248551bp}{279.305313bp}
+\pgfpathqlineto{88.748551bp}{275.971985bp}
+\pgfpathqlineto{89.148781bp}{276.271667bp}
+\pgfpathqlineto{88.748551bp}{276.571365bp}
+\pgfpathqlineto{86.248551bp}{273.238037bp}
+\pgfpathqlineto{85.130539bp}{271.749741bp}
+\pgfpathqlineto{86.844368bp}{272.47818bp}
+\pgfpathqlineto{94.679017bp}{275.811508bp}
+\pgfpathqlineto{95.761651bp}{276.271667bp}
+\pgfpathqlineto{94.679017bp}{276.731827bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{257.254252bp}{181.324146bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Cargas accidentales: sismo}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{258.147416bp}{169.199146bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Tipos de combinaci\'on de cargas}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{96.803554bp}{140.903254bp}}
+\pgfpathlineto{\pgfpoint{96.803554bp}{72.882462bp}}
+\pgfpathlineto{\pgfpoint{418.333298bp}{72.882462bp}}
+\pgfpathlineto{\pgfpoint{418.333298bp}{140.903254bp}}
+\pgfpathlineto{\pgfpoint{96.803554bp}{140.903254bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear74}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear74}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{258.107181bp}{131.576685bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}DIMENSIONAMIENTO Y REFUERZO DE ELEMENTOS ESTRUCTURALES}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{258.07222bp}{118.795825bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Dimensionamiento conforme un $\%$ de refuerzo adecuado}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{258.027884bp}{106.949146bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Determinaci\'on del \'area de refuerzo longitudinal}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{95.966654bp}{163.763324bp}}
+\pgfpathlineto{\pgfpoint{80.537933bp}{163.763324bp}}
+\pgfpathlineto{\pgfpoint{80.537933bp}{118.771672bp}}
+\pgfpathlineto{\pgfpoint{92.398782bp}{118.771672bp}}
+\color[rgb]{0.5,0.5,0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[rgb]{0.5,0.5,0.5}\pgfpathqmoveto{95.03785bp}{119.231842bp}
+\pgfpathqlineto{87.203194bp}{115.898499bp}
+\pgfpathqlineto{87.398781bp}{115.438324bp}
+\pgfpathqlineto{87.799012bp}{115.138641bp}
+\pgfpathqlineto{90.299012bp}{118.471985bp}
+\pgfpathqlineto{90.523423bp}{118.771667bp}
+\pgfpathqlineto{90.299012bp}{119.071381bp}
+\pgfpathqlineto{87.799012bp}{122.404694bp}
+\pgfpathqlineto{87.398781bp}{122.105011bp}
+\pgfpathqlineto{87.203194bp}{121.644836bp}
+\pgfpathqlineto{95.03785bp}{118.311523bp}
+\pgfpathqlineto{95.233429bp}{118.771667bp}
+\pgfpathqlineto{95.03785bp}{119.231842bp}
+\pgfclosepath
+\pgfpathqmoveto{95.429017bp}{119.231842bp}
+\pgfpathqlineto{87.594368bp}{122.565155bp}
+\pgfpathqlineto{85.882363bp}{123.295929bp}
+\pgfpathqlineto{86.998551bp}{121.805298bp}
+\pgfpathqlineto{89.498551bp}{118.471985bp}
+\pgfpathqlineto{89.898781bp}{118.771667bp}
+\pgfpathqlineto{89.498551bp}{119.071381bp}
+\pgfpathqlineto{86.998551bp}{115.738037bp}
+\pgfpathqlineto{85.880539bp}{114.249725bp}
+\pgfpathqlineto{87.594368bp}{114.97818bp}
+\pgfpathqlineto{95.429017bp}{118.311523bp}
+\pgfpathqlineto{96.511651bp}{118.771667bp}
+\pgfpathqlineto{95.429017bp}{119.231842bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{257.623588bp}{95.324146bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Determinaci\'on del \'area de refuerzo transversal y distancias}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{257.87222bp}{83.080786bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Determinaci\'on de las secciones de armado}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.9317}{-0.0}{0.0}{0.9317}{\pgfpoint{258.295173bp}{13.713339bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}DE PROPIEDADES}
+\end{pgfscope}
+\end{pgfpicture}
+
+	\caption{Esquema del proceso llevado a cabo para el dise\~no el\'astico lineal convencional.}
+	\label{fig:esquema1}
+\end{figure*}
+
+
+Las caracte\'{\i}sticas del proyecto arquitect\'onico planteado anteriormente pueden parecer simples en su distribuci\'on de muros de mamposter\'{\i}a, sin embargo, este tipo de modelos permiten determinar las principales caracter\'{\i}sticas del comportamiento de estructuras semejantes con distribuciones de mayor irregularidad en geometr\'{\i}a. En el \emph{Apendice \textbf{C}} se presentan los principales resultados de este dise\~no convencional.
+
+\subsection{Simulaci\'on de Propiedades}
+
+Proporcionando al programa de simulaci\'on de propiedades SIB \cite{SIB2013} con la informaci\'on resultante del an\'alisis el\'astico lineal se realizan internamente un conjunto de $\simulaciones$ simulaciones por cada una de las estructuras analizadas y se genera un archivo de propiedades medias. Lo ideal como parte de una investigaci\'on que toma en cuenta el comportamiento de cada una de las incertidumbres en t\'erminos estoc\'asticos es realizar un amplio n\'umero de simulaciones que permitan representar adecuadamente el universo posible de resultados, sin embargo, debido a la demanda de capacidad de c\'omputo no es posible la realizaci\'on de un mayor n\'umero de simulaciones con fines de obtener niveles de confiabilidad; en el esquema de la Figura \ref{fig:esquema2} se presenta el procedimiento de manera general mediante el cual es posible considerar las posibles incertidumbres en el sistema.
+
+\begin{figure*}[htbp]
+
+\begin{pgfpicture}[width=170mm]{0bp}{0bp}{437.563351bp}{408.87848bp}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{267.426483bp}{93.818992bp}}
+\pgfpathlineto{\pgfpoint{267.426483bp}{51.069243bp}}
+\pgfpathlineto{\pgfpoint{436.854712bp}{51.069243bp}}
+\pgfpathlineto{\pgfpoint{436.854712bp}{93.818992bp}}
+\pgfpathlineto{\pgfpoint{267.426483bp}{93.818992bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear66}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear66}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{0.708663bp}{362.702975bp}}
+\pgfpathlineto{\pgfpoint{0.708663bp}{332.968344bp}}
+\pgfpathlineto{\pgfpoint{166.135607bp}{332.968344bp}}
+\pgfpathlineto{\pgfpoint{166.135607bp}{362.702975bp}}
+\pgfpathlineto{\pgfpoint{0.708663bp}{362.702975bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear67}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear67}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.9842550435865507bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{427.199822bp}{392.136353bp}}
+\pgfpathcurveto{\pgfpoint{427.199822bp}{383.437868bp}}{\pgfpoint{377.585391bp}{376.386353bp}}{\pgfpoint{316.382908bp}{376.386353bp}}
+\pgfpathcurveto{\pgfpoint{255.180426bp}{376.386353bp}}{\pgfpoint{205.565995bp}{383.437868bp}}{\pgfpoint{205.565995bp}{392.136353bp}}
+\pgfpathcurveto{\pgfpoint{205.565995bp}{400.834838bp}}{\pgfpoint{255.180426bp}{407.886353bp}}{\pgfpoint{316.382908bp}{407.886353bp}}
+\pgfpathcurveto{\pgfpoint{377.585391bp}{407.886353bp}}{\pgfpoint{427.199822bp}{400.834838bp}}{\pgfpoint{427.199822bp}{392.136353bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear68}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear68}{0.0}\pgfseteorule\color[gray]{0.25}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.9317}{-0.0}{0.0}{0.9317}{\pgfpoint{317.427097bp}{391.865142bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}DISE\~NO S\'ISMICO CONVENCIONAL}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{82.693716bp}{354.769965bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}OBTENCI\'ON Y }
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{91.541279bp}{309.300291bp}}
+\pgfpathlineto{\pgfpoint{91.541279bp}{229.858862bp}}
+\pgfpathlineto{\pgfpoint{409.339314bp}{229.858862bp}}
+\pgfpathlineto{\pgfpoint{409.339314bp}{309.300291bp}}
+\pgfpathlineto{\pgfpoint{91.541279bp}{309.300291bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear69}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear69}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{250.603091bp}{299.57934bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}DETERMINACI\'ON DE INFORMACI\'ON POR SIMULAR}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{252.242739bp}{285.087543bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Dimensiones de las secciones}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{252.066567bp}{275.208441bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Coordenadas de la estructura tridimensional}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{251.066567bp}{249.701801bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Tipos de armados longitudinales y transversales}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.9842550435865507bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{144.721081bp}{22.343245bp}}
+\pgfpathlineto{\pgfpoint{144.721081bp}{0.992141bp}}
+\pgfpathlineto{\pgfpoint{368.085732bp}{0.992141bp}}
+\pgfpathlineto{\pgfpoint{368.085732bp}{22.343245bp}}
+\pgfpathlineto{\pgfpoint{144.721081bp}{22.343245bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear70}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear70}{0.0}\pgfseteorule\color[gray]{0.25}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{65.926483bp}{94.318992bp}}
+\pgfpathlineto{\pgfpoint{65.926483bp}{51.569243bp}}
+\pgfpathlineto{\pgfpoint{235.354712bp}{51.569243bp}}
+\pgfpathlineto{\pgfpoint{235.354712bp}{94.318992bp}}
+\pgfpathlineto{\pgfpoint{65.926483bp}{94.318992bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear71}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear71}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{154.219106bp}{86.20434bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}AN\'ALISIS DIN\'AMICO NO LINEAL}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{153.028091bp}{75.833441bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}C\'alculo de K_{sec}}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{151.395864bp}{63.076801bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.9317}{-0.0}{0.0}{0.9317}{\pgfpoint{257.258795bp}{12.340994bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}AN\'ALISIS DE CONFIABILIDAD}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{317.209281bp}{374.588715bp}}
+\pgfpathlineto{\pgfpoint{317.209281bp}{347.963715bp}}
+\pgfpathlineto{\pgfpoint{174.464903bp}{347.963715bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{171.825832bp}{347.503555bp}
+\pgfpathqlineto{179.660488bp}{350.836887bp}
+\pgfpathqlineto{179.464901bp}{351.297047bp}
+\pgfpathqlineto{179.064678bp}{351.596741bp}
+\pgfpathqlineto{176.564678bp}{348.263412bp}
+\pgfpathqlineto{176.340267bp}{347.963715bp}
+\pgfpathqlineto{176.564678bp}{347.664017bp}
+\pgfpathqlineto{179.064678bp}{344.330688bp}
+\pgfpathqlineto{179.464901bp}{344.630379bp}
+\pgfpathqlineto{179.660488bp}{345.090538bp}
+\pgfpathqlineto{171.825832bp}{348.423874bp}
+\pgfpathqlineto{171.630245bp}{347.963715bp}
+\pgfpathqlineto{171.825832bp}{347.503555bp}
+\pgfclosepath
+\pgfpathqmoveto{171.434673bp}{347.503555bp}
+\pgfpathqlineto{179.269314bp}{344.170219bp}
+\pgfpathqlineto{180.981319bp}{343.439453bp}
+\pgfpathqlineto{179.865139bp}{344.930077bp}
+\pgfpathqlineto{177.365139bp}{348.263412bp}
+\pgfpathqlineto{176.964901bp}{347.963715bp}
+\pgfpathqlineto{177.365139bp}{347.664017bp}
+\pgfpathqlineto{179.865139bp}{350.997353bp}
+\pgfpathqlineto{180.98315bp}{352.485649bp}
+\pgfpathqlineto{179.269314bp}{351.757206bp}
+\pgfpathqlineto{171.434673bp}{348.423874bp}
+\pgfpathqlineto{170.352032bp}{347.963715bp}
+\pgfpathqlineto{171.434673bp}{347.503555bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{316.791011bp}{347.950442bp}}
+\pgfpathlineto{\pgfpoint{355.657339bp}{347.950442bp}}
+\pgfpathlineto{\pgfpoint{355.657339bp}{312.900082bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{356.117489bp}{310.261017bp}
+\pgfpathqlineto{352.784176bp}{318.095665bp}
+\pgfpathqlineto{352.324001bp}{317.900085bp}
+\pgfpathqlineto{352.024319bp}{317.499855bp}
+\pgfpathqlineto{355.357632bp}{314.999855bp}
+\pgfpathqlineto{355.657345bp}{314.775436bp}
+\pgfpathqlineto{355.957027bp}{314.999855bp}
+\pgfpathqlineto{359.290371bp}{317.499855bp}
+\pgfpathqlineto{358.990658bp}{317.900085bp}
+\pgfpathqlineto{358.530514bp}{318.095665bp}
+\pgfpathqlineto{355.19717bp}{310.261017bp}
+\pgfpathqlineto{355.657345bp}{310.06543bp}
+\pgfpathqlineto{356.117489bp}{310.261017bp}
+\pgfclosepath
+\pgfpathqmoveto{356.117489bp}{309.86985bp}
+\pgfpathqlineto{359.450832bp}{317.704498bp}
+\pgfpathqlineto{360.181606bp}{319.416504bp}
+\pgfpathqlineto{358.690975bp}{318.300308bp}
+\pgfpathqlineto{355.357632bp}{315.800308bp}
+\pgfpathqlineto{355.657345bp}{315.400085bp}
+\pgfpathqlineto{355.957027bp}{315.800308bp}
+\pgfpathqlineto{352.623714bp}{318.300308bp}
+\pgfpathqlineto{351.135403bp}{319.418327bp}
+\pgfpathqlineto{351.863857bp}{317.704498bp}
+\pgfpathqlineto{355.19717bp}{309.86985bp}
+\pgfpathqlineto{355.657345bp}{308.787216bp}
+\pgfpathqlineto{356.117489bp}{309.86985bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{252.1277bp}{262.835004bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Tipos de recubrimiento}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{250.330239bp}{236.460004bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Determinaci\'on de propiedades de las secciones discretizadas}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{92.408572bp}{188.03612bp}}
+\pgfpathlineto{\pgfpoint{92.408572bp}{146.678529bp}}
+\pgfpathlineto{\pgfpoint{407.593596bp}{146.678529bp}}
+\pgfpathlineto{\pgfpoint{407.593596bp}{188.03612bp}}
+\pgfpathlineto{\pgfpoint{92.408572bp}{188.03612bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear72}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear72}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{252.114419bp}{180.57934bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}SIMULACI\'ON DE PROPIEDADES ESTRUCTURALES EN SIB}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{252.071841bp}{166.585004bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Se realiza el proceso de simulaci\'on de $\simulaciones$ edificios por cada tipo de estructura}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{252.234341bp}{155.210004bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Se obtiene un edificio con propiedades medias por cada tipo de estructura}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{251.752738bp}{145.463715bp}}
+\pgfpathlineto{\pgfpoint{251.752738bp}{126.338715bp}}
+\pgfpathlineto{\pgfpoint{152.812964bp}{126.338715bp}}
+\pgfpathlineto{\pgfpoint{152.812964bp}{99.338715bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{153.273129bp}{96.699646bp}
+\pgfpathqlineto{149.939785bp}{104.534302bp}
+\pgfpathqlineto{149.479626bp}{104.338715bp}
+\pgfpathqlineto{149.179943bp}{103.938477bp}
+\pgfpathqlineto{152.513271bp}{101.438477bp}
+\pgfpathqlineto{152.812969bp}{101.214081bp}
+\pgfpathqlineto{153.112652bp}{101.438477bp}
+\pgfpathqlineto{156.445995bp}{103.938477bp}
+\pgfpathqlineto{156.146297bp}{104.338715bp}
+\pgfpathqlineto{155.686138bp}{104.534302bp}
+\pgfpathqlineto{152.35281bp}{96.699646bp}
+\pgfpathqlineto{152.812969bp}{96.504059bp}
+\pgfpathqlineto{153.273129bp}{96.699646bp}
+\pgfclosepath
+\pgfpathqmoveto{153.273129bp}{96.308472bp}
+\pgfpathqlineto{156.606457bp}{104.143127bp}
+\pgfpathqlineto{157.337231bp}{105.855133bp}
+\pgfpathqlineto{155.8466bp}{104.738953bp}
+\pgfpathqlineto{152.513271bp}{102.238953bp}
+\pgfpathqlineto{152.812969bp}{101.838715bp}
+\pgfpathqlineto{153.112652bp}{102.238953bp}
+\pgfpathqlineto{149.779324bp}{104.738953bp}
+\pgfpathqlineto{148.291027bp}{105.856964bp}
+\pgfpathqlineto{149.019466bp}{104.143127bp}
+\pgfpathqlineto{152.35281bp}{96.308472bp}
+\pgfpathqlineto{152.812969bp}{95.225861bp}
+\pgfpathqlineto{153.273129bp}{96.308472bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{220.886788bp}{126.363433bp}}
+\pgfpathlineto{\pgfpoint{350.437859bp}{126.363433bp}}
+\pgfpathlineto{\pgfpoint{350.437859bp}{99.943265bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{350.898006bp}{97.304199bp}
+\pgfpathqlineto{347.564693bp}{105.138855bp}
+\pgfpathqlineto{347.104519bp}{104.943268bp}
+\pgfpathqlineto{346.804836bp}{104.54303bp}
+\pgfpathqlineto{350.13818bp}{102.04303bp}
+\pgfpathqlineto{350.437862bp}{101.818634bp}
+\pgfpathqlineto{350.737545bp}{102.04303bp}
+\pgfpathqlineto{354.070889bp}{104.54303bp}
+\pgfpathqlineto{353.771206bp}{104.943268bp}
+\pgfpathqlineto{353.311031bp}{105.138855bp}
+\pgfpathqlineto{349.977688bp}{97.304199bp}
+\pgfpathqlineto{350.437862bp}{97.108612bp}
+\pgfpathqlineto{350.898006bp}{97.304199bp}
+\pgfclosepath
+\pgfpathqmoveto{350.898006bp}{96.913025bp}
+\pgfpathqlineto{354.23135bp}{104.747681bp}
+\pgfpathqlineto{354.962124bp}{106.459686bp}
+\pgfpathqlineto{353.471493bp}{105.343506bp}
+\pgfpathqlineto{350.13818bp}{102.843506bp}
+\pgfpathqlineto{350.437862bp}{102.443268bp}
+\pgfpathqlineto{350.737545bp}{102.843506bp}
+\pgfpathqlineto{347.404232bp}{105.343506bp}
+\pgfpathqlineto{345.91592bp}{106.461517bp}
+\pgfpathqlineto{346.644375bp}{104.747681bp}
+\pgfpathqlineto{349.977688bp}{96.913025bp}
+\pgfpathqlineto{350.437862bp}{95.830414bp}
+\pgfpathqlineto{350.898006bp}{96.913025bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{353.694106bp}{84.95434bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}AN\'ALISIS EST\'ATICO NO LINEAL}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{354.77477bp}{72.447699bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}C\'alculo de K_{0}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{352.161684bp}{61.337543bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{151.136547bp}{50.747313bp}}
+\pgfpathlineto{\pgfpoint{151.136547bp}{29.74677bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{151.596706bp}{27.107697bp}
+\pgfpathqlineto{148.263378bp}{34.942352bp}
+\pgfpathqlineto{147.803219bp}{34.746765bp}
+\pgfpathqlineto{147.503521bp}{34.346527bp}
+\pgfpathqlineto{150.836849bp}{31.846527bp}
+\pgfpathqlineto{151.136547bp}{31.622131bp}
+\pgfpathqlineto{151.436245bp}{31.846527bp}
+\pgfpathqlineto{154.769573bp}{34.346527bp}
+\pgfpathqlineto{154.469875bp}{34.746765bp}
+\pgfpathqlineto{154.009716bp}{34.942352bp}
+\pgfpathqlineto{150.676388bp}{27.107697bp}
+\pgfpathqlineto{151.136547bp}{26.912109bp}
+\pgfpathqlineto{151.596706bp}{27.107697bp}
+\pgfclosepath
+\pgfpathqmoveto{151.596706bp}{26.716522bp}
+\pgfpathqlineto{154.930035bp}{34.551178bp}
+\pgfpathqlineto{155.660809bp}{36.263184bp}
+\pgfpathqlineto{154.170193bp}{35.147003bp}
+\pgfpathqlineto{150.836849bp}{32.647003bp}
+\pgfpathqlineto{151.136547bp}{32.246765bp}
+\pgfpathqlineto{151.436245bp}{32.647003bp}
+\pgfpathqlineto{148.102901bp}{35.147003bp}
+\pgfpathqlineto{146.614605bp}{36.265015bp}
+\pgfpathqlineto{147.34306bp}{34.551178bp}
+\pgfpathqlineto{150.676388bp}{26.716522bp}
+\pgfpathqlineto{151.136547bp}{25.633911bp}
+\pgfpathqlineto{151.596706bp}{26.716522bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{10.826242bp}{331.014376bp}}
+\pgfpathlineto{\pgfpoint{10.826242bp}{75.616195bp}}
+\pgfpathlineto{\pgfpoint{60.566876bp}{75.616195bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{63.205944bp}{76.076355bp}
+\pgfpathqlineto{55.371292bp}{72.743011bp}
+\pgfpathqlineto{55.566875bp}{72.282867bp}
+\pgfpathqlineto{55.967106bp}{71.983154bp}
+\pgfpathqlineto{58.467106bp}{75.316498bp}
+\pgfpathqlineto{58.691517bp}{75.61618bp}
+\pgfpathqlineto{58.467106bp}{75.915894bp}
+\pgfpathqlineto{55.967106bp}{79.249237bp}
+\pgfpathqlineto{55.566875bp}{78.949524bp}
+\pgfpathqlineto{55.371292bp}{78.48938bp}
+\pgfpathqlineto{63.205944bp}{75.156036bp}
+\pgfpathqlineto{63.401524bp}{75.61618bp}
+\pgfpathqlineto{63.205944bp}{76.076355bp}
+\pgfclosepath
+\pgfpathqmoveto{63.597111bp}{76.076355bp}
+\pgfpathqlineto{55.762463bp}{79.409698bp}
+\pgfpathqlineto{54.050453bp}{80.140472bp}
+\pgfpathqlineto{55.166649bp}{78.649841bp}
+\pgfpathqlineto{57.666649bp}{75.316498bp}
+\pgfpathqlineto{58.066875bp}{75.61618bp}
+\pgfpathqlineto{57.666649bp}{75.915894bp}
+\pgfpathqlineto{55.166649bp}{72.58255bp}
+\pgfpathqlineto{54.04863bp}{71.094269bp}
+\pgfpathqlineto{55.762463bp}{71.822693bp}
+\pgfpathqlineto{63.597111bp}{75.156036bp}
+\pgfpathqlineto{64.679745bp}{75.61618bp}
+\pgfpathqlineto{63.597111bp}{76.076355bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{250.761547bp}{230.722628bp}}
+\pgfpathlineto{\pgfpoint{250.761547bp}{196.903693bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{251.221706bp}{194.264633bp}
+\pgfpathqlineto{247.888378bp}{202.099274bp}
+\pgfpathqlineto{247.428219bp}{201.903687bp}
+\pgfpathqlineto{247.128521bp}{201.503464bp}
+\pgfpathqlineto{250.461849bp}{199.003464bp}
+\pgfpathqlineto{250.761547bp}{198.779053bp}
+\pgfpathqlineto{251.061245bp}{199.003464bp}
+\pgfpathqlineto{254.394573bp}{201.503464bp}
+\pgfpathqlineto{254.094875bp}{201.903687bp}
+\pgfpathqlineto{253.634716bp}{202.099274bp}
+\pgfpathqlineto{250.301388bp}{194.264633bp}
+\pgfpathqlineto{250.761547bp}{194.069046bp}
+\pgfpathqlineto{251.221706bp}{194.264633bp}
+\pgfclosepath
+\pgfpathqmoveto{251.221706bp}{193.873459bp}
+\pgfpathqlineto{254.555035bp}{201.708115bp}
+\pgfpathqlineto{255.285824bp}{203.42012bp}
+\pgfpathqlineto{253.795193bp}{202.303925bp}
+\pgfpathqlineto{250.461849bp}{199.803925bp}
+\pgfpathqlineto{250.761547bp}{199.403687bp}
+\pgfpathqlineto{251.061245bp}{199.803925bp}
+\pgfpathqlineto{247.727901bp}{202.303925bp}
+\pgfpathqlineto{246.239605bp}{203.421936bp}
+\pgfpathqlineto{246.96806bp}{201.708115bp}
+\pgfpathqlineto{250.301388bp}{193.873459bp}
+\pgfpathqlineto{250.761547bp}{192.790833bp}
+\pgfpathqlineto{251.221706bp}{193.873459bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{81.3527bp}{342.901605bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}ESCALAMIENTO DE SISMOS REALES}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250311332506bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{351.136547bp}{48.747313bp}}
+\pgfpathlineto{\pgfpoint{351.136547bp}{27.74677bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{351.596706bp}{25.107697bp}
+\pgfpathqlineto{348.263363bp}{32.942352bp}
+\pgfpathqlineto{347.803219bp}{32.746765bp}
+\pgfpathqlineto{347.503506bp}{32.346527bp}
+\pgfpathqlineto{350.836849bp}{29.846527bp}
+\pgfpathqlineto{351.136562bp}{29.622131bp}
+\pgfpathqlineto{351.436245bp}{29.846527bp}
+\pgfpathqlineto{354.769588bp}{32.346527bp}
+\pgfpathqlineto{354.469875bp}{32.746765bp}
+\pgfpathqlineto{354.009731bp}{32.942352bp}
+\pgfpathqlineto{350.676388bp}{25.107697bp}
+\pgfpathqlineto{351.136562bp}{24.912109bp}
+\pgfpathqlineto{351.596706bp}{25.107697bp}
+\pgfclosepath
+\pgfpathqmoveto{351.596706bp}{24.716522bp}
+\pgfpathqlineto{354.93005bp}{32.551178bp}
+\pgfpathqlineto{355.660824bp}{34.263184bp}
+\pgfpathqlineto{354.170193bp}{33.147003bp}
+\pgfpathqlineto{350.836849bp}{30.647003bp}
+\pgfpathqlineto{351.136562bp}{30.246765bp}
+\pgfpathqlineto{351.436245bp}{30.647003bp}
+\pgfpathqlineto{348.102901bp}{33.147003bp}
+\pgfpathqlineto{346.61462bp}{34.265015bp}
+\pgfpathqlineto{347.343044bp}{32.551178bp}
+\pgfpathqlineto{350.676388bp}{24.716522bp}
+\pgfpathqlineto{351.136562bp}{23.633911bp}
+\pgfpathqlineto{351.596706bp}{24.716522bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\end{pgfpicture}
+
+	\caption{Esquema del proceso llevado a cabo para la simulaci\'on de incertidumbres.}
+	\label{fig:esquema2}
+\end{figure*}
+
+Como parte de esta investigaci\'on se realiza un grupo adicional de $\simulacionescv$ simulaciones independientes de edificios con el modelo de simulaci\'on de carga viva de Pier y Cornell y $\simulacionescv$ simulaciones de edificios con el modelo de simulaci\'on de carga viva de Mitchell y Woodgate; esto se realiza con la finalidad de estudiar las diferencias de los modelos de carga viva y considerar el m\'as adecuado para la obtenci\'on de las funciones de confiabilidad de los sistemas estudiados. Los resultados de esta parte de la investigaci\'on pueden verse en \cite{SIBCV2014}.
+
+Debido a que el SIB no incluye un modelo de muros de mamposter\'{\i}a, en este trabajo las simulaciones de propiedades de los muros se realizan externamente considerando el Macro--modelo de S. Kadysiewski y K. Mosalam \cite{MOSS2009}, para lo anterior se presenta la Tabla \ref{tab:propm} donde se muestran los par\'ametros simulados y sus propiedades estad\'{\i}sticas consideradas con base a informaci\'on experimental disponible. 
+
+El c\'odigo de simulaci\'on de propiedades puede verse en el \emph{Ap\'endice \textbf{B}}} de esta investigaci\'on, cabe aclarar que se asume \emph{a priori} que la variaci\'on de propiedades de la mamposter\'{\i}a ocurre unicamente sobre cada entrepiso, se espera que debido a los procesos constructivos en los cuales generalmente se construye en jornadas una parte considerable de los muros por nivel esta simplificaci\'on no tenga influencia considerable en los resultados; las incertidumbres se consideran procesos estoc\'asticos independientes con excepci\'on de la resistencia y m\'odulo de cortante, se generan modelos probabilistas de distribuci\'on normal.
+
+\begin{table}[htbp]
+	\centering
+		\caption{Propiedades estad\'{\i}sticas consideradas en la simulaci\'on de los muros de mamposter\'{\i}a \cite{AA2001,Put2010}.}
+		\begin{tabular}{llll}
+			\hline \hline Propiedad \ Simulada & Valor \ Medio & Desviaci\'on \ Estandar & \multicolumn{1}{l}{Correlaci\'on} \\ \hline\hline
+			$v^{*}_{m}$ & $4.35\frac{kg}{cm^{2}}$ & $0.8809\frac{kg}{cm^{2}}$ & \multicolumn{1}{l}{} \\
+			 &  & & \multicolumn{1}{l}{$0.47$} \\
+			$G$ & $4763.30\frac{kg}{cm^{2}}$ & $1039.50\frac{kg}{cm^{2}}$ & \multicolumn{1}{l}{           } \\ \hline
+			$t$ & $12.30cm$ & $0.31cm$ & \multicolumn{1}{l}{           } \\ \hline
+			$f_{y}$ & $7140\frac{kg}{cm^{2}}$ & $142.80\frac{kg}{cm^{2}}$ & \multicolumn{1}{l}{           }  \\ \hline
+			$f_{u}$ & $8220.00\frac{kg}{cm^{2}}$ & $82.22\frac{kg}{cm^{2}}$ & \multicolumn{1}{l}{           }  \\ \hline
+			$epsym$ & $0.0060$ & $0.00024$ & \multicolumn{1}{l}{           }  \\ \hline
+			$E_{m}$ & $6873.75\frac{kg}{cm^{2}}$ & $1374.75\frac{kg}{cm^{2}}$ & \multicolumn{1}{l}{           }  \\ \hline
+			$W_{m}$ & $1300\frac{kg}{m^{3}}$ & $195\frac{kg}{m^{3}}$ & \multicolumn{1}{l}{           }  \\ \hline
+			$f^{*}_{m}$ & $38.75\frac{kg}{cm^{2}}$ & $6.4906\frac{kg}{cm^{2}}$ & \multicolumn{1}{l}{           }  \\ \hline\hline
+		\end{tabular}
+	\label{tab:propm}
+\end{table}
+
+\newpage
+
+\subsection{An\'alisis no Lineal}
+
+Utilizando los archivos de salida del SIB para cada uno de los edificios simulados se realizan modificaciones con el objetivo de introducir los muros de mamposter\'{\i}a simulados en Opensees \cite{OP2006}, la inclusi\'on de los elementos puntales ocurre unicamente en las crujias perimetrales; de dichas modificaciones se explora el posible uso de un novedoso elemento basado en fuerza disponible en Opensees \cite{MG2006} el cual considera la posible distribuci\'on de no linealidad fuera de la zona de plasticidad determinada en un modelo de viga con articulaciones pl\'asticas, es decir que las caracter\'{\i}sticas del material que existe entre las articulaciones puede no ser el\'astico lineal.
+
+Cada una de las estructuras se analiza por los m\'etodos de \emph{Pushover} controlado por desplazamientos con un vector de fuerzas triangular inverso correspondiente al vector de cargas s\'{\i}smicas del an\'alisis din\'amico modal y un \emph{an\'alisis din\'amico no lineal} con aceleraciones s\'{\i}smicas reales escaladas en amplitud de factores de $0.50$ sobre un rango de $0.50$ a $3.5$ veces la aceleraci\'on registrada. Los principales resultados se presentan en el an\'alisis de resultados del cap\'{\i}tulo siguiente en t\'erminos de distorsiones, desplazamientos y rotaciones de los nodos maestros de entrepiso.
+
+En la Figura \ref{fig:sism1} a \ref{fig:sism5} se presentan los sismos que son considerados para la investigaci\'on de los sistemas estructurales estudiados, estos sismos fueron seleccionados debido a sus magnitudes e importancia. En la Tabla \ref{tab:csis} se presentan las caracter\'{\i}sticas principales de los sismos considerados para los an\'alisis din\'amicos.
+
+	\begin{table}
+		\centering
+		\caption{Caracter\'{\i}sticas de los sismos consideradso en esta investigaci\'on.}
+		\begin{tabular}{llccccc} \\ 
+			\hline \hline
+	  Clave & Fecha & Latitud & Longitud & Profundidad & Mb & Mc \\ 
+	   &  & (\circ) & (\circ) & (Km) & & \\
+		\hline\hline
+	  ACAP$7803.191$ & $19/03/1978$ & $17.026$ & $99.785$ & $36$ &  & 5.8 \\
+	  CALE$9701.111$ & $11/01/1997$ & $17.910$ & $103.040$ & $16$ & 6.5 & \\
+	  LLAV$9005.311$ & $31/05/1990$ & $17.106$ & $100.893$ & $16$ & 5.8 & 5.5 \\
+	  PARS$8509.211$ & $21/09/1985$ & $18.021$ & $101.479$ & $15$ & 6.3 & 7.5 \\
+	  VIGA$8904.251$ & $25/04/1989$ & $16.603$ & $99.400$ & $19$ & 6.3 & 6.5 \\
+\\\hline \hline
+		\end{tabular}
+	\label{tab:csis}
+\end{table}
+
+\begin{figure} [htbp]
+\includegraphics[scale=0.4]{S1X.pdf}
+\includegraphics[scale=0.4]{S1Y.pdf}
+\includegraphics[scale=0.4]{S1Z.pdf}
+\caption{Componentes del acelerograma del sismo $1$.}
+\label{fig:sism1}
+\end{figure}
+
+\begin{figure} [htbp]
+\includegraphics[scale=0.4]{S2X.pdf}
+\includegraphics[scale=0.4]{S2Y.pdf}
+\includegraphics[scale=0.4]{S2Z.pdf}
+\caption{Componentes del acelerograma del sismo $2$.}
+\label{fig:sism2}
+\end{figure}
+
+\begin{figure} [htbp]
+\includegraphics[scale=0.4]{S3X.pdf}
+\includegraphics[scale=0.4]{S3Y.pdf}
+\includegraphics[scale=0.4]{S3Z.pdf}
+\caption{Componentes del acelerograma del sismo $3$.}
+\label{fig:sism3}
+\end{figure}
+
+\begin{figure} [htbp]
+\includegraphics[scale=0.4]{S4X.pdf}
+\includegraphics[scale=0.4]{S4Y.pdf}
+\includegraphics[scale=0.4]{S4Z.pdf}
+\caption{Componentes del acelerograma del sismo $4$.}
+\label{fig:sism4}
+\end{figure}
+
+\begin{figure} [htbp]
+\includegraphics[scale=0.4]{S5X.pdf}
+\includegraphics[scale=0.4]{S5Y.pdf}
+\includegraphics[scale=0.4]{S5Z.pdf}
+\caption{Componentes del acelerograma del sismo $5$.}
+\label{fig:sism5}
+\end{figure}
+
+\newpage
+
+\subsection{An\'alisis de Confiabilidad Estructural}
+
+Para la obtenci\'on de los niveles de confiabilidad en t\'erminos cuantitativos es posible aplicar los niveles de confiabilidad tipo dos y tres tal como el correspondiente \'{\i}ndice $\beta$ de Cornell \cite{SRT2004,C1969}. Procediendo de esta manera se debe determinar el marguen de seguridad como funci\'on de la capacidad y demanda del sistema estructural; siguiendo un esquema semejante al presentado en el Cap\'{\i}tulo del Marco Te\'orico propuesto por D\'{\i}az--L\'opez $&$ Esteva \cite{DE2006} se calculan las funciones de confiabilidad de los dos sistemas estudiados. 
+
+Una variaci\'on propuesta para el c\'alculo de confiabilidad permite considerar los posibles efectos torsionales de las estructuras mediante el c\'alculo de los desplazamientos planos absolutos en lugar de los desplazamientos unidimensionales; esto es, considerar como variable independiente en los c\'alculos de da\~no y demanda a la ra\'{\i}z cuadrada de la suma de los cuadrados de los desplazamientos en los ejes X y Z globales del sistema, de igual forma para el c\'alculo de las rigideces $K_{0}$ y $K_{sec}$ se utiliza la resultante espacial del corte basal, posteriormente se procede de manera convencional a la propuesta de confiabilidad de D\'{\i}az--L\'opez $&$ Esteva \cite{DE2006}, lo anterior se presenta de manera esquem\'atica a continuaci\'on en la Figura \ref{fig:esquema3}:
+
+\begin{figure*}[htbp]
+
+\begin{pgfpicture}[width=170mm]{0bp}{0bp}{439.960957bp}{473.379915bp}
+\begin{pgfscope}
+\pgfsetlinewidth{1.984255075454712bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{298.13132bp}{459.099765bp}}
+\pgfpathcurveto{\pgfpoint{298.13132bp}{451.760994bp}}{\pgfpoint{265.788623bp}{445.811744bp}}{\pgfpoint{225.891898bp}{445.811744bp}}
+\pgfpathcurveto{\pgfpoint{185.995172bp}{445.811744bp}}{\pgfpoint{153.652475bp}{451.760994bp}}{\pgfpoint{153.652475bp}{459.099765bp}}
+\pgfpathcurveto{\pgfpoint{153.652475bp}{466.438537bp}}{\pgfpoint{185.995172bp}{472.387787bp}}{\pgfpoint{225.891898bp}{472.387787bp}}
+\pgfpathcurveto{\pgfpoint{265.788623bp}{472.387787bp}}{\pgfpoint{298.13132bp}{466.438537bp}}{\pgfpoint{298.13132bp}{459.099765bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear84}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear84}{0.0}\pgfseteorule\color[gray]{0.25}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.9317}{-0.0}{0.0}{0.9317}{\pgfpoint{225.051841bp}{459.270469bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}AN\'ALISIS NO LINEAL}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{0.708663bp}{432.598668bp}}
+\pgfpathlineto{\pgfpoint{0.708663bp}{389.209924bp}}
+\pgfpathlineto{\pgfpoint{115.546904bp}{389.209924bp}}
+\pgfpathlineto{\pgfpoint{115.546904bp}{432.598668bp}}
+\pgfpathlineto{\pgfpoint{0.708663bp}{432.598668bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear85}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear85}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{58.257624bp}{420.693848bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}C\'ALCULO DE q Y LN(q)}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{134.142616bp}{400.130539bp}}
+\pgfpathlineto{\pgfpoint{134.142616bp}{372.098122bp}}
+\pgfpathlineto{\pgfpoint{320.695403bp}{372.098122bp}}
+\pgfpathlineto{\pgfpoint{320.695403bp}{400.130539bp}}
+\pgfpathlineto{\pgfpoint{134.142616bp}{400.130539bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear86}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear86}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{227.972273bp}{392.454004bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}DETERMINACI\'ON DEL \'INDICE DE DA\~NO}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{227.805476bp}{380.330566bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\large
+\color[gray]{0.0}$D=\frac{K_{sec}-K_{0}}{K_{0}}$}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.984255075454712bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{73.281509bp}{37.751698bp}}
+\pgfpathlineto{\pgfpoint{73.281509bp}{0.992115bp}}
+\pgfpathlineto{\pgfpoint{377.777585bp}{0.992115bp}}
+\pgfpathlineto{\pgfpoint{377.777585bp}{37.751698bp}}
+\pgfpathlineto{\pgfpoint{73.281509bp}{37.751698bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear87}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear87}{0.0}\pgfseteorule\color[gray]{0.25}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{24.839301bp}{265.609919bp}}
+\pgfpathlineto{\pgfpoint{24.839301bp}{225.035229bp}}
+\pgfpathlineto{\pgfpoint{183.487266bp}{225.035229bp}}
+\pgfpathlineto{\pgfpoint{183.487266bp}{265.609919bp}}
+\pgfpathlineto{\pgfpoint{24.839301bp}{265.609919bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear88}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear88}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{105.676374bp}{258.579004bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}AN\'ALISIS DIN\'AMICO NO LINEAL}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{105.610359bp}{248.583105bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Sin interacci\'on suelo--estructura}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{103.603132bp}{232.826465bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}C\'alculo de K_{sec}}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.9317}{-0.0}{0.0}{0.9317}{\pgfpoint{226.957778bp}{28.715659bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}C\'ALCULO DE LA PROBABILIDAD DE FALLA}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{133.746054bp}{351.930496bp}}
+\pgfpathlineto{\pgfpoint{133.746054bp}{318.658572bp}}
+\pgfpathlineto{\pgfpoint{320.640842bp}{318.658572bp}}
+\pgfpathlineto{\pgfpoint{320.640842bp}{351.930496bp}}
+\pgfpathlineto{\pgfpoint{133.746054bp}{351.930496bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear89}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear89}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{227.266413bp}{343.530371bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}GR\'AFICA DE DISPERSI\'ON}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{226.053562bp}{445.338379bp}}
+\pgfpathlineto{\pgfpoint{226.053562bp}{418.713379bp}}
+\pgfpathlineto{\pgfpoint{130.315572bp}{418.713379bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{127.676502bp}{418.25322bp}
+\pgfpathqlineto{135.511158bp}{421.586552bp}
+\pgfpathqlineto{135.315571bp}{422.046711bp}
+\pgfpathqlineto{134.915348bp}{422.346405bp}
+\pgfpathqlineto{132.415348bp}{419.013073bp}
+\pgfpathqlineto{132.190922bp}{418.713379bp}
+\pgfpathqlineto{132.415348bp}{418.413685bp}
+\pgfpathqlineto{134.915348bp}{415.080353bp}
+\pgfpathqlineto{135.315571bp}{415.380047bp}
+\pgfpathqlineto{135.511158bp}{415.840206bp}
+\pgfpathqlineto{127.676502bp}{419.173538bp}
+\pgfpathqlineto{127.480915bp}{418.713379bp}
+\pgfpathqlineto{127.676502bp}{418.25322bp}
+\pgfclosepath
+\pgfpathqmoveto{127.285343bp}{418.25322bp}
+\pgfpathqlineto{135.119984bp}{414.919888bp}
+\pgfpathqlineto{136.83199bp}{414.189117bp}
+\pgfpathqlineto{135.715794bp}{415.679741bp}
+\pgfpathqlineto{133.215794bp}{419.013073bp}
+\pgfpathqlineto{132.815571bp}{418.713379bp}
+\pgfpathqlineto{133.215794bp}{418.413685bp}
+\pgfpathqlineto{135.715794bp}{421.747017bp}
+\pgfpathqlineto{136.833821bp}{423.235313bp}
+\pgfpathqlineto{135.119984bp}{422.50687bp}
+\pgfpathqlineto{127.285343bp}{419.173538bp}
+\pgfpathqlineto{126.202702bp}{418.713379bp}
+\pgfpathqlineto{127.285343bp}{418.25322bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{216.325398bp}{418.839286bp}}
+\pgfpathlineto{\pgfpoint{270.700398bp}{418.839286bp}}
+\pgfpathlineto{\pgfpoint{270.700398bp}{404.832598bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{271.160542bp}{402.193535bp}
+\pgfpathqlineto{267.827229bp}{410.028183bp}
+\pgfpathqlineto{267.367054bp}{409.832596bp}
+\pgfpathqlineto{267.067372bp}{409.432365bp}
+\pgfpathqlineto{270.400715bp}{406.932365bp}
+\pgfpathqlineto{270.700398bp}{406.707954bp}
+\pgfpathqlineto{271.00008bp}{406.932365bp}
+\pgfpathqlineto{274.333424bp}{409.432365bp}
+\pgfpathqlineto{274.033741bp}{409.832596bp}
+\pgfpathqlineto{273.573567bp}{410.028183bp}
+\pgfpathqlineto{270.240254bp}{402.193535bp}
+\pgfpathqlineto{270.700398bp}{401.997948bp}
+\pgfpathqlineto{271.160542bp}{402.193535bp}
+\pgfclosepath
+\pgfpathqmoveto{271.160542bp}{401.802361bp}
+\pgfpathqlineto{274.493885bp}{409.637016bp}
+\pgfpathqlineto{275.224659bp}{411.349018bp}
+\pgfpathqlineto{273.734028bp}{410.232826bp}
+\pgfpathqlineto{270.400715bp}{407.732826bp}
+\pgfpathqlineto{270.700398bp}{407.332596bp}
+\pgfpathqlineto{271.00008bp}{407.732826bp}
+\pgfpathqlineto{267.666767bp}{410.232826bp}
+\pgfpathqlineto{266.178456bp}{411.350845bp}
+\pgfpathqlineto{266.90691bp}{409.637016bp}
+\pgfpathqlineto{270.240254bp}{401.802361bp}
+\pgfpathqlineto{270.700398bp}{400.719734bp}
+\pgfpathqlineto{271.160542bp}{401.802361bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{227.488319bp}{316.338379bp}}
+\pgfpathlineto{\pgfpoint{227.488319bp}{298.338379bp}}
+\pgfpathlineto{\pgfpoint{104.931366bp}{298.338379bp}}
+\pgfpathlineto{\pgfpoint{104.931366bp}{271.338379bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{105.391522bp}{268.69931bp}
+\pgfpathqlineto{102.058193bp}{276.533966bp}
+\pgfpathqlineto{101.598034bp}{276.338379bp}
+\pgfpathqlineto{101.298336bp}{275.938156bp}
+\pgfpathqlineto{104.631672bp}{273.438156bp}
+\pgfpathqlineto{104.93137bp}{273.21373bp}
+\pgfpathqlineto{105.23106bp}{273.438156bp}
+\pgfpathqlineto{108.564396bp}{275.938156bp}
+\pgfpathqlineto{108.264698bp}{276.338379bp}
+\pgfpathqlineto{107.804539bp}{276.533966bp}
+\pgfpathqlineto{104.471211bp}{268.69931bp}
+\pgfpathqlineto{104.93137bp}{268.503723bp}
+\pgfpathqlineto{105.391522bp}{268.69931bp}
+\pgfclosepath
+\pgfpathqmoveto{105.391522bp}{268.308136bp}
+\pgfpathqlineto{108.724858bp}{276.142792bp}
+\pgfpathqlineto{109.455631bp}{277.854797bp}
+\pgfpathqlineto{107.965008bp}{276.738602bp}
+\pgfpathqlineto{104.631672bp}{274.238602bp}
+\pgfpathqlineto{104.93137bp}{273.838379bp}
+\pgfpathqlineto{105.23106bp}{274.238602bp}
+\pgfpathqlineto{101.897724bp}{276.738602bp}
+\pgfpathqlineto{100.409428bp}{277.856628bp}
+\pgfpathqlineto{101.137875bp}{276.142792bp}
+\pgfpathqlineto{104.471211bp}{268.308136bp}
+\pgfpathqlineto{104.93137bp}{267.22551bp}
+\pgfpathqlineto{105.391522bp}{268.308136bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{228.564624bp}{298.387724bp}}
+\pgfpathlineto{\pgfpoint{351.654337bp}{298.387724bp}}
+\pgfpathlineto{\pgfpoint{351.654337bp}{272.918886bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{352.114491bp}{270.279816bp}
+\pgfpathqlineto{348.781147bp}{278.114471bp}
+\pgfpathqlineto{348.321003bp}{277.918884bp}
+\pgfpathqlineto{348.021321bp}{277.518661bp}
+\pgfpathqlineto{351.354634bp}{275.018661bp}
+\pgfpathqlineto{351.654347bp}{274.79425bp}
+\pgfpathqlineto{351.954029bp}{275.018661bp}
+\pgfpathqlineto{355.287373bp}{277.518661bp}
+\pgfpathqlineto{354.98766bp}{277.918884bp}
+\pgfpathqlineto{354.527516bp}{278.114471bp}
+\pgfpathqlineto{351.194172bp}{270.279816bp}
+\pgfpathqlineto{351.654347bp}{270.084229bp}
+\pgfpathqlineto{352.114491bp}{270.279816bp}
+\pgfclosepath
+\pgfpathqmoveto{352.114491bp}{269.888657bp}
+\pgfpathqlineto{355.447834bp}{277.723297bp}
+\pgfpathqlineto{356.178608bp}{279.435303bp}
+\pgfpathqlineto{354.687977bp}{278.319122bp}
+\pgfpathqlineto{351.354634bp}{275.819122bp}
+\pgfpathqlineto{351.654347bp}{275.418884bp}
+\pgfpathqlineto{351.954029bp}{275.819122bp}
+\pgfpathqlineto{348.620686bp}{278.319122bp}
+\pgfpathqlineto{347.132405bp}{279.437134bp}
+\pgfpathqlineto{347.860859bp}{277.723297bp}
+\pgfpathqlineto{351.194172bp}{269.888657bp}
+\pgfpathqlineto{351.654347bp}{268.806015bp}
+\pgfpathqlineto{352.114491bp}{269.888657bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{271.701485bp}{265.475454bp}}
+\pgfpathlineto{\pgfpoint{271.701485bp}{224.908639bp}}
+\pgfpathlineto{\pgfpoint{431.837151bp}{224.908639bp}}
+\pgfpathlineto{\pgfpoint{431.837151bp}{265.475454bp}}
+\pgfpathlineto{\pgfpoint{271.701485bp}{265.475454bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear90}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear90}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{351.651374bp}{257.329004bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}AN\'ALISIS EST\'ATICO NO LINEAL}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{351.877741bp}{245.201465bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}C\'alculo de K_{0}}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{352.368952bp}{234.087207bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{226.718815bp}{62.740691bp}}
+\pgfpathlineto{\pgfpoint{226.718815bp}{43.390691bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{227.178974bp}{40.751617bp}
+\pgfpathqlineto{223.845646bp}{48.586273bp}
+\pgfpathqlineto{223.385487bp}{48.390686bp}
+\pgfpathqlineto{223.085789bp}{47.990448bp}
+\pgfpathqlineto{226.419117bp}{45.490448bp}
+\pgfpathqlineto{226.718815bp}{45.266052bp}
+\pgfpathqlineto{227.018513bp}{45.490448bp}
+\pgfpathqlineto{230.351841bp}{47.990448bp}
+\pgfpathqlineto{230.052143bp}{48.390686bp}
+\pgfpathqlineto{229.591984bp}{48.586273bp}
+\pgfpathqlineto{226.258656bp}{40.751617bp}
+\pgfpathqlineto{226.718815bp}{40.55603bp}
+\pgfpathqlineto{227.178974bp}{40.751617bp}
+\pgfclosepath
+\pgfpathqmoveto{227.178974bp}{40.360443bp}
+\pgfpathqlineto{230.512303bp}{48.195099bp}
+\pgfpathqlineto{231.243077bp}{49.907104bp}
+\pgfpathqlineto{229.752461bp}{48.790924bp}
+\pgfpathqlineto{226.419117bp}{46.290924bp}
+\pgfpathqlineto{226.718815bp}{45.890686bp}
+\pgfpathqlineto{227.018513bp}{46.290924bp}
+\pgfpathqlineto{223.685169bp}{48.790924bp}
+\pgfpathqlineto{222.196873bp}{49.908936bp}
+\pgfpathqlineto{222.925328bp}{48.195099bp}
+\pgfpathqlineto{226.258656bp}{40.360443bp}
+\pgfpathqlineto{226.718815bp}{39.277832bp}
+\pgfpathqlineto{227.178974bp}{40.360443bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgftransformcm{0.405257}{-0.0}{0.0}{0.758716}{\pgfpoint{57.348455bp}{404.2113bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\Large
+\color[gray]{0.0}$q=\frac{S_{a}\overline{M}}{\overline{v_{y}}}$}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.645734}{-0.0}{0.0}{0.712805}{\pgfpoint{227.065496bp}{329.694063bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\large
+\color[gray]{0.0}D v.s. Ln(q)}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{57.398486bp}{387.394509bp}}
+\pgfpathlineto{\pgfpoint{57.398486bp}{336.15623bp}}
+\pgfpathlineto{\pgfpoint{129.310195bp}{336.15623bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{131.949253bp}{336.616394bp}
+\pgfpathqlineto{124.114613bp}{333.283051bp}
+\pgfpathqlineto{124.310192bp}{332.822891bp}
+\pgfpathqlineto{124.710423bp}{332.523209bp}
+\pgfpathqlineto{127.210423bp}{335.856537bp}
+\pgfpathqlineto{127.434834bp}{336.156235bp}
+\pgfpathqlineto{127.210423bp}{336.455933bp}
+\pgfpathqlineto{124.710423bp}{339.789261bp}
+\pgfpathqlineto{124.310192bp}{339.489563bp}
+\pgfpathqlineto{124.114613bp}{339.029404bp}
+\pgfpathqlineto{131.949253bp}{335.696075bp}
+\pgfpathqlineto{132.14484bp}{336.156235bp}
+\pgfpathqlineto{131.949253bp}{336.616394bp}
+\pgfclosepath
+\pgfpathqmoveto{132.340428bp}{336.616394bp}
+\pgfpathqlineto{124.50578bp}{339.949722bp}
+\pgfpathqlineto{122.793774bp}{340.680496bp}
+\pgfpathqlineto{123.90997bp}{339.189865bp}
+\pgfpathqlineto{126.409962bp}{335.856537bp}
+\pgfpathqlineto{126.8102bp}{336.156235bp}
+\pgfpathqlineto{126.409962bp}{336.455933bp}
+\pgfpathqlineto{123.90997bp}{333.122589bp}
+\pgfpathqlineto{122.79195bp}{331.634293bp}
+\pgfpathqlineto{124.50578bp}{332.362732bp}
+\pgfpathqlineto{132.340428bp}{335.696075bp}
+\pgfpathqlineto{133.423054bp}{336.156235bp}
+\pgfpathqlineto{132.340428bp}{336.616394bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{227.593815bp}{372.740691bp}}
+\pgfpathlineto{\pgfpoint{227.593815bp}{356.390691bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{228.053974bp}{353.751625bp}
+\pgfpathqlineto{224.720646bp}{361.586273bp}
+\pgfpathqlineto{224.260487bp}{361.390694bp}
+\pgfpathqlineto{223.960789bp}{360.990463bp}
+\pgfpathqlineto{227.294117bp}{358.490463bp}
+\pgfpathqlineto{227.593815bp}{358.266045bp}
+\pgfpathqlineto{227.893513bp}{358.490463bp}
+\pgfpathqlineto{231.226841bp}{360.990463bp}
+\pgfpathqlineto{230.927143bp}{361.390694bp}
+\pgfpathqlineto{230.466984bp}{361.586273bp}
+\pgfpathqlineto{227.133656bp}{353.751625bp}
+\pgfpathqlineto{227.593815bp}{353.556038bp}
+\pgfpathqlineto{228.053974bp}{353.751625bp}
+\pgfclosepath
+\pgfpathqmoveto{228.053974bp}{353.360458bp}
+\pgfpathqlineto{231.387303bp}{361.195107bp}
+\pgfpathqlineto{232.118077bp}{362.907112bp}
+\pgfpathqlineto{230.627461bp}{361.790916bp}
+\pgfpathqlineto{227.294117bp}{359.290916bp}
+\pgfpathqlineto{227.593815bp}{358.890694bp}
+\pgfpathqlineto{227.893513bp}{359.290916bp}
+\pgfpathqlineto{224.560169bp}{361.790916bp}
+\pgfpathqlineto{223.071873bp}{362.908936bp}
+\pgfpathqlineto{223.800328bp}{361.195107bp}
+\pgfpathqlineto{227.133656bp}{353.360458bp}
+\pgfpathqlineto{227.593815bp}{352.277824bp}
+\pgfpathqlineto{228.053974bp}{353.360458bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{123.770817bp}{97.539993bp}}
+\pgfpathlineto{\pgfpoint{123.770817bp}{64.268057bp}}
+\pgfpathlineto{\pgfpoint{325.929815bp}{64.268057bp}}
+\pgfpathlineto{\pgfpoint{325.929815bp}{97.539993bp}}
+\pgfpathlineto{\pgfpoint{123.770817bp}{97.539993bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear91}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear91}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{226.65489bp}{89.530371bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}GR\'AFICA DE CONFIABILIDAD}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.645734}{-0.0}{0.0}{0.712805}{\pgfpoint{226.976885bp}{75.541316bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Determinaci\'on de las funciones de confiabilidad}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{226.968815bp}{141.313937bp}}
+\pgfpathlineto{\pgfpoint{226.968815bp}{103.484889bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{227.428974bp}{100.845825bp}
+\pgfpathqlineto{224.095646bp}{108.680481bp}
+\pgfpathqlineto{223.635487bp}{108.484894bp}
+\pgfpathqlineto{223.335789bp}{108.084656bp}
+\pgfpathqlineto{226.669117bp}{105.584656bp}
+\pgfpathqlineto{226.968815bp}{105.36026bp}
+\pgfpathqlineto{227.268513bp}{105.584656bp}
+\pgfpathqlineto{230.601841bp}{108.084656bp}
+\pgfpathqlineto{230.302143bp}{108.484894bp}
+\pgfpathqlineto{229.841984bp}{108.680481bp}
+\pgfpathqlineto{226.508656bp}{100.845825bp}
+\pgfpathqlineto{226.968815bp}{100.650238bp}
+\pgfpathqlineto{227.428974bp}{100.845825bp}
+\pgfclosepath
+\pgfpathqmoveto{227.428974bp}{100.454651bp}
+\pgfpathqlineto{230.762303bp}{108.289307bp}
+\pgfpathqlineto{231.493077bp}{110.001312bp}
+\pgfpathqlineto{230.002461bp}{108.885132bp}
+\pgfpathqlineto{226.669117bp}{106.385132bp}
+\pgfpathqlineto{226.968815bp}{105.984894bp}
+\pgfpathqlineto{227.268513bp}{106.385132bp}
+\pgfpathqlineto{223.935169bp}{108.885132bp}
+\pgfpathqlineto{222.446873bp}{110.003143bp}
+\pgfpathqlineto{223.175328bp}{108.289307bp}
+\pgfpathqlineto{226.508656bp}{100.454651bp}
+\pgfpathqlineto{226.968815bp}{99.372009bp}
+\pgfpathqlineto{227.428974bp}{100.454651bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{104.864204bp}{224.565501bp}}
+\pgfpathlineto{\pgfpoint{104.864204bp}{199.530583bp}}
+\pgfpathlineto{\pgfpoint{227.082762bp}{199.530583bp}}
+\pgfpathlineto{\pgfpoint{227.082762bp}{184.445439bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{227.542927bp}{181.806366bp}
+\pgfpathqlineto{224.209584bp}{189.641022bp}
+\pgfpathqlineto{223.749424bp}{189.445435bp}
+\pgfpathqlineto{223.449742bp}{189.045197bp}
+\pgfpathqlineto{226.78307bp}{186.545197bp}
+\pgfpathqlineto{227.082768bp}{186.320801bp}
+\pgfpathqlineto{227.38245bp}{186.545197bp}
+\pgfpathqlineto{230.715794bp}{189.045197bp}
+\pgfpathqlineto{230.416096bp}{189.445435bp}
+\pgfpathqlineto{229.955937bp}{189.641022bp}
+\pgfpathqlineto{226.622608bp}{181.806366bp}
+\pgfpathqlineto{227.082768bp}{181.610779bp}
+\pgfpathqlineto{227.542927bp}{181.806366bp}
+\pgfclosepath
+\pgfpathqmoveto{227.542927bp}{181.415192bp}
+\pgfpathqlineto{230.876255bp}{189.249847bp}
+\pgfpathqlineto{231.607029bp}{190.961853bp}
+\pgfpathqlineto{230.116398bp}{189.845673bp}
+\pgfpathqlineto{226.78307bp}{187.345673bp}
+\pgfpathqlineto{227.082768bp}{186.945435bp}
+\pgfpathqlineto{227.38245bp}{187.345673bp}
+\pgfpathqlineto{224.049122bp}{189.845673bp}
+\pgfpathqlineto{222.560826bp}{190.963684bp}
+\pgfpathqlineto{223.289265bp}{189.249847bp}
+\pgfpathqlineto{226.622608bp}{181.415192bp}
+\pgfpathqlineto{227.082768bp}{180.332581bp}
+\pgfpathqlineto{227.542927bp}{181.415192bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{228.046741bp}{199.531186bp}}
+\pgfpathlineto{\pgfpoint{352.602961bp}{199.531186bp}}
+\pgfpathlineto{\pgfpoint{352.602961bp}{223.058428bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{125.444131bp}{177.635666bp}}
+\pgfpathlineto{\pgfpoint{125.444131bp}{142.927216bp}}
+\pgfpathlineto{\pgfpoint{328.34615bp}{142.927216bp}}
+\pgfpathlineto{\pgfpoint{328.34615bp}{177.635666bp}}
+\pgfpathlineto{\pgfpoint{125.444131bp}{177.635666bp}}
+\pgfclosepath
+\pgfdeclareverticalshading{jdrlinear92}{100bp}{rgb(0bp)=(0.501961,0.501961,0.501961); rgb(32.5bp)=(0.501961,0.501961,0.501961); rgb(67.5bp)=(0.278431,0.278431,0.278431); rgb(100bp)=(0.278431,0.278431,0.278431)}
+\pgfshadepath{jdrlinear92}{0.0}\pgfseteorule\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.7}{-0.0}{0.0}{0.7}{\pgfpoint{226.868952bp}{169.65127bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}C\'ALCULO DE \beta}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.645734}{-0.0}{0.0}{0.712805}{\pgfpoint{227.210043bp}{155.027297bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\large
+\color[gray]{0.0}$ \beta= \frac{E[M]}{\sigma[M]}= \frac{E[Ln(qr)]-Ln(qa)}{\sigma[Ln(qr)]}$}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.645734}{-0.0}{0.0}{0.712805}{\pgfpoint{226.822258bp}{14.777297bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\large
+\color[gray]{0.0}$P_{f}=\Phi(-\beta)$}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.4173250198364258bp}
+\pgfsetrectcap 
+\pgfsetmiterjoin \pgfsetmiterlimit{10.0}
+\pgfsetdash{{10.0bp}{5.0bp}}{0.0bp}
+\pgfpathmoveto{\pgfpoint{227.339647bp}{122.147681bp}}
+\pgfpathlineto{\pgfpoint{438.182723bp}{122.147681bp}}
+\pgfpathlineto{\pgfpoint{439.254486bp}{432.875025bp}}
+\pgfpathlineto{\pgfpoint{232.20613bp}{432.875025bp}}
+\color[gray]{0.5}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 43
+{\begin{pgfscope}
+\color[gray]{0.5}\pgfpathqmoveto{229.567066bp}{432.414867bp}
+\pgfpathqlineto{237.401722bp}{435.748199bp}
+\pgfpathqlineto{237.206135bp}{436.208359bp}
+\pgfpathqlineto{236.805897bp}{436.508053bp}
+\pgfpathqlineto{234.305897bp}{433.174721bp}
+\pgfpathqlineto{234.081486bp}{432.875027bp}
+\pgfpathqlineto{234.305897bp}{432.575329bp}
+\pgfpathqlineto{236.805897bp}{429.241997bp}
+\pgfpathqlineto{237.206135bp}{429.541691bp}
+\pgfpathqlineto{237.401722bp}{430.00185bp}
+\pgfpathqlineto{229.567066bp}{433.335186bp}
+\pgfpathqlineto{229.371479bp}{432.875027bp}
+\pgfpathqlineto{229.567066bp}{432.414867bp}
+\pgfclosepath
+\pgfpathqmoveto{229.175892bp}{432.414867bp}
+\pgfpathqlineto{237.010548bp}{429.081532bp}
+\pgfpathqlineto{238.722553bp}{428.350761bp}
+\pgfpathqlineto{237.606358bp}{429.841385bp}
+\pgfpathqlineto{235.106358bp}{433.174721bp}
+\pgfpathqlineto{234.706135bp}{432.875027bp}
+\pgfpathqlineto{235.106358bp}{432.575329bp}
+\pgfpathqlineto{237.606358bp}{435.908665bp}
+\pgfpathqlineto{238.724369bp}{437.396961bp}
+\pgfpathqlineto{237.010548bp}{436.668518bp}
+\pgfpathqlineto{229.175892bp}{433.335186bp}
+\pgfpathqlineto{228.093266bp}{432.875027bp}
+\pgfpathqlineto{229.175892bp}{432.414867bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgftransformcm{0.645734}{-0.0}{0.0}{0.712805}{\pgfpoint{290.425524bp}{130.898121bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}Para cada grupo de simulaciones}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{0.645734}{-0.0}{0.0}{0.712805}{\pgfpoint{303.410966bp}{112.781474bp}}
+\pgftext[center,center]{\rmfamily\bfseries\upshape\small
+\color[gray]{0.0}correspondiente a cada sistema estructural}
+\end{pgfscope}
+\end{pgfpicture}
+
+	\caption{Esquema del proceso llevado a cabo para la obtenci\'on de las funciones de confiabilidad.}
+	\label{fig:esquema3}
+\end{figure*}
+
+\newpage
+
+\subsection{Propuesta de Confiabilidad Estructural}
+
+La propuesta de confiabilidad presentada permite considerar los posibles efectos torsionales de las estructuras mediante un esquema de interacci\'on semejante al de la Superficie \'ultima de Corte y Torque (SUCT) propuesto por De la Llera y Chopra A. \cite{DC1994}; la extensi\'on se realiza sobre la consideraci\'on de la interacci\'on de efectos, sin embargo, aqu\'{\i} se propone considerar la interacci\'on en t\'erminos de desplazamientos en el plano $XZ$ de manera que el estado global del sistema puede determinarse en familias de diagramas de interacci\'on y consecuentemente es posible establecer el margen de seguridad mediante  la identificaci\'on de la capacidad y la demanda.
+
+Considerando la libertad de desplazamientos de la estructura en los cuatro cuadrantes del plano $XZ$ correspondientes a cada entrepiso del sistema estructural se propone determinar la capacidad de la estructura en funci\'on de las rigideces iniciales de los desplazamiento y distorsiones de entrepiso, lo cual es posible al realizar un an\'alisis tipo \emph{Pushover} aplicando en el sentido de control el total de la carga considerada y aplicando  perpendicularmente un $30\%$ de la carga de control. De esta manera se determina la capacidad en el sentido $(+X)$, $(+Z)$, $(-X)$, $(-Z)$, $(+X+Z)$, $(+X-Z)$, $(-X+Z)$ y $(-X-Z)$; debido a la configuraci\'on de las cargas las caracter\'{\i}sticas torsionales del sistema son incluidas en los an\'alisis. 
+
+\begin{figure} [htbp]
+\includegraphics[width=150mm]{pc1.pdf}
+\caption{Ilustraci\'on de los c\'alculos planteados en la propuesta de confiabilidad para las medidas de da\~no por el IRRS \cite{DE2006}.}
+\label{fig:pc1}
+\end{figure}
+
+\begin{figure} [htbp]
+\includegraphics[width=150mm]{pc2.pdf}
+\caption{Ilustraci\'on de los c\'alculos planteados en la propuesta de confiabilidad para las medidas de intensidad normalizada q.}
+\label{fig:pc2}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
